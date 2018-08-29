@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<title>跨浏览器定位</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="http://code.google.com/apis/gears/gears_init.js"></script>
+<script src="js/geo.js"></script>
+</head>
+<body>
+  <header>
+  </header>
+  <div id="main">
+    <div id="someElm">
+		</div>
+  </div>
+  <footer>
+  </footer>
+  <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+  <script>
+    if(geo_position_js.init()){
+      geo_position_js.getCurrentPosition(showInfo,error_callback,{enableHighAccuracy:true,options:5000});
+    }
+    else{
+       $('#someElm').html("Functionality not available");
+    }
+    function showInfo(position)
+    {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      var accuracy = position.coords.accuracy;
+      $('#someElm').html('latitude: '+latitude+'<br />longitude: '+longitude+'<br />accuracy: '+accuracy);
+    }
+    function error_callback(p)
+    {
+       $('#someElm').html('error='+p.message);
+    }
+  </script>
+</body>
+</html>

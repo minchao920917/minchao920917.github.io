@@ -1,0 +1,178 @@
+*{
+	margin:0 auto;
+	padding: 0 0;
+}
+.container{
+	border:1px solid #eee;
+}
+.form-div {
+    border: 1px solid #eee;
+}
+
+.form-title {
+    background: #eee;
+    padding: 10px 10px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.form-group {
+    padding: 10px 10px;
+	height: 74px;
+}
+
+
+.form-group label {
+    color: #999;
+  
+    margin-bottom: 0;
+}
+
+.form-group label .require {
+    color: #f00;
+    padding-left: 5px;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #fff; 
+    opacity: 1;
+    cursor: auto;
+}
+
+#imghead1,#imghead2{
+	margin-left: 30%;
+}
+#imghead2{
+	margin-left: 20%;
+	margin-top:20%;
+}
+
+.regular-radio+label {
+	-webkit-appearance: none;
+	background-color: #fff;
+	border: 1px solid #008BCA;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px -15px 10px -12px
+		rgba(0, 0, 0, 0);
+	padding: 8px;
+	border-radius: 50px;
+	display: inline-block;
+	position: relative;
+}
+
+.regular-radio:checked+label:after {
+	content: ' ';
+	width: 6px;
+	height: 6px;
+	border-radius: 50px;
+	position: absolute;
+	top: 5px;
+	background: #008BCA;
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0);
+	text-shadow: 0px;
+	left: 5px;
+	font-size: 6px;
+}
+
+.regular-radio:checked+label {
+	background-color: #fff;
+	color: #008BCA;
+	border: 1px solid #008bca;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px -15px 10px -12px
+		rgba(0, 0, 0, 0), inset 15px 10px -12px rgba(255, 255, 255, 0), inset
+		0px 0px 10px rgba(0, 0, 0, 0);
+}
+
+.regular-radio + label:active, .regular-radio:checked+label:active {
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px 1px 3px
+		rgba(0, 0, 0, 0);
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+.text1, .text2 {
+	position: relative;
+	left: 10px;
+	font-size: 14px;
+}
+
+#addFriendPhone a,#addExperiencePhone a,#addEducationPhone a,
+#addTrainPhone a,#addProfessionalPhone a,#addRewardPhone a,
+#addPatentPhone a{
+    font-size: 20px;
+    color: #428bca;
+    border:1px solid #428bca;
+}
+#relatives .relative,#friends .friend,#experiences .experience,
+#educations .education,#trains .train,#professionals .professional,
+#rewards .reward,#patents .patent{
+	border:1px solid #eee;
+	margin-top:20px;
+}
+#friends .friend:first-child .closed,#experiences .experience:first-child .closed,
+#educations .education:first-child .closed,#trains .train:first-child .closed,
+#professionals .professional:first-child .closed,#rewards .reward:first-child .closed,
+#patents .patent:first-child .closed{
+	display: none;
+}
+#relatives .relative:last-child,#friends .friend:last-child,#experiences .experience:last-child,
+#educations .education:last-child,#trains .train:last-child,
+#professionals .professional:last-child,#rewards .reward:last-child,
+#patents .patent:last-child{
+	margin-bottom: 20px;
+}
+#friends .friend .closed,#experiences .experience .closed,
+#educations .education .closed,#trains .train .closed,
+#professionals .professional .closed,#rewards .reward .closed,
+#patents .patent .closed{
+	float: right;
+	margin-top: -10px;
+ 	margin-right: -22px;
+ 	opacity: .6;
+ 	filter: opacity(60);
+ 	font-weight:60;
+}
+#friends .friend .closed span,#experiences .experience .closed span,
+#educations .education .closed span,#trains .train .closed span,
+#professionals .professional .closed span,#rewards .reward .closed span,
+#patents .patent .closed span{
+	background: #fff;
+    color:#3a3a3a;
+    transform-origin:center;
+    transform: rotate(45deg);
+    -webkit-transition:  -webkit-transform .3s ease; 
+	transition: transform .3s ease;
+}
+#friends .friend .closed span:hover,#experiences .experience .closed span:hover,
+#educations .education .closed span:hover,#trains .train .closed span:hover,
+#professionals .professional .closed span:hover,#rewards .reward .closed span:hover,
+#patents .patent .closed span:hover{
+	transform: rotate(215deg);
+}
+#addFriend,#reduceFriend,#addExperience,#reduceExperience,
+#addEducation,#reduceEducation,#addTrain,#reduceTrain,#addProfessional,#reduceProfessional,
+#addReward,#reduceReward,#addPatent,#reducePatent{
+	float:right;
+	margin-left: 10px;
+}
+
+.form-btn {
+	margin: 20px 0;
+	text-align: center;
+}
+
+.form-btn a {
+	padding: 8px 30px;
+	font-size: 20px;
+	margin-left: 40px;
+}
+label{
+	font-weight:100;
+
+}
+label.error{
+	color:red;
+	
+}

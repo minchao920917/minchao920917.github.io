@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue的一个例子</title>
+    <meta charset="utf-8">
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">  
+    <input v-model="val" v-on:keypress.enter="addToList" >
+        <button v-on:click="addToList">添加</button>  
+    <ul>  
+        <li v-for="(val,index) in values">  
+            {{val.val}}  
+            <input type="button" value="删除" v-on:click="removeList(index)"/>  
+        </li>  
+    </ul>
+    <input v-model="DATE" type="date"/>  
+	<p>{{DATE}}</p>    
+</div>  
+<script type="text/javascript" src="js/vue.js"></script>
+<script>  
+
+var data ={ 
+            DATE:"111", 
+            val: "1",  
+            values: []  
+        };
+
+   var vm= new Vue({  
+        el: '#app',  
+        data: data,  
+        methods: {  
+            addToList: function () {  
+                var val = parseInt(this.val.trim());  
+                //注意，因为当上面的val是字符串类型的时候，才能用trim()，如果是数字类型，则用this.val  
+                if (val) {  
+                    this.values.push({val: val});  
+                }  
+                this.val = String(val + 1);  
+            },  
+            removeList: function (index) {  
+                this.values.splice(index, 1);  
+            }  
+        }  
+    }) ;
+
+</script>  
+
+</body>
+</html>

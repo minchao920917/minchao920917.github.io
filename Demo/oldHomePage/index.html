@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>welcome to 闵超</title>
+	<link rel = "Shortcut Icon" href=img/mc.ico>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/rewards.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.flipster.css">
+	<style type="text/css">
+
+	</style>
+
+</head>
+<body>
+	<!-- 加载项 -->
+	<div id="preloader">
+		<canvas id="loading"></canvas>
+	</div>
+
+	<!-- 内容 -->
+	<header class="top">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-2 col-md-3 col-lg-offset-1 col-md-offset-1 col-sm-10 col-xs-10">
+					<img src="img/logo.png" style="line-height: 40px;">
+					<span class="name">闵超的主页</span>
+
+				</div>
+				<div class="col-lg-5 col-md-6 col-lg-offset-1  hidden-sm hidden-xs">
+					<ul class="list-inline list-unstyled">
+						<li><a href="">首页</a></li>
+						<li><a href="">技能</a></li>
+						<li><a href="">作品</a></li>
+						<li><a href="">博客</a></li>
+						<li><a href="">找我</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 col-md-2 hidden-xs hidden-sm" style="line-height: 40px;">
+					<iframe scrolling="no" width="200" height="20" frameborder="0" allowtransparency="false" src="http://i.tianqi.com/index.php?c=code&id=1&color=%23FFFFFF&bgc=%230d1025&bdc=%23000000&icon=3&num=1"></iframe>
+				</div>
+				<!-- 菜单按钮 -->
+				<div class="col-sm-2 col-xs-2 hidden-lg hidden-md">
+ 					<div class="menu-button svgmenu" id="menu_icon"></div>
+				</div>
+			</div>
+		</div>
+		<div class="fixd-mobile-menu fixd-mobile-menu-hidden hidden-md hidden-lg">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-xs-12 col-sm-12 list">
+		                <dl>
+		                    <dd><a href="#">介绍</a></dd>
+		                    <dd><a href="#">技能</a></dd>
+		                    <dd><a href="#">作品</a></dd>
+		                    <dd><a href="#">博客</a></dd>
+		                    <dd><a href="#">找我</a></dd>
+		                </dl>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</header>
+	<div style="background: #332;display: block;">
+		<div class="container">
+			<div class="row" style="background: #0d1025;">
+				<!-- 自我信息 -->
+				<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+					<div id="self-introduction">
+							<img id="sculpture" src="img/person.jpg" alt="" class="img-responsive img-thumbnail">
+						<h2 class="text-center "><strong>micale</strong></h2>
+						<p class="text-center ">有智者立长志，无智者常立志</p>
+					</div>
+				</div>
+				<!-- banner -->
+				<div id="banner" class="col-lg-9 col-md-8 col-sm-12 col-xs-12 hidden-xs hidden-sm" style="padding:0px;">
+					<div class="swiper-container">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide">
+								<img src="img/banner1.jpg" class="img-responsive" alt="">
+								<div class="description">
+									<h2>HTML5</h2>
+									<h6>HTML5 将成为 HTML、XHTML 以及 HTML DOM 的新标准</h6>
+									<a href="#" class="" >查看更多</a>
+								</div>
+				            </div>
+				            <div class="swiper-slide">	
+				            	<img src="img/banner3.jpg" class="img-responsive" alt="">
+				            	<div class="description">
+									<h2>CSS3</h2>
+									<h6>CSS3 是最新的 CSS 标准。</h6>
+									<a href="#" class="" >查看更多</a>
+								</div>
+				            </div>
+				        </div>
+				        <!-- Add Pagination -->
+				        <div class="swiper-pagination"></div>
+				        <!-- Add Arrows -->
+				        <div class="swiper-button-next hidden-xs"></div>
+				        <div class="swiper-button-prev hidden-xs"></div>
+					</div>
+				</div>
+			</div>
+			<div id="main" class="row ">
+					  <h2>技能列表</h2>
+					  <input id="tab1" type="radio" name="tabs" checked>
+					  <label for="tab1">CSS3</label>
+					  <input id="tab2" type="radio" name="tabs">
+					  <label for="tab2">HTML5</label>
+					  <input id="tab3" type="radio" name="tabs">
+					  <label for="tab3">Bootstraps</label>
+					  <input id="tab4" type="radio" name="tabs">
+					  <label for="tab4">JavaScript</label>
+					  <input id="tab5" type="radio" name="tabs">
+					  <label for="tab5">NodeJs</label>
+					  <input id="tab6" type="radio" name="tabs">
+					  <label for="tab6">JAVA</label>
+					  <section id="content1">
+						<h3>CSS3</h3>
+						<p>CSS3列表</p>
+					  </section>
+					  <section id="content2">
+						<h3>HTML5</h3>
+						<p>HTML5</p>
+					  </section>
+					  <section id="content3">
+						<h3>Bootstraps</h3>
+						<p>Bootstraps</p>
+					  </section>
+					  <section id="content4">
+						<h3>JavaScript</h3>
+						<p>JavaScript</p>
+					  </section>					  
+					  <section id="content5">
+						<h3>NodeJs</h3>
+						<p>NodeJs</p>
+					  </section>					  
+					  <section id="content6">
+						<h3>JAVA</h3>
+						<p>JAVA</p>
+					  </section>
+			</div>
+
+			<!-- 作品展示 -->
+			<div class="row">
+				<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+					<h2 class="text-center" style="color:#fff;"> 作品列表</h2>
+				</div>
+				<div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+					<div class="flipster">
+							  <ul>
+								<li>
+									<a href="" class="Button Block">
+										<h1>1、基于java的聊天室</h1>
+										<p>Showcase of all available features in both the Coverflow and Carousel styles</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="Button Block">
+										<h1>2、基于vue的饿了么</h1>
+										<p>The bare minimum code needed to implement Flipster</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="Button Block">
+										<h1>3、基于nodejs的web小应用</h1>
+										<p>Roundabout carousel style!</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="Button Block">
+										<h1>4、Coverflow with Tab Navigation</h1>
+										<p>Example of tab navigation using the enableNav option</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="Button Block">
+										<h1>5、Carousel with Tab Navigation</h1>
+										<p>Example of tab navigation using the nableNav option</p>
+									</a>
+								</li>
+							  </ul>
+					</div>
+				</div>
+	 		</div>  <!-- end row -->
+ 		</div>	<!-- end container -->
+	</div>
+
+
+	<!-- 打赏 -->
+	<div id="myRewards" class="myRewards hidden-md hidden-sm hidden-xs" v-bind:style="styleObject">
+	  <a class="btn-myRewards"  v-on:click="leftOutSlide" href="javascript: ;">
+	    <img class="png" src="img/tab_6.png">
+	  </a>
+	  <div class="myRewards-main">
+	    <h1 class="myR-h">喜欢请打赏</h1>
+	    <div class="myRewardsbox">
+	      <div class="myRewards-list">
+	        <ul class="not-full">
+	          <li v-bind:class="{ 'myR-on': show }">
+	            <a href="javascript:;" v-on:click="show = !show">支付宝<img class="png" src="img/alipaylogo.png" alt="支付宝"></a>
+	          </li>
+	          <li v-bind:class="{ 'myR-on': !show }">
+	            <a href="javascript:;" v-on:click="show = !show">微信<img class="png" src="img/weixinlogo.png" alt="微信"></a>
+	          </li>
+	        </ul>
+	      </div>
+	      <div class="myRewards-detail" v-if="show">
+	        <div class="myRewards-ubox">
+	          <p class="myRewards-code-tit">扫描二维码打赏</p>
+	          <div class="myRewards-code">
+	            <img src="img/alipay.png">
+	          </div>
+	          <p class="myRewards-account">支付宝打赏</p>
+	        </div>
+	      </div>
+	      <div class="myRewards-detail" v-else="show">
+	        <div class="myRewards-ubox">
+	          <p class="myRewards-code-tit">扫描二维码打赏</p>
+	          <div class="myRewards-code">
+	            <img src="img/weixin.png">
+	          </div>
+	          <p class="myRewards-account">微信打赏</p>
+	        </div>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+<!-- 分享 -->
+<div id="share_btn">
+	<div class="htmleaf-container">
+		<div id='ss_menu'>
+		  <div>
+			<a href="https://github.com/minchao920917" target="_blank"><i class="fa fa-github"></i></a>
+		  </div>
+		  <div>
+			<a href="http://v.t.sina.com.cn/share/share.php?url=http://minchao.me/&title='分享内容'" target="_blank"><i class="fa fa-weibo"></i></a>
+		  </div>
+		  <div>
+			<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://minchao.me/" target="_blank"><i class="fa fa-qq"></i></a>
+		  </div>
+		  <div class='menu'>
+			<div class='share' id='ss_toggle' data-rot='180'>
+			  <div class='circle'></div>
+			  <div class='bar'></div>
+			</div>
+		  </div>
+		</div>
+	</div>
+</div>
+<a class="go-top" href="#top"><span></span></a>
+	<footer>
+		<div class="container">				
+			<div class="row">
+			
+			<p class="text-center">Copyright &copy; 2016-2017 闵超 All rights reserved.	
+			<span class="">访问量：<label id="lb_count">0</label>	</span>				
+			</p>
+			</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/loading.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script src="js/jquery.flipster.js"></script>
+	<script type="text/javascript"> 
+	 
+	  $(window).load(function() {
+	  		//加载完成调用
+	     	$('#preloader').delay(950).fadeOut('slow',function(){
+	    		$('#sculpture').addClass("animated bounce");
+	    		$('#self-introduction').children("h2").addClass("animated rotateInDownRight");
+	    		$('#self-introduction').children("p").addClass("animated rotateInDownLeft");
+	    		$('#sculpture').on("mouseover mouseout",function(event){
+	    			if(event.type == "mouseover"){
+	    				$(this).removeClass("jello");
+	    				$(this).removeClass("bounce");
+	    				$(this).addClass("pulse");
+	    			}else if(event.type == "mouseout"){
+	    				$(this).removeClass("pulse");
+	    				$(this).addClass("jello");
+	    			}
+	    		});
+	    		$('#banner').find("h2").addClass("animated fadeInDownBig");
+	    		$('#banner').find("h6").addClass("animated fadeInUp");
+	    		$('#banner').find("a").addClass("animated fadeInUp");
+	    	});
+	    	$(".flipster").flipster({ 
+	    		style: 'carousel',
+	    		start: 0 
+	    	});
+	        //手机端菜单显示与隐藏
+			$("body").on('click', function(e){
+			    if($(e.target).hasClass("svgmenu")){
+			       $(".fixd-mobile-menu").toggleClass("fixd-mobile-menu-hidden");
+				}else if($(e.target).parents(".fixd-mobile-menu").length<=0){
+				   $(".fixd-mobile-menu").addClass("fixd-mobile-menu-hidden");
+				}
+			});
+			//banner
+			 var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        nextButton: '.swiper-button-next',
+		        prevButton: '.swiper-button-prev',
+		        paginationClickable: true,
+		        spaceBetween: 30,
+		        centeredSlides: true,
+		        // autoplay: 3000,
+		        autoplayDisableOnInteraction: false
+		    });
+			 //分享加载
+			    $("#share_btn").hide();
+			    $(".go-top").hide();
+			 	var toggle = $('#ss_toggle');
+				var menu = $('#ss_menu');
+				var rot;
+				$('#ss_toggle').on('click', function () {
+					rot = parseInt($(this).data('rot')) - 180;
+					menu.css('transform', 'rotate(' + rot + 'deg)');
+					menu.css('webkitTransform', 'rotate(' + rot + 'deg)');
+					if (rot / 180 % 2 == 0) {
+						toggle.parent().addClass('ss_active');
+						toggle.addClass('close');
+					} else {
+						toggle.parent().removeClass('ss_active');
+						toggle.removeClass('close');
+					}
+					$(this).data('rot', rot);
+				});
+				menu.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+					if (rot / 180 % 2 == 0) {
+						$('#ss_menu div i').addClass('ss_animate');
+					} else {
+						$('#ss_menu div i').removeClass('ss_animate');
+					}
+				});
+
+		    //判断滚动条是否到达窗口底部
+		    $(window).bind('scroll', function(){    //绑定滚动事件
+		        if($(document).scrollTop() + $(window).height() >= $(document).height()){
+		            // console.log($(document).scrollTop());
+		            // console.log("到达底部");
+		            $("#share_btn").show();
+		        }else{
+		        	$("#share_btn").hide();
+		        }
+		        // console.log($(document).scrollTop());
+		        if($(document).scrollTop()>0){
+		        	$(".go-top").show();
+		        }else{
+		        	$(".go-top").hide();
+		        }
+		    });
+
+
+			//获取网站访问量
+		    getTotalPV();
+		    function getTotalPV()
+		    {
+		        $.ajax({ 
+		            url:"http://cloud.bmob.cn/60ff1e672b911da7/getTotalPV", 
+		            dataType:'jsonp', 
+		            data:'', 
+		            jsonp:'callback', 
+		            success:function(result) { 
+		                   //result.results[0].totalPV
+		               $('#lb_count').html(result.results[0].totalPV);
+		               //更新次数
+		               setTotalPV();
+		            }     
+		        });    
+		    }  
+		    function setTotalPV()
+		    {
+		      $.ajax({ 
+		            url:"http://cloud.bmob.cn/60ff1e672b911da7/setTotalPV", 
+		            dataType:'jsonp', 
+		            data:'', 
+		            jsonp:'callback' ,
+		            success:function(result){
+		            	console.log(result.results[0].totalPV);
+		            }  
+		        });
+		    }
+
+
+		});//jquery onload()
+
+  
+
+	</script>
+	<!-- 打赏初始化 -->
+	<script type="text/javascript">
+	  var myReward = new Vue({
+	    el:"#myRewards",
+	    data:{
+	      show:true,
+	      styleObject:{
+	        width:"0px"
+	      },
+	      flag:true
+	    },
+	    methods:{
+	      leftOutSlide:function(){
+	        if(this.flag){
+	          this.styleObject.width="240px";
+	          this.flag=!this.flag;
+	        }
+	        else{
+	          this.styleObject.width="0px";
+	          this.flag=!this.flag;
+	        }
+	      }
+	    },
+
+	  });
+	</script> 
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<div class="section-header">
+	<h2>页面小点缀</h2>
+	</div>
+	<style>
+	.section-header h2 {
+	    margin-top: 30px;
+	    margin-bottom: 30px;
+	    font-size: 45px;
+	    font-weight: 600;
+	    color: #313131;
+	    font-family: "Lora", serif;
+	    text-align: center;
+	    text-transform: uppercase;
+	    position: relative;
+	    padding-bottom: 30px;
+	}
+	
+	/*画两头的线*/
+	.section-header h2:before {
+	    border-left: 50px solid #DADADA;
+	    border-right: 50px solid #DADADA;
+	    bottom: 5px;
+	    content: "";
+	    height: 1px;
+	    left: 50%;
+	    margin-left: -70px;
+	    position: absolute;
+	    width: 40px;
+	}
+	/*画菱形*/
+	.section-header h2:after {
+	    background: #FF8724 none repeat scroll 0 0 padding-box content-box;
+	    border-bottom: 1px solid #DADADA;
+	    border-left: 1px solid #DADADA;
+	    bottom: -9px;
+	    content: "";
+	    height: 22px;
+	    left: 50%;
+	    margin-left: -16px;
+	    padding: 0 0 8px 8px;
+	    position: absolute;
+	    -webkit-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	    width: 22px;
+	}
+	</style>
+
+
+</body>
+</html>

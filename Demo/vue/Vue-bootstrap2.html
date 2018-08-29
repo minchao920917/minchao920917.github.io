@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>vue+boostrap最佳实践2-模拟输入框匹配</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div style="margin-top: 100px;width:100%" id="main">
+	<div class="input-group">
+		<input v-model="searchString" type="text" class="form-control" placeholder="请输入标题名称">
+		<div class="input-group-addon">搜索</div>
+	</div>
+	<ul class="list-group" >
+		<template v-for="msg in msgs | searchFor searchString">
+			<li class="list-group-item">
+				<span>{{msg.title}}</span>
+				<span style="margin-left:30px">{{msg.author}}</span>
+			</li>
+		</template>
+	</ul>
+</div>
+
+<script src="js/vue.v1.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+	var data={
+		show:false,
+		searchString:"",
+		msgs:[
+			{
+				title:'the best technology is the most basic',
+				author:'bb'
+			},
+			{
+				title:'hijacking the javascript function',
+				author:'aa'
+			},
+			{
+				title:'use karma to test multiple broswer',
+				author:"bb"
+			}
+		]
+	}
+	//定义一个自定的过滤器叫做searchFor,传递一个过滤参数searchString
+	//第一个参数指的是要过滤的数据源data,第二个参数是输入的数据
+	Vue.filter("searchFor",function(value,searchString){
+
+		var result=[];
+		//判断传入的内容是否为空
+		if(!searchString){
+			//将要过滤的对象全部返回，也就是是相当于什么都没有操作一样
+			return result;
+		}
+		//将输入的内容统一为小写或者大写
+		seearchString=searchString.trim().toLowerCase();
+
+		//item指代当前数据
+		result=value.filter(function(item){
+			//查询的内容不存在
+			if(item.title.toLowerCase().indexOf(searchString) !== -1){
+				return item;
+			}
+		});
+		return result;
+	});
+
+
+	var demo = new Vue({
+		el:'#main',
+		data:data,
+		filters:{
+			searchFor:function(value,searchString){
+				//判断传入的内容是否为空
+				if(!searchString){
+					//将要过滤的对象全部返回，也就是是相当于什么都没有操作一样
+					//程序也在这个地方终止不会继续向下走
+					return value;
+				}
+				//将输入的内容统一为小写或者大写
+				seearchString=searchString.trim().toLowerCase();
+				var result=[];
+
+				//item指代当前数据
+				result=value.filter(function(item){
+
+					//查询的内容不存在
+					if(item.title.toLowerCase().indexOf(searchString) !== -1){
+						return item;
+					}
+				});
+
+				return result;
+
+			}
+		}
+	})
+}
+</script>
+</body>
+</html>

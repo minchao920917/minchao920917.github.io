@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>父子模板嵌套案例</title>
+</head>
+<body>
+
+<!-- 第一种，子组件模板直接写在js里 -->
+<!-- 定义模板挂载点my-component -->
+<!-- <div id="exampleBox1">
+  <com-ponent></com-ponent>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+var Component = Vue.extend({
+  //定义
+  template:'<div>A cunstom component!    {{name}}</div>',
+  data:function(){
+    return{
+      name:'minchao'
+    }
+  }
+});
+Vue.component('com-ponent',Component);//注册
+// 注意，extend(json)和vue.component('com-ponent',json)//这两个json是相等的
+// 所以下面第二种会将extend()函数省略掉，直接在component中定义，系统会自动调用extend函数
+  var conp = new Vue({
+    //创建根实例
+    el:"#exampleBox1"
+  })
+</script> -->
+
+<!-- 第二种使用HTML模板 -->
+<!-- 父组建模板 -->
+<!-- <div id="exampleBox2" style="border:1px solid #ccc;width:500px;">
+  <div>{{parent.name}}</div> -->
+  <!-- 模板挂载标识 -->
+  <!-- <children></children>
+</div> -->
+<!-- 子组件模板 -->
+<!-- <template id="child-template">
+    <p style="background: #eee">{{text}}</p>
+</template>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+//注册组件
+Vue.component('children',{
+  //child是模板挂载的标签名
+  template:'#child-template',//id对应子组件的ID
+  data:function(){
+    return {
+      text:"这里是子组件的内容"
+    }
+  }
+});
+var parent = new Vue({
+  //初始化父组件
+  el:"#exampleBox2",
+  data:{
+    parent:{
+      name:"这里是父组件的内容"
+    }
+  }
+})
+</script> -->
+
+<!-- 第三种嵌套的 -->
+<div id="example">
+  <!-- 所有的模板挂件，都必须在根实例ID内部，否则找不到挂件 -->
+  <my-component></my-component>
+  <!-- 模板可以重用多次...只不过一样的东西没有这个必要 -->
+  <child></child>
+  <child></child>
+  <child></child>
+  <child></child>
+</div>
+<!-- 比如这里是找不到的 -->
+<child></child>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+//定义子组件，子组件必须在父组件之前定义
+var Child = Vue.extend({template:'<div> A child component!</div>'});
+//定义父组件
+var Parent = Vue.extend({
+  template:'<div style="border:1px solid #ccc;width:200px;">\
+            Parent\
+            <child-component></child-component>\
+            父模版内部</div>',
+  components:{
+    //调用子组件
+    'child-component':Child
+  }
+});
+  //注册父组件
+  Vue.component('my-component',Parent);
+  //复用子组件
+  Vue.component('child',Child);
+  //创建根实例，所有组件都需要在根实例之前创建。
+  new Vue({
+    el:'#example'
+  });
+</script>
+</body>
+</html>

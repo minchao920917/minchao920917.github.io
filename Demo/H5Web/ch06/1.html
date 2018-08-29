@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+		<title>移动设备商播放音频</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    
+    button,
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+    cursor: pointer; /* 1 */
+    -webkit-appearance: button; /* 2 */
+}
+    </style>
+  </head>
+  <body>
+    <header>
+    </header>
+		<div id="main">
+			<audio controls preload="auto" autobuffer>
+        <source src="resources/snake_charmer.mp3" />
+        <source src="resources/snake_charmer.ogg" />
+        <a href="resources/snake_charmer.mp3">play or download here</a>
+      </audio>
+      <video></video>
+		</div>
+    <footer>
+    </footer>
+	</body>
+</html>

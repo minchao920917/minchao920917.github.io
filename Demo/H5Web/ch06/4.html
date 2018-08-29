@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<title>使用网络存储(Web Storage)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/modernizr.custom.54685.js"></script>
+<script src="js/h5utils.js"></script>
+</head>
+<body>
+  <section>
+    <p>Values are stored on <code>keyup</code></p> 
+    <p>Content loaded from previous sessions:</p> 
+    <ul id="previous"></ul> 
+  </section>
+  <section>
+    <div> 
+      <label for="local">localStorage:</label> 
+      <input type="text" name="local" value="" id="local" /> 
+    </div> 
+    <script>
+    function getStorage(type) {
+      var storage = window[type + 'Storage'],
+        delta = 0,
+        li = document.createElement('li');
+     
+      if (!window[type + 'Storage']) return;
+     
+      if (storage.getItem('value')) {
+        delta = ((new Date()).getTime() - (new Date()).setTime(storage.getItem('timestamp'))) / 1000;
+        
+        li.innerHTML = type + 'Storage: ' + storage.getItem('value') + ' (last updated: ' + delta + 's ago)';
+      } else {
+        li.innerHTML = type + 'Storage is empty';
+      }
+     
+      document.querySelector('#previous').appendChild(li);
+    }
+    
+    getStorage('local');
+    
+    addEvent(document.querySelector('#local'), 'keyup', function () {
+      localStorage.setItem('value', this.value);
+      localStorage.setItem('timestamp', (new Date()).getTime());
+    });
+    
+    </script>
+  </section>
+</body>
+</html>

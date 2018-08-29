@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script> -->
+	<script type="text/javascript" src="js/vue.js"></script>
+
+	<style type="text/css">
+	.active{
+		width: 200px;
+		height: 200px;
+		border:5px solid #ddd;
+		background-color: lightblue;
+		text-align: center;
+		margin:200px auto 0 auto;
+
+	}
+	</style>
+
+</head>
+<body >
+<!-- <div >
+	<app-nav></app-nav>
+	<app-view>
+		<app-slidebar></app-slidebar>
+		<app-content></app-content>
+	</app-view>
+</div> -->
+
+<div id="app">
+	<input 
+		v-model="newTodoText"
+		v-on:keyup.enter = "addNewTodo"
+		placeholder = "Add a todo"
+	>
+	<ul>
+		<li
+			is="todo-item"
+			v-for = "(todo,index) in todos"
+			v-bind:title = "todo"
+			v-on:remove = "todos.splice(index,1)"
+		></li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+
+
+ 	Vue.component('todo-item',{
+ 		template:'<li>{{title}}<button v-on:click="$emit(\'remove\')">x</button></li>',
+ 		props:['title']
+ 	})
+
+ 	new Vue({
+ 		el:'#app',
+ 		data:{
+			newTodoText:'',
+			todos:[
+				'Do the dishes',
+				'Take out the trash',
+				'Mow the lawn'
+			]
+ 		},
+ 		methods:{
+ 			addNewTodo:function(){
+ 				this.todos.push(this.newTodoText);
+ 				this.newTodoText = '';
+ 			}
+ 		}
+ 	})
+
+
+
+
+	
+
+
+	/* computed与motheds的区别，
+	 不经过计算属性(computed),我们可以在methods中定义一个相同的函数来替代它，最终结果是一样的。然而区别在于，不同的是，计算属性(computed)是基于它的依赖缓存。计算属性(computed)只有在它的相关依赖发生改变时才会重新取值。这就意味着只要message没有发生改变，多次访问  reversedMessage计算属性会立即返回之前的计算结果，而不必多次执行同一个函数。
+	*/
+
+	/* v-if与v-show的区别，
+		v-if 是真实的条件渲染，因为它会确保条件块在切换中适当地销毁与重建条件块中内的事件监听器和子组件
+		v-if 是惰性的：如果在初始渲染条件为假时，则什么也不做--在条件第一次变为真时才开始局部编译（编译会诶缓存起来）。
+		相比之下，v-show简单得多--元素时钟被编译并保留，只是简单地基于css切换。
+		一般来说，v-if有更高的切换消耗而 v-show 有更高的初始渲染消耗，因此，如果需要频繁切换使用 v-show较好，如果在运行时条件不大可能改变则使用v-if较好。
+	
+	 */
+</script>
+</body>
+</html>

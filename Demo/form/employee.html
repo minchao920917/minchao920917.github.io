@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>员工登记表</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+    content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/employee.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+	   <form id="employeeForm" action="">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h2 class="text-center">员工登记表</h2>
+			</div>
+			<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*基本资料(没有曾用名的填无)</p>
+			<!-- 照片和资料分栏 -->
+			<!-- 手机端上传控件 -->
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  hidden-lg hidden-md">
+	            <label for="phone">照片上传</label>
+	           		<div id="preview1">
+                        <img id="imghead1" border="0" src="img/photo_icon.png" width="150" height="150" onclick="$('#previewImg1').click();">
+                     </div>         
+                    <input type="file" onchange="previewImage(this,1)" style="display: none;" id="previewImg1">
+	        	</div>
+	        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="name">姓名</label>
+		            <input id="name" type="text" class="form-control" name="name" placeholder=""  />
+		        </div>
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="lastName">曾用名</label>
+		            <input id="lastName" type="text" class="form-control" name="lastName" placeholder=""  />
+		        </div>
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="identity">身份证号码</label>
+		            <input id="identity" type="text" class="form-control" name="identity" placeholder=""  />
+		        </div>
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="nation">民族</label>
+		            <input id="nation" type="text" class="form-control" name="nation" placeholder=""  />
+		        </div>
+
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="sex">性别</label>
+		            <div></div>
+					<input type="radio" id="status1" name="sex" value="男" checked class="regular-radio" /> 
+					<label for="status1"></label><span class="text1">男</span> 
+					<input type="radio" id="status0" name="sex" value="女" class="regular-radio" /> 
+					<label for="status0" style="margin-left: 20px;"></label><span class="text2">女</span>
+		        </div>
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="birthday">出生年月</label>
+		            <input id="birthday" type="text" class="form-control" name="birthday" placeholder="" readonly="readonly" />
+		        </div>
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="marital">婚育状况</label>
+		            <select id="marital" class="form-control" name="marital">
+					  <option value="已婚">已婚</option>
+					  <option value="未婚">未婚</option>
+					</select>
+		        </div>
+		        
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="origin">籍贯</label>
+		            <input id="origin" type="text" class="form-control" name="origin" placeholder=""  />
+		        </div>
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="political">政治面貌</label>
+		            <input id="political" type="text" class="form-control" name="political" placeholder=""  />
+		        </div>
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="height">身高(cm)</label>
+		            <input id="height" type="text" class="form-control" name="height" placeholder=""  />
+		        </div>
+		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		            <label for="health">健康状况</label>
+		            <input id="health" type="text" class="form-control" name="health" placeholder=""  />
+		        </div>
+	        </div>
+	        <!-- pc端上传控件 -->
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  hidden-sm hidden-xs">
+	            <label for="photo">照片上传</label>
+	            <div id="preview2">
+                    <img id="imghead2" border="0" src="img/photo_icon.png" width="150" height="150" onclick="$('#previewImg2').click();">
+                </div>         
+                <input type="file" onchange="previewImage(this,2)" style="display: none;" id="previewImg2">
+	        </div>
+
+	       <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*户口、档案(档案单位一般为学校或人才服务中心)</p>
+
+	        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+		        <label for="permanentAddress">户口地址</label>
+		        <input id="permanentAddress" type="text" class="form-control" name="permanentAddress" placeholder=""  />
+		    </div>
+		   	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+		        <label for="identityAddress">身份证地址</label>
+		        <input id="identityAddress" type="text" class="form-control" name="identityAddress" placeholder=""  />
+		    </div>
+		   	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+		        <label for="fileUnit">档案存放单位</label>
+		        <input id="fileUnit" type="text" class="form-control" name="fileUnit" placeholder=""  />
+		    </div>
+		   	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+		        <label for="fileAddress">档案地址</label>
+		        <input id="fileAddress" type="text" class="form-control" name="fileAddress" placeholder=""  />
+		   </div>
+
+		   	<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*联系方式(现住地址与家庭地址不同需分开填写；私人邮箱用于接收工资单)</p>
+
+	        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		        <label for="currentTel">目前住所电话</label>
+		        <input id="currentTel" type="text" class="form-control" name="currentTel" placeholder=""  />
+		    </div>
+		   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		        <label for="currentCode">目前住所邮编</label>
+		        <input id="currentCode" type="text" class="form-control" name="currentCode" placeholder=""  />
+		    </div>
+		   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		        <label for="currentAddress">目前住所地址</label>
+		        <input id="currentAddress" type="text" class="form-control" name="currentAddress" placeholder=""  />
+		    </div>
+	        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		        <label for="familyTel">家庭住所电话</label>
+		        <input id="familyTel" type="text" class="form-control" name="familyTel" placeholder=""  />
+		    </div>
+		   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		        <label for="familyCode">家庭住所邮编</label>
+		        <input id="familyCode" type="text" class="form-control" name="familyCode" placeholder=""  />
+		    </div>
+		   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		        <label for="familyAddress">家庭住所地址</label>
+		        <input id="familyAddress" type="text" class="form-control" name="familyAddress" placeholder=""  />
+		    </div>		    
+		   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		        <label for="personalMobile">个人手机</label>
+		        <input id="personalMobile" type="text" class="form-control" name="personalMobile" placeholder=""  />
+		    </div>
+		   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+		        <label for="personalEmail">私人邮箱</label>
+		        <input id="personalEmail" type="text" class="form-control" name="personalEmail" placeholder=""  />
+		   </div>	
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*直系亲属关系(必填，没有填无:单位可甜企业名称/私营/务农/退休/上学等) 
+
+			</div>
+			<div id="relatives" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 relative">
+				
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="ch-name">关系</label>
+				       	<input type="text" class="form-control" value="父亲"  placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="father">姓名</label>
+				        <input id="father" type="text" class="form-control" name="father" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="fatherBirth">出生年月</label>
+				        <input id="fatherBirth" type="text" class="form-control" name="fatherBirth" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="fatherWork">工作单位(职务)</label>
+				        <input id="fatherWork" type="text" class="form-control" name="fatherWork" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="fatherMobile">联系电话</label>
+				        <input id="fatherMobile" type="text" class="form-control" name="fatherMobile" placeholder=""  />
+				   </div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  relative">
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="">关系</label>
+				       	<input  type="text" class="form-control" value="母亲"  placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="mother">姓名</label>
+				        <input id="mother" type="text" class="form-control" name="mother" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="motherBirth">出生年月</label>
+				        <input id="motherBirth" type="text" class="form-control" name="motherBirth" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="motherWork">工作单位(职务)</label>
+				        <input id="motherWork" type="text" class="form-control" name="motherWork" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="motherMobile">联系电话</label>
+				        <input id="motherMobile" type="text" class="form-control" name="motherMobile" placeholder=""  />
+				   </div>	
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  relative">
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="">关系</label>
+				       	<input type="text" class="form-control" value="兄弟" placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="borther">姓名</label>
+				        <input id="borther" type="text" class="form-control" name="borther" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="bortherBirth">出生年月</label>
+				        <input id="bortherBirth" type="text" class="form-control" name="bortherBirth" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="bortherWork">工作单位(职务)</label>
+				        <input id="bortherWork" type="text" class="form-control" name="bortherWork" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="bortherMobile">联系电话</label>
+				        <input id="bortherMobile" type="text" class="form-control" name="bortherMobile" placeholder=""  />
+				   </div>	
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  relative">
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="ch-name">关系</label>
+				       	<input  type="text" class="form-control" value="姐妹" placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="sister">姓名</label>
+				        <input id="sister" type="text" class="form-control" name="sister" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="sisterBirth">出生年月</label>
+				        <input id="sisterBirth" type="text" class="form-control" name="sisterBirth" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="sisterWork">工作单位(职务)</label>
+				        <input id="sisterWork" type="text" class="form-control" name="sisterWork" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="sisterMobile">联系电话</label>
+				        <input id="sisterMobile" type="text" class="form-control" name="sisterMobile" placeholder=""  />
+				   </div>	
+				</div>
+				<div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 relative">
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="">关系</label>
+				       	<input  type="text" class="form-control" value="配偶" placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="spouse">姓名</label>
+				        <input id="spouse" type="text" class="form-control" name="spouse" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="spouseBirth">出生年月</label>
+				        <input id="spouseBirth" type="text" class="form-control" name="spouseBirth" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="spouseWork">工作单位(职务)</label>
+				        <input id="spouseWork" type="text" class="form-control" name="spouseWork" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="spouseMobile">联系电话</label>
+				        <input id="spouseMobile" type="text" class="form-control" name="spouseMobile" placeholder=""  />
+				   </div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 relative">	
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="">关系</label>
+				       	<input type="text" class="form-control" value="子女"  placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="child">姓名</label>
+				        <input id="child" type="text" class="form-control" name="child" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="childBirth">出生年月</label>
+				        <input id="childBirth" type="text" class="form-control" name="childBirth" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="childWork">工作单位(职务)</label>
+				        <input id="childWork" type="text" class="form-control" name="childWork" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="childMobile">联系电话</label>
+				        <input id="childMobile" type="text" class="form-control" name="childMobile" placeholder=""  />
+				   </div>		
+				</div>	       
+			</div>
+
+			<!-- 社会关系 -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*社会关系(至少填写一位联系人) 
+			
+			<a href="javascript:void(0);" onclick="addFriend()" ><span id="addFriend" class="glyphicon glyphicon-plus hidden-sm hidden-xs"></span></a>
+			</div>
+			<div id="friends" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 friend">
+					<a href="javascript:void(0)" onclick="reduceFriend(this)" class="closed"><span class="glyphicon glyphicon-plus"></span></a>
+					<br>
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="friendName">姓名</label>
+				        <input id="friendName" type="text" class="form-control" name="friendName" placeholder=""  />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="friendRelation">关系</label>
+				        <input id="friendRelation" type="text" class="form-control" name="friendRelation" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="friendBirth">出生年月</label>
+				        <input id="friendBirth" type="text" class="form-control" name="friendBirth" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="friendWork">工作单位(部门)</label>
+				        <input id="friendWork" type="text" class="form-control" name="friendWork" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="friendMobile">联系电话</label>
+				        <input id="friendMobile" type="text" class="form-control" name="friendMobile" placeholder=""  />
+				   </div>	
+				</div>	       
+			</div>
+			<div id="addFriendPhone" class="col-sm-12 col-xs-12 form-group hidden-lg hidden-md text-center">
+				<a href="javascript:void(0);" class="form-control" onclick="addFriend()" ><span class="glyphicon glyphicon-plus"></span></a>
+			</div>
+			<!-- 工作经历 -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*工作经历(简历一致，需要证明人及电话)
+			<a href="javascript:void(0);" onclick="addExperience()" ><span id="addExperience" class="glyphicon glyphicon-plus hidden-sm hidden-xs"></span></a>
+			</div>
+			<div id="experiences" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 experience">
+					<a href="javascript:void(0)" onclick="reduceExperience(this)" class="closed"><span class="glyphicon glyphicon-plus"></span></a>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="experienceStart">起始年月</label>
+				        <input id="experienceStart" type="text" class="form-control" name="experienceStart" placeholder=""  />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="experienceEnd">终止年月</label>
+				        <input id="experienceEnd" type="text" class="form-control" name="experienceEnd" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="experienceUnit">单位</label>
+				        <input id="experienceUnit" type="text" class="form-control" name="experienceUnit" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="experiencePeople">证明人</label>
+				        <input id="experiencePeople" type="text" class="form-control" name="experiencePeople" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="experienceTel">联系电话</label>
+				        <input id="experienceTel" type="text" class="form-control" name="experienceTel" placeholder=""  />
+				   </div>	
+				</div>	       
+			</div>
+			<div id="addExperiencePhone" class="col-sm-12 col-xs-12 form-group hidden-lg hidden-md text-center">
+				<a href="javascript:void(0);" class="form-control" onclick="addExperience()" ><span class="glyphicon glyphicon-plus"></span></a>
+			</div>
+			<!-- 教育经历 -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*教育经历(高中起，简历一致)
+			<a href="javascript:void(0);" onclick="addEducation()" ><span id="addEducation" class="glyphicon glyphicon-plus hidden-sm hidden-xs"></span></a>
+			</div>
+			<div id="educations" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 education">
+					<a href="javascript:void(0)" onclick="reduceEducation(this)" class="closed"><span class="glyphicon glyphicon-plus"></span></a>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="educationStart">起始年月</label>
+				        <input id="educationStart" type="text" class="form-control" name="educationStart" placeholder=""  />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="educationEnd">终止年月</label>
+				        <input id="educationEnd" type="text" class="form-control" name="educationEnd" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="educationCollege">学校</label>
+				        <input id="educationCollege" type="text" class="form-control" name="educationCollege" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="educationMajor">专业</label>
+				        <input id="educationMajor" type="text" class="form-control" name="educationMajor" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="educationRecord">学历</label>
+				        <input id="educationRecord" type="text" class="form-control" name="educationRecord" placeholder=""  />
+				   </div>	
+				</div>	       
+			</div>
+			<div id="addEducationPhone" class="col-sm-12 col-xs-12 form-group hidden-lg hidden-md text-center">
+				<a href="javascript:void(0);" class="form-control" onclick="addEducation()" ><span class="glyphicon glyphicon-plus"></span></a>
+			</div>
+			<!-- 培训、资质(厂商认证,如思科/微软;专业证书,如网络安全/信息工程) -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">培训、资质(厂商认证,如思科/微软;专业证书,如网络安全/信息工程) 
+			<a href="javascript:void(0);" onclick="addTrain()" ><span id="addTrain" class="glyphicon glyphicon-plus hidden-sm hidden-xs"></span></a>
+			</div>
+			<div id="trains" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 train">
+					<a href="javascript:void(0)" onclick="reduceTrain(this)" class="closed"><span class="glyphicon glyphicon-plus"></span></a>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="trainStart">起始年月</label>
+				        <input id="trainStart" type="text" class="form-control" name="trainStart" placeholder=""  />
+				    </div>
+
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="trainEnd">终止年月</label>
+				        <input id="trainEnd" type="text" class="form-control" name="trainEnd" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="trainContent">内容</label>
+				        <input id="trainContent" type="text" class="form-control" name="trainContent" placeholder=""  />
+				    </div>		    
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="trainRecord">证书</label>
+				        <input id="trainRecord" type="text" class="form-control" name="trainRecord" placeholder=""  />
+				   </div>	
+				</div>	       
+			</div>
+			<div id="addTrainPhone" class="col-sm-12 col-xs-12 form-group hidden-lg hidden-md text-center">
+				<a href="javascript:void(0);" class="form-control" onclick="addEducation()" ><span class="glyphicon glyphicon-plus"></span></a>
+			</div>
+
+			<!-- 职称情况 -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">职称情况
+			<a href="javascript:void(0);" onclick="addProfessional()" ><span id="addProfessional" class="glyphicon glyphicon-plus hidden-sm hidden-xs"></span></a>
+
+			</div>
+			<div id="professionals" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 professional">
+					<a href="javascript:void(0)" onclick="reduceProfessional(this)" class="closed"><span class="glyphicon glyphicon-plus"></span></a>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+				        <label for="professionalTime">获得时间</label>
+				        <input id="professionalTime" type="text" class="form-control" name="professionalTime" placeholder=""  />
+				    </div>
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+				        <label for="professionalName">职称名称</label>
+				        <input id="professionalName" type="text" class="form-control" name="professionalName" placeholder=""  />
+				    </div>
+				   	
+				</div>	       
+			</div>
+			<div id="addProfessionalPhone" class="col-sm-12 col-xs-12 form-group hidden-lg hidden-md text-center">
+				<a href="javascript:void(0);" class="form-control" onclick="addProfessional()" ><span class="glyphicon glyphicon-plus"></span></a>
+			</div>
+			<!-- 奖惩情况 -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">奖惩情况
+			<a href="javascript:void(0);" onclick="addReward()" ><span id="addReward" class="glyphicon glyphicon-plus hidden-sm hidden-xs"></span></a>
+
+			</div>
+			<div id="rewards" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reward">
+					<a href="javascript:void(0)" onclick="reduceReward(this)" class="closed"><span class="glyphicon glyphicon-plus"></span></a>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="rewardTime">时间</label>
+				        <input id="rewardTime" type="text" class="form-control" name="rewardTime" placeholder=""  />
+				    </div>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="rewardUnit">受理单位</label>
+				        <input id="rewardUnit" type="text" class="form-control" name="rewardUnit" placeholder=""  />
+				    </div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+				        <label for="rewardContent">内容</label>
+				        <input id="rewardContent" type="text" class="form-control" name="rewardContent" placeholder=""  />
+				    </div>
+				   	
+				</div>	       
+			</div>
+			<div id="addRewardPhone" class="col-sm-12 col-xs-12 form-group hidden-lg hidden-md text-center">
+				<a href="javascript:void(0);" class="form-control" onclick="addReward()" ><span class="glyphicon glyphicon-plus"></span></a>
+			</div>
+
+			<!-- 知识产权 -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">知识产权(专利/软著/其他)
+			<a href="javascript:void(0);" onclick="addPatent()" ><span id="addPatent" class="glyphicon glyphicon-plus hidden-sm hidden-xs"></span></a>
+
+			</div>
+			<div id="patents" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 patent">
+					<a href="javascript:void(0)" onclick="reducePatent(this)" class="closed"><span class="glyphicon glyphicon-plus"></span></a>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="patentYear">年份</label>
+				        <input id="patentYear" type="text" class="form-control" name="patentYear" placeholder=""  />
+				    </div>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="patentTime">时间</label>
+				        <input id="patentTime" type="text" class="form-control" name="patentTime" placeholder=""  />
+				    </div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+				        <label for="patentContent">内容</label>
+				        <input id="patentContent" type="text" class="form-control" name="patentContent" placeholder=""  />
+				    </div>
+				   	
+				</div>	       
+			</div>
+			<div id="addPatentPhone" class="col-sm-12 col-xs-12 form-group hidden-lg hidden-md text-center">
+				<a href="javascript:void(0);" class="form-control" onclick="addPatent()" ><span class="glyphicon glyphicon-plus"></span></a>
+			</div>
+
+			<div class="form-btn col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+				 <input class="btn btn-info" type="submit"  value="提交" style="padding: 8px 30px;font-size: 20px;">
+				<a href="javascript:void(0);" class="btn btn-default" id="reset">重置</a>
+			</div>
+
+        </form>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/date.min.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript">
+
+	jeDate({
+		dateCell:"#birthday",
+		format:"YYYY-MM-DD"
+	})
+
+ 	//图片上传预览
+        function previewImage(file,index)
+        {
+          var MAXWIDTH  = 150; 
+          var MAXHEIGHT = 300;
+          var div = document.getElementById('preview'+index);
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead'+index+' onclick=$("#previewImg").click()>';
+              var img = document.getElementById('imghead'+index);
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+                //img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight ){
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                
+                if( rateWidth > rateHeight ){
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else{
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+
+        //社会关系添加和减少
+        function addFriend(){
+        	
+        	var num = $(".friend").length;
+        	if( num >= 4){
+        		layer.msg("最多填写四个社会联系人!");
+        		return;
+        	}
+        	var friend = $(".friend:first").clone();
+        	$(friend.find(".form-control")[0]).attr("id","friendName"+num).attr("name","friendName"+num).val("");
+        	$(friend.find(".form-control")[1]).attr("id","friendRelation"+num).attr("name","friendRelation"+num).val("");
+        	$(friend.find(".form-control")[2]).attr("id","friendBirth"+num).attr("name","friendBirth"+num).val("");
+        	$(friend.find(".form-control")[3]).attr("id","friendWork"+num).attr("name","friendWork"+num).val("");
+        	$(friend.find(".form-control")[4]).attr("id","friendMobile"+num).attr("name","friendMobile"+num).val("");
+        	friend.find(".error").text("");
+        	$("#friends").append(friend);
+        	
+        }
+        function reduceFriend(obj){
+        	console.log(obj);
+        	if($(".friend").length<=1){
+        		layer.msg("至少填写一个社会联系人!");
+        		return;
+        	}
+        	obj.parentNode.remove()
+        	
+        }       
+        //工作经历添加和减少
+        function addExperience(){
+        	var num = $(".experience").length;
+        	if( num >= 4){
+        		layer.msg("最多填写四段工作经历!");
+        		return;
+        	}
+        	var experience = $(".experience:first").clone();
+        	$(experience.find(".form-control")[0]).attr("id","experienceStart"+num).attr("name","experienceStart"+num).val("");
+        	$(experience.find(".form-control")[1]).attr("id","experienceEnd"+num).attr("name","experienceEnd"+num).val("");
+        	$(experience.find(".form-control")[2]).attr("id","experienceUnit"+num).attr("name","experienceUnit"+num).val("");
+        	$(experience.find(".form-control")[3]).attr("id","experiencePeople"+num).attr("name","experiencePeople"+num).val("");
+        	$(experience.find(".form-control")[4]).attr("id","experienceTel"+num).attr("name","experienceTel"+num).val("");
+	        experience.find(".error").text("");
+	        $("#experiences").append(experience);
+        }
+        function reduceExperience(obj){
+        	if($(".experience").length<=1){
+        		layer.msg("至少填写一段工作经历!");
+        		return;
+        	}
+        	obj.parentNode.remove()
+        }
+        //教育经历添加和减少
+        function addEducation(){
+        	var num =$(".education").length;
+        	if( num >= 4){
+        		layer.msg("最多填写四段教育经历!");
+        		return;
+        	}
+        	var education = $(".education:first").clone();
+        	$(education.find(".form-control")[0]).attr("id","educationStart"+num).attr("name","educationStart"+num).val("");
+        	$(education.find(".form-control")[1]).attr("id","educationEnd"+num).attr("name","educationEnd"+num).val("");
+        	$(education.find(".form-control")[2]).attr("id","educationCollege"+num).attr("name","educationCollege"+num).val("");
+        	$(education.find(".form-control")[3]).attr("id","educationMajor"+num).attr("name","educationMajor"+num).val("");
+        	$(education.find(".form-control")[4]).attr("id","educationRecord"+num).attr("name","educationRecord"+num).val("");
+	        education.find(".error").text("");
+	        $("#educations").append(education);
+
+        }
+        function reduceEducation(obj){
+        	if($(".education").length<=1){
+        		layer.msg("至少填写一段教育经历!");
+        		return;
+        	}
+        	obj.parentNode.remove();
+        } 
+        //培训添加和减少
+        function addTrain(){
+        	var num =$(".train").length;
+        	
+        	if(num  >= 3){
+        		layer.msg("最多填写三段培训、资质经历!");
+        		return;
+        	}
+        	var train = $(".train:first").clone();
+        	$(train.find(".form-control")[0]).attr("id","trainStart"+num).attr("name","trainStart"+num).val("");
+        	$(train.find(".form-control")[1]).attr("id","trainEnd"+num).attr("name","trainEnd"+num).val("");
+        	$(train.find(".form-control")[2]).attr("id","trainContent"+num).attr("name","trainContent"+num).val("");
+        	$(train.find(".form-control")[3]).attr("id","trainRecord"+num).attr("name","trainRecord"+num).val("");
+        	train.find(".error").text("");
+        	$("#trains").append(train);
+        }
+        function reduceTrain(obj){
+        	if($(".train").length<=1){
+        		return;
+        	}
+        	obj.parentNode.remove();
+        }
+        //职称情况添加和减少
+        function addProfessional(){
+        	var num = $(".professional").length;
+        	if( num >= 2){
+        		layer.msg("最多填写两个职称情况!");
+        		return;
+        	}
+        	var professional = $(".professional:first").clone();
+        	$(professional.find(".form-control")[0]).attr("id","professionalTime"+num).attr("name","professionalTime"+num).val("");
+        	$(professional.find(".form-control")[1]).attr("id","professionalName"+num).attr("name","professionalName"+num).val("");
+        	professional.find(".error").text("");
+	        $("#professionals").append(professional);
+        }
+        function reduceProfessional(obj){
+        	if($(".professional").length<=1){
+        		return;
+        	}
+        	obj.parentNode.remove();
+
+        }
+        //奖惩情况
+        function addReward(){
+        	var num = $(".reward").length;
+        	if( num >= 2){
+        		layer.msg("最多填写两个奖惩情况!");
+        		return;
+        	}
+        	var reward = $(".reward:first").clone();
+        	$(reward.find(".form-control")[0]).attr("id","rewardTime"+num).attr("name","rewardTime"+num).val("");
+        	$(reward.find(".form-control")[1]).attr("id","rewardUnit"+num).attr("name","rewardUnit"+num).val("");
+        	$(reward.find(".form-control")[2]).attr("id","rewardContent"+num).attr("name","rewardContent"+num).val("");
+			reward.find(".error").text("");
+	        $("#rewards").append(reward);
+
+        }
+        function reduceReward(obj){
+        	if($(".reward").length<=1){
+        		return;
+        	}
+        	obj.parentNode.remove();
+        }
+        //专利情况
+        function addPatent(){
+        	var num = $(".patent").length;
+        	if( num >= 2){
+        		layer.msg("最多填写两个专利情况!");
+        		return;
+        	}
+        	var patent = $(".patent:first").clone();
+        	$(patent.find(".form-control")[0]).attr("id","patentYear"+num).attr("name","patentYear"+num).val("");
+        	$(patent.find(".form-control")[1]).attr("id","patentTime"+num).attr("name","patentTime"+num).val("");
+        	$(patent.find(".form-control")[2]).attr("id","patentContent"+num).attr("name","patentContent"+num).val("");
+        	patent.find(".error").text("");
+	        $("#patents").append(patent);
+        }
+        function reducePatent(obj){
+        	if($(".patent").length<=1){
+        		return;
+        	}
+        	obj.parentNode.remove();
+        }        
+</script>
+<script type="text/javascript" src="js/validate.expand.js"></script>
+<script type="text/javascript">
+
+
+ $(function(){
+
+
+ 	$("#employeeForm").validate({
+
+ 		 onfocusout: function(element) { $(element).valid();},
+ 		 
+ 		 rules:rules,
+ 		 messages:messages,
+ 		submitHandler:function(){
+ 		 	console.log($("#employeeForm").serializeArray());
+ 		 	$.ajax({
+						url : '',
+						type : 'post',
+						dataType : 'json',
+						data : $("#employeeForm").serializeArray(),
+						type : "post", //请求方式
+						success : function(data) {
+							
+							
+						},
+						error : function(data) {
+							
+							
+						}
+					});
+ 		 }
+ 	 });
+ 	 $("#reset").click(function() {
+			   window.location.reload();
+		    });
+ });
+
+
+</script>
+</body>
+
+
+
+</html>

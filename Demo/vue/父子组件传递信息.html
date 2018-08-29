@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>event up</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>    
+  
+<div id="app" class="app">  
+    <p>{{total}}</p>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+</div>  
+<script>  
+
+    //定义注册一步合并
+    Vue.component('button-counter',{
+        template:'<button v-on:click="incrementCounter">{{counter}}</button>',
+        data:function(){
+            return {
+                counter:0
+            }
+        },
+        methods:{
+            incrementCounter:function(){
+                this.counter +=1;
+                this.$emit('increment');//触发父组件的increment
+            }
+        },
+    });
+
+    //创建实例
+    var vm =new Vue({
+        el:'#app',
+        data: {
+            total:0
+        },
+        methods:{
+            incrementTotal:function(){
+                this.total +=1;
+            }
+        }
+    })
+</script>  
+</script>  
+    </body>
+</html>

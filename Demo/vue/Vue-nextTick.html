@@ -1,0 +1,36 @@
+<!--
+	在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue-nextTick</title>
+	    <meta charset="utf-8">
+</head>
+<body>
+	<div id="app">{{mes}}</div>
+</body>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+	Vue.nextTick(function () {
+		  // DOM 更新了
+		  console.log("msg"+"更新了");
+		});
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			'mes':"aaaa",
+			'change' :"123"
+		}
+	});
+	// 修改数据
+	console.log(vm.mes);
+
+	// DOM 还没有更新
+	
+	vm.mes = 'Hello';
+	console.log(vm.mes);
+
+
+</script>
+</html>

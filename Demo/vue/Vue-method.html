@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>事件处理</title>
+	    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+	<script type="text/javascript" src="js/vue.js"></script>
+
+
+
+</head>
+<body >
+
+<div id="app">
+	<p v-once>原始(一次插值)信息: "{{ message }}"</p>
+	<p>计算属性反转后的信息: "{{ reversedMessage }}"</p>
+	<p>methods反转后的信息: "{{ reversedMsg }}"</p>
+  	
+  	<button v-on:click="reversedMessage1">反转</button>
+	
+
+</div>
+
+<script type="text/javascript">
+
+var app = new Vue({
+	el:'#app',
+	data:{
+		message:'hello vuejs',
+		reversedMsg:"hello vuejs",
+		tiwce:1
+	},
+	computed:{
+		reversedMessage:function(){
+			console.log("计算1次");
+			return this.message.split('').reverse().join('');
+		}
+	},
+	methods:{
+		reversedMessage1:function(){
+			console.log("翻转"+ this.tiwce++ +"次");
+			this.reversedMsg = this.reversedMsg.split('').reverse().join('');
+		}
+	}
+
+})
+app.message = "wqwee";
+
+
+// <!-- 阻止单击事件冒泡 -->
+// 	<a v-on:click.stop="doThis">doThis</a>
+
+// 	<!-- 提交事件不在重载页面 -->
+// 	<form v-on:submit.prevent="onSubmit">onSubmit</form>
+	
+// 	<!-- 修饰符可以串联 -->
+// 	<a v-on:submit.prevent ="doThat">doThat</a>
+
+// 	<!-- 只有修饰符 -->
+// 	<form v-on:submit.prevent></form>
+
+// 	<!-- 添加事件侦听器时事件捕获模式 -->
+// 	<div v-on:click.capture>...</div>
+
+// 	<!-- 只有事件在该元素本身(而不是子元素)触发时触发回调 -->
+// 	<div v-on:click.self="doThat">...</div>
+
+// 	<!-- 只有在keyCode是 13 时调用 vm.submit() -->
+// 	<input v-on:keyup.13 = "submit">
+
+// 	<!-- 同上 -->
+// 	<input v-on:keyup.enter="submit">
+
+// 	<!-- 缩写语法 -->
+// 	<input @keyup.enter="submit">
+	
+</script>
+</body>
+</html>

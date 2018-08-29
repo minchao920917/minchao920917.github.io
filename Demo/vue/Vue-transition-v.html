@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>过渡效果结合velocity.js</title>
+      <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	
+</head>
+<body>
+<!-- Velocity.js结合vue -->
+<script src="js/velocity.js"></script>
+<script src="js/vue.js"></script>
+<div id="example-4">
+<br>
+  <button v-if="show" @click="show = !show" class="btn btn-block btn-primary">
+    click to leave
+  </button>
+  <button v-else="show" @click="show = !show" class="btn btn-block btn-success">
+    clcik to enter
+  </button>
+  <br>
+  <transition
+    v-on:before-enter="beforeEnter"
+    v-on:enter="enter"
+    v-on:leave="leave"
+    v-bind:css="false"
+  >
+    <h5 v-if="show" class="text-left">
+      Demo
+    </h5>
+  </transition>
+</div>
+
+<script type="text/javascript">
+	new Vue({
+	  el: '#example-4',
+	  data: {
+	    show: false
+	  },
+	  methods: {
+	  	/*
+	  		进入时
+	  	 */
+	    beforeEnter: function (el) {
+	    	console.log("进入动画开始时间:" + new Date().getTime());
+	      el.style.opacity = 0
+	      el.style.transformOrigin = 'left'
+	    },
+	    /*
+	    	进入后展现的状态
+	     */
+	    enter: function (el, done) {
+	      Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300 })
+	      Velocity(el, { fontSize: '1em' }, { complete: done })
+	    },
+	    /*
+	    	离开状态 
+	     */
+	    leave: function (el, done) {
+
+	      Velocity(el, { translateX: '15px', rotateZ: '50deg' }, { duration: 600 })
+	      Velocity(el, { rotateZ: '100deg' }, { loop: 3 })
+	      Velocity(el, {
+	        rotateZ: '45deg',
+	        translateY: '30px',
+	        translateX: '30px',
+	        opacity: 0
+	      }, { complete: done });
+	      console.log("离开动画时间:"+ new Date().getTime());
+	    }
+	  }
+	})
+</script>
+</body>
+</html>
+
+<!-- methods: {
+  // 
+  // 进入中
+  //
+  beforeEnter: function (el) {
+    // ...
+  },
+  // 此回调函数是可选项的设置
+  // 与 CSS 结合时使用
+  enter: function (el, done) {
+    // ...
+    done()
+  },
+  afterEnter: function (el) {
+    // ...
+  },
+  enterCancelled: function (el) {
+    // ...
+  },
+  // 
+  // 离开时
+  // 
+  beforeLeave: function (el) {
+    // ...
+  },
+  // 此回调函数是可选项的设置
+  // 与 CSS 结合时使用
+  leave: function (el, done) {
+    // ...
+    done()
+  },
+  afterLeave: function (el) {
+    // ...
+  },
+  // leaveCancelled 只用于 v-show 中
+  leaveCancelled: function (el) {
+    // ...
+  }
+} -->

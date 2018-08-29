@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+<title>vue+boostrap最佳实践3-模拟购物车</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.color{
+    background:#E35885;
+}
+</style>
+</head>
+<body>
+<div style="width:100%;margin-top: 20px;" id="main">
+    <a href="#" class="list-group-item active">商品总金额: {{getTotal}}
+        <div></div>
+    </a>
+
+    <div v-for="(goods,index) in goodses">
+        <a href="#" v-bind:class="" class="list-group-item">{{goods.name}}
+            <div style="float:right">
+                <button v-show="goods.num" v-on:click="decrease(index)">-</button>
+                <span v-show="goods.num">{{goods.num}}</span>
+                <button v-on:click="add(index)">+</button>
+                <span  class="label label-default">￥{{goods.price}}</span>
+            </div>
+            
+        </a>
+    </div>
+
+</div>
+
+<script src="js/vue.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+    var data = {
+        total:0,
+        goodses:[
+                {
+                    name:'苹果',
+                    status:false,
+                    price:15,
+                    num:0
+                },
+                {
+                    name:'梨子',
+                    status:false,
+                    price:10,
+                    num:0
+                },
+                {
+                    name:'樱桃',
+                    status:false,
+                    price:22,
+                    num:0
+                },
+                {
+                    name:'西瓜',
+                    status:false,
+                    price:13,
+                    num:0
+                }
+            ]
+        }
+
+    var demo=new Vue({
+        el:'#main',
+        data:data,
+        computed:{
+            getTotal:function(){
+                this.total = 0;
+                for(index in this.goodses){
+                    this.total += Number.parseInt(this.goodses[index].num * this.goodses[index].price); 
+                }
+                return this.total
+            }
+        },
+        methods:{
+            add:function(index){
+                this.goodses[index].num += 1;
+            },
+            decrease:function(index){
+                if(this.goodses[index].num!=0){
+                        this.goodses[index].num -=1;
+                }
+            }
+            
+        }
+    });
+  
+}
+</script>
+</body>
+</html>

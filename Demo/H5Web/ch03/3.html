@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<title>检测和处理横屏切换</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.css">
+		<link  href="http://fonts.googleapis.com/css?family=Kranky:regular" rel="stylesheet" type="text/css" >
+		<style>
+		body {
+			font-family: 'Kranky', serif;
+			font-size: 36px;
+			font-style: normal;
+			font-weight: 400;
+			text-shadow: none;
+			text-decoration: none;
+			text-transform: none;
+			letter-spacing: 0em;
+			word-spacing: 0em;
+			line-height: 1.2;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="screen">
+			<div id="loader">enter the game</div>
+		</div>
+		<script>
+			var metas = document.getElementsByTagName('meta');
+			var i;
+			if (navigator.userAgent.match(/iPhone/i)) {
+				for (i=0; i<metas.length; i++) {
+					if (metas[i].name == "viewport") {
+						metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+					}
+				}
+				document.addEventListener("gesturestart", gestureStart, false);
+			}
+			function gestureStart() {
+				for (i=0; i<metas.length; i++) {
+					if (metas[i].name == "viewport") {
+						metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+					}
+				}
+			}
+			window.onorientationchange = function() {
+				update();
+			}
+			function update() {
+				switch(window.orientation) {
+					case 0:   // Portrait
+					case 180: // Upside-down Portrait
+						var cWidth = window.innerWidth;
+						var cHeight = window.innerHeight;
+						document.getElementById("screen").style.width = cHeight-36+'px';
+						document.getElementById("screen").style.height = cWidth+'px';
+						break;
+					case -90: // Landscape: turned 90 degrees counter-clockwise
+					case 90:  // Landscape: turned 90 degrees clockwise
+						var cWidth = window.innerWidth;
+						var cHeight = window.innerHeight;
+						document.getElementById("screen").style.width = "100%";
+						document.getElementById("screen").style.height = "auto";
+						break;
+				}
+			}
+			update();
+		</script>
+		<script>
+			
+		</script>
+	</body>
+</html>
+	
+
+

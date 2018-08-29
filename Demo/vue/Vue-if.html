@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>条件渲染</title>
+	    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+</head>
+<body>
+<div id="app">
+	<h2>v-if 和 v-else</h2>
+	<p v-if="ok">Yes</p>
+	<p v-else>No</p>
+
+	<h2>v-if 和 v-else-if</h2>
+	<p v-if="type === 'A'">
+		  A
+	</p>
+	<p v-else-if="type === 'B'">
+		  B
+	</p>
+	<p v-else-if="type === 'C'">
+		  C
+	</p>
+	<p v-else>
+		  Not A/B/C
+	</p>
+	
+	<h2>v-show</h2>
+
+	<p v-show="isShow">show</p>
+</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+
+	var data ={
+		ok:false,
+		type:"V",
+		isShow:false
+	}
+	//创建vue实例vm
+ 	var vm = new Vue({
+		el:'#app',
+		data:data
+	})
+	</script>
+</body>
+</html>

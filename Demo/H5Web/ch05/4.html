@@ -1,0 +1,95 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>实时显示地理位置</title>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style>
+html {
+  height: auto;
+}
+body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+#map_canvas {
+  height: auto;
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  top:0;
+}
+</style>
+</head>
+<body>
+<div id="map_canvas"></div>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script>
+var watchProcess = null;
+var initialLocation;
+var map;
+var infowindow = new google.maps.InfoWindow();
+var myOptions = {
+  zoom: 12,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+
+map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+navigator.geolocation.getCurrentPosition(function(position) {
+  updatePos(position.coords.latitude,position.coords.longitude,position.coords.accuracy);
+});
+
+initiate_watchlocation();
+
+function initiate_watchlocation() {
+  if (watchProcess == null) {
+    watchProcess = navigator.geolocation.watchPosition(handle_geolocation_query, handle_errors);
+  }
+}
+
+function stop_watchlocation() {
+  if (watchProcess != null)
+  {
+    navigator.geolocation.clearWatch(watchProcess);
+    watchProcess = null;
+  }
+}
+
+function handle_errors(error)
+{
+  switch(error.code)
+  {
+  case error.PERMISSION_DENIED: alert("user did not share geolocation data");
+    break;
+
+  case error.POSITION_UNAVAILABLE: alert("could not detect current position");
+    break;
+
+  case error.TIMEOUT: alert("retrieving position timedout");
+    break;
+
+  default: alert("unknown error");
+    break;
+  }
+}
+
+function handle_geolocation_query(position) {
+  updatePos(position.coords.latitude,position.coords.longitude,position.coords.accuracy);
+}
+
+function updatePos(lat,long,acc) {
+  var text = "Latitude: "  + lat  + "<br/>" + "Longitude: " + long;
+  initialLocation = new google.maps.LatLng(lat,long);
+  contentString = text;
+  map.setCenter(initialLocation);
+  infowindow.setContent(contentString);
+  infowindow.setPosition(initialLocation);
+  infowindow.open(map);
+}
+</script> 
+</body>
+</html>

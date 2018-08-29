@@ -1,0 +1,98 @@
+.video
+{
+    padding: 0px 10.5rem 0 10.5rem;
+    /*height: 300px;*/
+}
+   .video figure
+    {
+        position: relative;
+    }
+
+        .video figure img
+        {
+            width: 100%;
+        }
+
+        .video figure figcaption
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            top: 0;
+            left: 0;
+            transition: background-color 0.5s;
+            -webkit-transition: background-color 0.5s;
+            cursor: pointer;
+        }
+
+            .video figure figcaption div
+            {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                width: 60px;
+                margin-left: -30px;
+                height: 60px;
+                margin-top: -30px;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.4);
+                border-radius: 100px;
+                background-image: url(data:image/svg+xml;base64,77u/PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTcuMDU2cHgiIGhlaWdodD0iMzBweCIgdmlld0JveD0iMCAwIDE3LjA1NiAzMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTcuMDU2IDMwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iMy45MjMsMS40MDggMTcuMDU2LDE0LjU2MSAzLjg5OSwyNy42OTIgIi8+DQo8L3N2Zz4NCg==);
+                background-position: center center;
+                background-repeat: no-repeat;
+                transition: all 0.5s;
+                -webkit-transition: all 0.5s;
+            }
+        .video figure:hover figcaption div
+        {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: solid 3px rgba(255, 255, 255, 0.8);
+        }
+
+        .video figure:hover figcaption
+        {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+            .video .videoTitle
+            {
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+                background: #fff;
+                padding: 5px;
+            }
+
+
+    @media screen and (max-width: 767px){
+        .video-phone 
+        {
+            width: 100%;
+            padding: 20px 0;
+            height: auto;
+            margin: 0 auto;
+        }
+        .video-phone .video-item1 video,.video-phone .video-item2 video,.video-phone .video-item3 video{
+            width: 100%;
+            height: auto;
+        }
+
+    }
+
+ 
+/*video end*/    
+
+    .video-container {position:fixed;top:10%;z-index:99999;width:80%;margin-left:10%;height:auto;background-color:rgba(0,0,0,1);}
+    .video-wrap {width:80%;margin-left: 10%;margin-top:10px;margin-bottom: 10px;}
+    .video-container .del-icon {display:block;width:1.5rem;height:1.5rem;position:absolute;top:0rem;right:0rem;z-index:999;font-size:1.25rem;line-height:1.5rem;text-align:center;cursor:pointer;color:#DDD;}
+    .video-container .del-icon:hover {color:rgba(255,0,0,0.5);}
+    .video-container .video-mask {position:absolute;top:0;left:0;width:100%;height:100%;}
+    .video-container .video-mask .video-loading {position:absolute;top:50%;left:50%;width:50px;margin-left:-25px;height:50px;margin-top:-60px;
+       background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+DQogICAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDIiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNSkiIGZpbGw9Im5vbmUiPjwvY2lyY2xlPg0KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQyIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZT0id2hpdGUiIGZpbGw9Im5vbmUiIHN0cm9rZS1kYXNoYXJyYXk9IjYwIDEwNjkiPjwvY2lyY2xlPg0KPC9zdmc+);
+       background-size: 100% 100%;background-repeat:no-repeat;background-position: center center;
+       -webkit-animation:vloading 1s linear infinite;
+       -moz-animation:vloading 1s linear infinite;
+       -ms-animation:vloading 1s linear infinite;
+       -0-animation:vloading 1s linear infinite;
+       animation:vloading 1s linear infinite;
+    }

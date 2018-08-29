@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>接口测试</title>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+	<script type="text/javascript">
+		var  data1 ={
+			'logisticode':'3957170446683'
+		}
+		function init(){
+			$.ajax({
+				url:'https://www.minchao.me/Demo/v1/kdgscx.php',
+				data:data1,
+				success:function(data){
+					
+					var com = JSON.parse(data);
+					console.log(com);
+					console.log(com.Shippers[0].ShipperCode);
+					data1.shipperCode = com.Shippers[0].ShipperCode;
+					console.log(data1);
+					$.ajax({
+						url:'https://www.minchao.me/Demo/v1/kdcx.php',
+						data:data1,
+						success:function(data){
+							console.log(data);
+						}
+					})
+				}
+
+			})
+		}
+
+	</script>
+</head>
+
+<body onload="init();" style="margin: 0; padding: 0; width: 100%; height: 100%;">
+</body>
+</html>

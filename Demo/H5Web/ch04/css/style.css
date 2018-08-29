@@ -1,0 +1,77 @@
+body {
+    margin:0; 
+    padding:0;
+    font-family:Arial;
+    background:#ccc;
+}
+header {
+    text-shadow: 0 1px #000;
+    background: #ff3019; /* Old browsers */
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 20%, #ff3019 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(20%,#cf0404), color-stop(100%,#ff3019)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 20%,#ff3019 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 20%,#ff3019 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 20%,#ff3019 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#ff3019',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #ff3019 0%,#cf0404 20%,#ff3019 100%); /* W3C */
+}
+h1 {
+    padding:0.5em 0.2em; 
+    margin:0;
+    font-size: 18px;
+    color:white;
+}
+h2 {
+    text-shadow: 0 1px #FFFFFF;
+    background: #eeeeee; /* Old browsers */
+    background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* W3C */
+    padding:0.5em 0.2em; 
+    margin:0;
+    font-size: 16px;
+    color:#000;
+}
+nav ul {
+    border-top:1px solid #fff;
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+nav li {
+    padding:0.5em 0.2em; 
+    margin:0;
+    background:#AFAFAF;
+    border-bottom:1px solid #fff;
+}
+nav li a {
+    height:20px;
+    display:block;
+    text-decoration:none;
+    color:white;
+}
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+   j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+/*styles for 800px and up!*/
+@media only screen and (min-width: 800px) {
+/* Styles */
+body {background:#fff; width:1000px; margin:0 auto;}
+nav li {
+    float:left;
+    margin-right:0.2em;
+    padding:0.5em 0.5em; 
+    
+    background:#AFAFAF;
+    border-bottom:1px solid #fff;
+}
+}/*/mediaquery*/

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>点击爆炸特效</title>
+
+
+<style type="text/css">
+body {
+	margin: 0;
+	padding: 0;
+	background: #f0fcff;
+	font-family: 'adelle-sans', sans-serif;
+	overflow: hidden;
+	height: 100%;
+}
+.container {
+	width: 400px;
+	
+	top: 100px;
+	position: relative;
+	margin: 0px auto;
+}
+.clipped-box {
+	cursor: pointer;
+	-webkit-transition: top 1.2s linear;
+	transition: top 1.2s linear;
+}
+.clipped-box div {
+	z-index: 9999999;
+	color: #fff;
+	font-size: 1em;
+	padding: 50px 20px;
+	text-align: center;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background: #4F9CC7;
+}
+.clipped-box div h1 {
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.clipped-box, .clipped-box div {
+	width: 400px;
+	height: 400px;
+	position: relative;
+}
+.clipped-box div {
+	position: absolute;
+	top: auto;
+	left: 0;
+	background: #4F9CC7;
+	-webkit-transition: -webkit-transform 1.4s ease-in, background 0.3s ease-in;
+	transition: transform 1.4s ease-in, background 0.3s ease-in;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="clipped-box">
+    <div class="content">
+      <h1>点击爆炸特效</h1>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+		
+	//clips初始化分块
+	(genClips = function() {
+		
+		// 绑定元素
+		$t = $('.clipped-box');
+		
+		// 将分成5*5的小片
+		var amount = 5;
+		
+		//	除以宽高
+		var width = $t.width() / amount;
+		var height = $t.height() / amount;
+		
+		// 一共有5*5个小块
+		var totalSquares = Math.pow(amount, 2);
+		
+		// 总的内容
+		var html = $t.find('.content').html();
+		
+		var y = 0;
+		
+		for(var z = 0; z <= (amount*width); z = z+width) { 
+		
+			$('<div class="clipped" style="clip: rect('+y+'px, '+(z+width)+'px, '+(y+height)+'px, '+z+'px)">'+html+'</div>').appendTo($t);
+			if(z === (amount*width)-width) {
+			
+				y = y + height;
+				z = -width;
+			
+			}
+			if(y === (amount*height)) {
+				z = 9999999;
+			}
+			
+		}
+		
+	})();
+	
+	// 随机数的快速随机函数(生成两个数之间的随机数)
+	function rand(min, max) {
+		
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+		
+	}
+	
+	// 当动画结束时的变量检查
+	var first = false,
+		clicked = false;
+	
+	// 绑定click
+	$('.clipped-box div').on('click', function() {
+		
+		if(clicked === false) {
+			
+			clicked = true;
+			
+			$('.clipped-box .content').css({'display' : 'none'});	
+	
+			// 
+			$('.clipped-box div:not(.content)').each(function() {
+				
+			
+				var v = rand(120, 90),
+					angle = rand(80, 89), 
+					theta = (angle * Math.PI) / 180, 
+					g = -9.8; 
+					
+				// $(this) 赋值 self
+				var self = $(this);
+				
+				var t = 0,
+					z, r, nx, ny,
+					totalt =  15;
+				
+				// 方向可以是左（1），右（- 1）或中心（0）。这是水平方向。
+				var negate = [1, -1, 0],
+					direction = negate[ Math.floor(Math.random() * negate.length) ];
+				
+				// 改变形状位置的随机数
+				var randDeg = rand(-5, 10), 
+					randScale = rand(0.9, 1.1),
+					randDeg2 = rand(30, 5);
+				
+				//因为阴影框都有一点滞后
+				// 我们改变背景颜色有轻微的手工，为了给div分化时
+				// 生长在空中的方位。
+				var color = $(this).css('backgroundColor').split('rgb(')[1].split(')')[0].split(', '),
+					colorR = rand(-20, 20),  // 如果您更改颜色，您可能需要手动更改这些颜色。
+					colorGB = rand(-20, 20),  // 获得正确的一致性。
+					newColor = 'rgb('+(parseFloat(color[0])+colorR)+', '+(parseFloat(color[1])+colorGB)+', '+(parseFloat(color[2])+colorGB)+')';
+				
+				
+				// 使用形状位置随机数
+				$(this).css({
+					'transform' : 'scale('+randScale+') skew('+randDeg+'deg) rotateZ('+randDeg2+'deg)', 
+					'background' : newColor
+				});
+				 
+				// 设置一个定时器
+				z = setInterval(function() { 	
+					
+					// 水平速度是恒定的（没有风阻力）
+					var ux = ( Math.cos(theta) * v ) * direction;
+					
+					// 垂直速度随着时间的增加而下降，在达到峰值前达到0。
+					var uy = ( Math.sin(theta) * v ) - ( (-g) * t);
+					
+					// 水平位置
+					nx = (ux * t);
+							
+					//距离公式，s=s1 +a*v^2
+					ny = (uy * t) + (0.5 * (g) * Math.pow(t, 2));
+					
+					// 使用位置	
+					$(self).css({'bottom' : (ny)+'px', 'left' : (nx)+'px'});
+					
+					// 时间增加0.10
+					t = t + 0.10;
+					
+					if(t > totalt) {
+
+						clicked = false;
+						first = true;
+						
+						
+						$('.clipped-box').css({'top' : '-1000px', 'transition' : 'none'});
+						$(self).css({'left' : '0', 'bottom' : '0', 'opacity' : '1', 'transition' : 'none', 'transform' : 'none'});
+
+						// 清除定时器
+						clearInterval(z);
+					}
+					
+				}, 10); 
+		
+			});
+			
+		}
+	
+	});
+	
+	//结束之后，重新恢复样式			
+	r = setInterval(function() {	
+		if(first === true) {			
+			$('.clipped-box').css({'top' : '0', 'transition' : ''});
+			$('.clipped-box div').css({'opacity' : '1', 'transition' : '', 'background-color' : ''});		
+			$('.content').css({'display' : 'block'});
+			first = false;
+		}		
+	}, 300);			
+
+});
+
+
+</script>
+</body>
+</html>

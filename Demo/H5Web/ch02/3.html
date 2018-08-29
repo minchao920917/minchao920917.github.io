@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>修复移动版Safari的re-flow scale问题</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+    </header>
+    <div>
+    <h1>Lorem ipsum</h1>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <footer>
+    </footer>
+		<script>
+		  var metas = document.getElementsByTagName('meta');
+			var i;
+			if (navigator.userAgent.match(/iPhone/i)) {
+				for (i=0; i<metas.length; i++) {
+					if (metas[i].name == "viewport") {
+						metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+					}
+				}
+				document.addEventListener("gesturestart", gestureStart, false);
+			}
+			function gestureStart() {
+				for (i=0; i<metas.length; i++) {
+					if (metas[i].name == "viewport") {
+						metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+					}
+				}
+			}
+		</script>
+  </body>
+  <!-- 
+  每个移动设备都有自己默认的视口宽度，具体参见附录X-关于所有移动设备默认视口宽度的列表。如果你不显示的设置它的值，在渲染页面的时候你可能会得不到你想要的效果。比方说，如果不设置iphone的视口宽度，它将会按照980像素的宽度渲染页面，如果你的页面设计不是按照这个像素宽度做的，那么出来的效果就会不尽如人意。
+   -->
+</html>

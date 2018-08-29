@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	    <meta charset="utf-8">
+	<!-- <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script> -->
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+
+<!-- <div >
+	<app-nav></app-nav>
+	<app-view>
+		<app-slidebar></app-slidebar>
+		<app-content></app-content>
+	</app-view>
+</div> -->
+
+<div id="app">
+	<p>
+		Ask a yes/no question:
+		<input v-model="question">
+	</p>
+	<p>{{answer|change}}</p>
+</div>
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			question :'',
+			answer :'I cannot giv you an answer util you ask a question!'
+		},
+		watch:{
+			question:function(newQuestion){
+				this.answer = "Waiting for you to stop typng...";
+				this.getAnswer();
+			}
+		},
+		methods:{
+			getAnswer: _.debounce(
+				function(){
+					var vm1 = this;
+					if(this.question.indexOf('?')===-1){
+						vm1.answer = 'Question usually contain a question mark.:-)';
+						return;
+					}
+					vm1.answer = "Thinking...";
+					axios.get('https://yesno.wtf/api')
+						.then(function(response){
+							vm1.answer = _.capitalize(response.data.answer);
+						}).catch(function(error){
+							vm1.answer = 'Error! Could not reach the Api.'+error
+						});
+					},500
+			)
+		},
+		filters:{
+			change:function(val){
+				if(val =="Yes"){
+					return val = "是";
+				}else if(val == "No"){
+					return val = "否";
+				}else{
+					return val;
+				}
+			}
+		}
+	});
+
+	// vm.fullName="min chao";
+
+	// vm.firstName = 'aaa';
+
+	/* computed与motheds的区别，
+	 不经过计算属性(computed),我们可以在methods中定义一个相同的函数来替代它，最终结果是一样的。然而区别在于，不同的是，计算属性(computed)是基于它的依赖缓存。计算属性(computed)只有在它的相关依赖发生改变时才会重新取值。这就意味着只要message没有发生改变，多次访问  reversedMessage计算属性会立即返回之前的计算结果，而不必多次执行同一个函数。
+	*/
+</script>
+</body>
+</html>

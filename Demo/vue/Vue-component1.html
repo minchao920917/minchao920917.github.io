@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1.子组件直接写在js里</title>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+</head>
+<body>
+	
+	<!-- 第一种，子组件模板直接写在js里 -->
+	<div id="exampleBox1">
+		<!-- 定义模板挂载点my-component -->
+	  <com-ponent></com-ponent>
+	</div>
+
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+var Component = Vue.extend({
+  //定义
+  template:'<h1>A cunstom component!    {{name}}</h1>',
+  data:function(){
+    return{
+      name:'minchao111'
+    }
+  }
+});
+Vue.component('com-ponent',Component);//注册
+// 注意，extend(json)和vue.component('com-ponent',json)//这两个json是相等的
+// 所以下面第二种会将extend()函数省略掉，直接在component中定义，系统会自动调用extend函数
+  var conp = new Vue({
+    //创建根实例
+    el:"#exampleBox1",
+
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!--
+	使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象。
+	data 选项是特例，需要注意 - 在 Vue.extend() 中它必须是函数
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>全局APIextend</title>
+      <meta charset="utf-8">
+</head>
+<body>
+	<div id="mount-point">
+
+	</div>
+</body>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+  //创建构造器
+  var Profile = Vue.extend({
+  	template:'\
+  	<p>{{firstName}} {{lastName}} aka {{alias}}\
+  	</p>\
+  	',
+  	data:function(){
+  		return {
+  			firstName : "min",
+  			lastName : 'chao',
+  			alias : "helicas"
+  		}
+  	}
+  });
+
+  //创建实例,并挂在到元素上
+  new Profile().$mount('#mount-point');
+
+</script>
+</html>

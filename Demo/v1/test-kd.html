@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>快递接口测试</title>
+	<meta charset="utf-8">
+
+</head>
+
+<body  style="margin: 0; padding: 0; width: 100%; height: 100%;">
+	
+	<input id="logisticode" type="text" name="logisticode">
+	<button onclick="search()">查询</button>
+
+	<script src="jquery.min.js"></script>
+
+	<script type="text/javascript">
+		//3957170446683
+		function search(){
+			// var kdurl ="http://www.wuzan.com:8088/v1/";
+			var kdurl ="https://www.minchao.me/Demo/v1/";
+
+			var  data1 ={
+				'logisticode':$("#logisticode").val()
+			}
+			$.ajax({
+
+				url:kdurl+'kdgscx.php',
+				data:data1,
+				success:function(data){
+					
+					var com = JSON.parse(data);
+					console.log(com.Shippers[0].ShipperCode);
+					data1.shipperCode = com.Shippers[0].ShipperCode;
+					$.ajax({
+						url: kdurl+'kdcx.php',
+						data:data1,
+						success:function(data){
+							console.log(data);
+						}
+					})
+				}
+
+			})
+		}
+
+	</script>
+</body>
+</html>

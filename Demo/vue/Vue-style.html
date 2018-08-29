@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>style绑定</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+</head>
+<script type="text/javascript" src="js/vue.js"></script>
+<body>
+<div id="app">  
+    <div v-bind:style="TheStyle">内联样式</div>  
+    <div v-bind:style="[TheStyle1, AnotherStyle,TheStyleFilter]">内联样式的数组写法</div> 
+</div>   
+<script>  
+    var vm = new Vue({  
+        el: '#app',  
+        data: {  
+            TheStyle: {  
+                fontSize: "30px",  
+                color: "red",  
+                backgroundColor: "#aaa"  
+            } ,
+            TheStyle1: {  
+		        fontSize: "30px"  
+		    },  
+		    AnotherStyle: {  
+		        color: "red",  
+		        backgroundColor: "#aaa"  
+		    },TheStyleFilter: {  
+			    filter: "grayscale(.5)"  
+			}   
+        }  
+    })  
+</script>  
+</body>
+</html>

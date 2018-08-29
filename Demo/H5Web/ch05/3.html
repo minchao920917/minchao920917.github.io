@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>基于地理信息显示地图</title>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="http://code.google.com/apis/gears/gears_init.js"></script>
+<script src="js/geo.js"></script>
+<style>
+html {
+  height: auto;
+}
+body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+#map_canvas {
+  height: auto;
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  top:0;
+}
+</style>
+</head>
+<body>
+  <div id="map_canvas"></div>
+  <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+  <script>
+    var initialLocation;
+    var siberia = new google.maps.LatLng(60, 105);
+    var newyork = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
+    var browserSupportFlag =  new Boolean();
+    var map;
+    var infowindow = new google.maps.InfoWindow();
+      
+    function initialize() {
+      var myOptions = {
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      
+      if(geo_position_js.init()){
+        browserSupportFlag = true;
+        geo_position_js.getCurrentPosition(function(position) {
+          initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+          contentString = "you are here";
+          map.setCenter(initialLocation);
+          infowindow.setContent(contentString);
+          infowindow.setPosition(initialLocation);
+          infowindow.open(map);
+        });
+      } 
+    }
+    
+      var useragent = navigator.userAgent;
+    function detectBrowser() {
+      var mapdiv = document.getElementById("map_canvas");
+      
+      if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1) {
+        window.scrollTo(0,1);
+        mapdiv.style.width = '100%';
+        mapdiv.style.height = '100%';
+      } else {
+        mapdiv.style.width = '600px';
+        mapdiv.style.height = '800px';
+      }
+    }
+    detectBrowser();
+    initialize();
+  </script>
+</body>
+</html>

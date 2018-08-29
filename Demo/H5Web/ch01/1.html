@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+  <title>适应宽度</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="modernizr-1.7.min.js"></script>
+  <style>
+  body, #main ul, #main li, h1 {
+    margin:0; 
+    padding:0;
+  }
+  body {
+    background:#FFFFA6;
+  }
+  #container {
+    font-family:Arial; 
+    margin:0 10px;
+  }
+  header, footer {
+    display:block;
+  }
+  #main li{
+    list-style:none;
+    height:40px; 
+    background:#29D9C2; 
+    margin-bottom:0.5em; 
+    line-height:40px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+  }
+  #main li a {
+    color:white; 
+    text-decoration:none; 
+    margin-left:1em;
+  }
+  </style>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>Title here</h1>
+      </header>
+      <div id="main">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+      <footer>
+        Footer links here
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+@charset "utf-8";
+/** 清除格式化标签 **/
+html,body, ul, ol,li,p,h1,h2,h3,h4,h5,h6,figcaption,figure,fieldset{ margin: 0; padding: 0; list-style: none;}
+label,nav,main,section,article,aside,footer,address,figure,figcaption{ display:block;}
+em,i{font-style: normal;}
+
+/** 设置默认字体 **/
+html, body {-webkit-text-size-adjust: none; font-family: helvetica, Arial, "Hiragino Sans GB";-webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased; font-smoothing: antialiased;}
+html, body { width: 100%; height: 100%; font-size:0.65rem; color: #fde7c6;} 
+body{ }
+  
+/** 设置表单元素**/
+button, input, select, textarea {font-family: helvetica, Arial, "Hiragino Sans GB"; outline:none;}
+textarea {resize: none;overflow: auto;}
+
+/** 去除点击后的高亮**/
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+/** 重置图片元素 **/
+img {border: 0px; vertical-align: middle; -ms-interpolation-mode: bicubic; max-width: 100%; height: auto;}
+
+/** 重置表格元素 **/
+table {border-collapse: collapse;border-spacing: 0;}
+
+ a{color: #666; text-decoration: none;}
+
+/** 清除浮动 **/
+.clearfix {*zoom:1;}
+.clearfix:before, .clearfix:after {content: ""; display: table;}
+.clearfix:after {clear: both;}
+
+.main{ 
+	max-width: 750px; 
+	width: 100%; 
+	height: 42rem;
+	margin: 0 auto;
+	background: url(../images/bg.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.digits{
+    position: relative;
+    display: flex;
+    width: 310px;
+    height: 70px;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cntSeparator { 
+  width: 15px;
+  height: 70px;
+  background: url(../images/d.png) no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+  display: inline-block;
+
+}
+
+
+.cntDigit {
+  width: 36px;/*88px*/
+  height: 52px;/*123px*/
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.handle{
+    position: relative;
+    display: block;
+    width:1.62rem ;
+    height: .93rem;
+    background: url(../images/handle.png) no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0 auto;
+    top: -10px;
+}
+.btn-live{
+  display: block;
+  position: relative;
+  background: url(../images/btn_live.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 4.65rem;/*465px*/
+  height: 1.05rem;/*105px*/
+  margin: auto;
+  top: .5rem;
+}
+
+.words1{
+	position: relative;
+	width: 6.65rem;
+	height: 7.45rem;
+	background: url(../images/words1.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin:0 auto;
+	top: 3.3rem;
+}
+.words2{
+	position: relative;
+	width: 7.05rem;
+	height: 3.36rem;
+	position: relative;
+	background: url(../images/words2.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*margin:0 auto;*/
+	top: 4rem;
+}
+.words3{
+	position: relative;
+	width: 7.05rem;
+	height: 4.02rem;
+	position: relative;
+	background: url(../images/words3.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*margin:0 auto;*/
+	top: 4.7rem;
+}
+.guest{
+	position: relative;
+	width: 7.34rem;
+	height: 9.32rem;
+	position: relative;
+	background: url(../images/guest.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin:0 auto;
+	top: 5.4rem;
+}
+.bottom{
+	position: relative;
+	width: 7.5rem;
+	height: 1.37rem;
+	position: relative;
+	background: url(../images/bottom.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin:0 auto;
+	top: 5.7rem;
+}

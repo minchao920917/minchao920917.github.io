@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+  <title>百分比适配移动端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="modernizr-1.7.min.js"></script>
+  <style>
+  body {
+    margin:0; 
+    padding:0;
+    background:#FFFFA6;
+  }
+ 
+  #main section {
+    display:block;
+    border:5px solid #29D9C2;
+    width:60%;
+    height:120px;
+    margin:5% auto;
+  }
+  
+  @media screen and (min-width: 480px) {
+    #main {
+      width:90%;
+      margin:0 auto;
+    }
+    
+    #main > section:first-child {
+       margin-right:5%;
+    }
+    
+    #main section {
+      float:left;
+      width:45%;
+    }
+  }
+  </style>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+      </header>
+      
+      <div id="main">
+        <section id="top-news"></section>
+        <section id="sports"></section>
+      </div>
+      
+      <footer>
+      </footer>
+    </div>
+  </body>
+</html>

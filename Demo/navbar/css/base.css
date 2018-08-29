@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: #333;
+	font-size: 12px;
+	text-decoration: none;
+	font-family: "Microsoft Yahei";
+}
+/* 导航start*/
+.header
+{
+	/*position: fixed;*/
+	/*top: 0px;*/
+	/*left: */
+}
+	/*电脑端start*/
+	.header .fixed-pc{
+		position: fixed;
+		background-color: #fff;
+		width: 100%;
+	}
+	.header .pc .navbar-logo,.header .pc .navbar-menu
+	{
+		padding-left: 0px;
+
+	}
+
+	.header .pc .navbar-logo img
+	{
+		padding: 10px 0 0 10px;
+	}
+
+	.header .pc .navbar-menu
+	{
+		padding: 10px 0 0 0;
+	}
+
+	.header .pc .navbar-menu ul li
+	{
+	   padding: 10px 30px;
+
+	}
+	
+		.header .pc .navbar-menu ul li a
+		{
+		  text-decoration: none;
+		  color: #333;
+		  font-size: 16px;
+		}
+
+		.header .pc .navbar-menu ul li a:hover
+		{
+			color: #008BCA;
+		}
+
+		.header .pc .navbar-menu .menu .menu-item .menu-warp
+		{
+			position: absolute;
+			display: none;
+			border: 1px solid #ddd;
+			background-color: #fff;
+		}
+
+		.header .pc .navbar-menu .menu .menu-item .menu-warp .col-nav{
+			/*position: relative;*/
+			float: left;
+			padding: 15px;
+			border-top: 3px solid #008BCA;
+		}
+			.header .pc .navbar-menu .menu .menu-item .menu-warp .col-nav .nav-title{
+				font-weight: bold;
+				line-height: 30px;
+				font-size: 14px;
+			}
+			.header .pc .navbar-menu .menu .menu-item .menu-warp .col-nav .nav-list{
+				margin-bottom: 0; 
+			}
+				.header .pc .navbar-menu .menu .menu-item .menu-warp .col-nav .nav-list dd a{
+					font-size: 14px;
+					margin: 20px 0;
+					line-height: 20px;
+				}
+				.header .pc .navbar-menu .menu .menu-item .menu-warp .col-nav .nav-list dd:hover{
+					background-color: #eee;
+				}
+
+	/*手机端样式*/
+	.header .fixed-phone{
+	    position: fixed;
+	    width: 100%;
+	    background-color: #fff;
+	}
+	.header .phone .phone-logo{
+		height: 40px;
+		background-image: url(data:image/svg+xml;base64,77u/PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSLlm77lsYJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIxNTYuMjVweCIgaGVpZ2h0PSIyMi41OTFweCIgdmlld0JveD0iMCAwIDE1Ni4yNSAyMi41OTEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE1Ni4yNSAyMi41OTEiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KDQoJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMTM4M0JDIiBkPSJNMTQ4LjE4MywwbC0zLjUzNSwxNC4xMjJMMTQxLjAwMywwaC04LjA2N3YyMi41OTFoNi4wNzZ2LTcuNjENCgkJCWwtMC4yMjItMy41NjJsLTAuMjE5LTMuMzE1bDMuNzU3LDE0LjQ4N2g0LjY0bDMuNjQ5LTE0LjQ4N2gwLjEwN2wtMC4zMjksNC4wNTNsLTAuMTE0LDMuNTU4djYuODc2aDUuOTY5VjBIMTQ4LjE4M3oNCgkJCSBNMTE5LjQ1MiwwLjAyNmMtNi43NzYsMC4zOTEtMTAuMzExLDQuMTE2LTEwLjYwOSwxMS4xNjdjMC4yMjMsNy4zNjUsMy43NTgsMTEuMTYyLDEwLjYwOSwxMS4zOTcNCgkJCWM2Ljg1NC0wLjIzNiwxMC40MjQtMy45OTcsMTAuNzIzLTExLjI4M0MxMjkuNzI5LDQuMTAzLDEyNi4xNTYsMC4zNDIsMTE5LjQ1MiwwLjAyNnogTTExOS40NTIsMTcuNTM2DQoJCQljLTIuNTc0LTAuMDc1LTMuOTAzLTIuMTUtMy45NzUtNi4yMjhjMC4xNDYtMy44MzYsMS40NzEtNS44MzgsMy45NzUtNS45OTJjMi41MDgsMC4wOCwzLjg3LDIuMDc1LDQuMDkzLDUuOTkyDQoJCQlDMTIzLjQ3LDE1LjQ2LDEyMi4xMDUsMTcuNTM2LDExOS40NTIsMTcuNTM2eiBNOTcuMDIzLDE3LjUzNmMtMi43MjYsMC4wODEtNC4wNTQtMS44ODEtMy45NzktNS44NzMNCgkJCWMwLTQuMDc2LDEuMjUzLTYuMTkzLDMuNzU4LTYuMzQ4YzIuMTM1LDAuMDgsMy4zNTIsMS4yNTMsMy42NDUsMy41MjVoNi4yOTljLTAuNzM1LTUuNzIyLTQuMTI2LTguNjU1LTEwLjE2Ni04LjgxNQ0KCQkJYy02LjQ4MiwwLjQ3MS05Ljg3Miw0LjI3MS0xMC4xNjUsMTEuNDAzYzAuMjIzLDcuMjA1LDMuNzkxLDEwLjkyNiwxMC43MTgsMTEuMTYyYzUuNjczLTAuMjM2LDguOTE0LTMuMTM0LDkuNzI3LTguNjk1aC02LjQxMg0KCQkJQzEwMC4wNzcsMTYuMzIzLDk4LjkzOCwxNy41MzYsOTcuMDIzLDE3LjUzNnogTTcxLjM4NSwwbC03LjI5MywyMi41OTFoNi41MmwwLjc3My0yLjk0OWg2LjYyOWwwLjc3OCwyLjk0OWg2LjYzTDc4LjEyNywwSDcxLjM4NXoNCgkJCSBNNzIuNjAxLDE0Ljg1NGwyLjEtOC4wOThsMi4yMTEsOC4wOThINzIuNjAxeiBNNTIuNjAzLDBoLTguOTU0djIyLjU5MWg4LjczMWM3LjE0NiwwLDEwLjc1NS0zLjkyOCwxMC44My0xMS43ODUNCgkJCUM2My4xMzUsMy42ODcsNTkuNTk4LDAuMDg1LDUyLjYwMywweiBNNTEuNzE1LDE3LjMxMmgtMS40MzNWNS4yNzloMS4zMjVjMy4zODktMC4yNDYsNS4wMDYsMS43MTksNC44NjEsNS44OTMNCgkJCUM1Ni40NjksMTUuMzQ3LDU0Ljg4MywxNy4zOTYsNTEuNzE1LDE3LjMxMnogTTMwLjI3NywxMy43NDloOC4zOTdWOC40NzZoLTguMzk3VjUuMjc5aDkuOTQzVjBIMjMuNTM1djIyLjU5MWgxNy4wMjF2LTUuMjc5DQoJCQlIMzAuMjc3VjEzLjc0OXogTTIwLjQ0MiwwaC03Ljg0NEw2Ljc0Miw3LjI0NFYwSDB2MjIuNTkxaDYuNzQydi03LjExOGwxLjU0Ni0xLjg0M2w0Ljg2MSw4Ljk2MWg4LjA2NkwxMi45MzIsOC40NzZMMjAuNDQyLDB6Ii8+DQo8L3N2Zz4NCg==);
+	    background-repeat: no-repeat;
+	    background-position: left center;
+	}
+	.header .phone .phone-menu{
+		height: 40px;
+		background-image: url(data:image/svg+xml;base64,77u/PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSLlm77lsYJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIyM3B4IiBoZWlnaHQ9IjIzcHgiIHZpZXdCb3g9IjAgMCAyMyAyMyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjMgMjMiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHJlY3QgZmlsbD0iIzY2NjY2NiIgd2lkdGg9IjIzIiBoZWlnaHQ9IjQuMDk0Ii8+DQo8cmVjdCB5PSI5LjQ1MyIgZmlsbD0iIzY2NjY2NiIgd2lkdGg9IjIzIiBoZWlnaHQ9IjQuMDk0Ii8+DQo8cmVjdCB5PSIxOC45MDYiIGZpbGw9IiM2NjY2NjYiIHdpZHRoPSIyMyIgaGVpZ2h0PSI0LjA5NCIvPg0KPC9zdmc+DQo=);
+		background-repeat: no-repeat;
+	    background-position: right center;
+	}
+	.header .phone .drop-menu{
+		display: none;
+		position: absolute;
+		top:40px;
+		width: 100%;
+		background-color: rgba(0,0,0,0);
+	}
+	.header .phone .drop-menu dl{
+		margin-bottom:0;
+	}
+		.header .phone .drop-menu dd{
+			font-size: 12px;
+			margin:0 15px;
+			border-bottom: 1px solid #008BCA;
+		}
+			.header .phone .drop-menu dd a{
+				line-height: 30px;
+				color: #666;
+				text-decoration: none;
+			}
+/* 导航start end*/
+
+

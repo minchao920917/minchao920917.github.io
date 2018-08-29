@@ -1,0 +1,8 @@
+CACHE MANIFEST
+# version 1
+img/apple-touch-icon.png
+
+NETWORK:
+#http://example.com/api/
+
+FALLBACK:

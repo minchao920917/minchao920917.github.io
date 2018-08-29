@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>营销中心应聘人员登记表</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+    content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/employment.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+	   <form id="employeeForm" action="">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h2 class="text-center">营销中心应聘人员登记表</h2>
+			</div>
+			<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*基本信息</p>
+
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="name">姓名</label>
+	            <input id="name" type="text" class="form-control" name="name" placeholder=""  />
+	        </div>
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="sex">性别</label>
+	            <div></div>
+				<input type="radio" id="status1" name="sex" value="男" checked class="regular-radio" /> 
+				<label for="status1"></label><span class="text1">男</span> 
+				<input type="radio" id="status0" name="sex" value="女" class="regular-radio" /> 
+				<label for="status0" style="margin-left: 20px;"></label><span class="text2">女</span>
+	        </div>
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="birthday">出生日期</label>
+	            <input id="birthday" type="text" class="form-control" name="birthday" placeholder="" readonly="readonly" />
+	        </div>
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="origin">籍贯</label>
+	            <input id="origin" type="text" class="form-control" name="origin" placeholder=""  />
+	        </div>
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="nation">民族</label>
+	            <input id="nation" type="text" class="form-control" name="nation" placeholder=""  />
+	        </div>
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+		        <label for="personalEmail">邮箱</label>
+		        <input id="personalEmail" type="text" class="form-control" name="personalEmail" placeholder=""  />
+		   </div>
+	       	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+		        <label for="personalMobile">电话</label>
+		        <input id="personalMobile" type="text" class="form-control" name="personalMobile" placeholder=""  />
+		    </div>
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="marital">婚育状况</label>
+	            <select id="marital" class="form-control" name="marital">
+				  <option value="已婚已育">已婚已育</option>
+				  <option value="已婚未育">已婚未育</option>
+				  <option value="未婚">未婚</option>
+				  <option value="其他">其他</option>
+				</select>
+	        </div>
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="political">政治面貌</label>
+	            <select id="political" class="form-control" name="political">
+				  <option value="群众">群众</option>
+				  <option value="团员">团员</option>
+				  <option value="党员">党员</option>
+				  <option value="其他">其他</option>
+				</select>
+	        </div>
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="identity">身份证号码</label>
+	            <input id="identity" type="text" class="form-control" name="identity" placeholder=""  />
+	        </div>
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+		        <label for="hopeAddress">现居住地</label>
+		        <input id="hopeAddress" type="text" class="form-control" name="hopeAddress" placeholder=""  />
+		    </div>
+		    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+		        <label for="familyAddress">期望工作地点</label>
+		        <input id="familyAddress" type="text" class="form-control" name="familyAddress" placeholder=""  />
+		    </div>
+	   		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+		        <label for="hopePosition">应聘职位</label>
+		        <input id="hopePosition" type="text" class="form-control" name="hopePosition" placeholder=""  />
+		    </div>
+
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+		        <label for="salary">原薪资</label>
+		        <input id="salary" type="text" class="form-control" name="salary" placeholder=""  />
+		    </div>
+		   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+		        <label for="hopeSalary">期望薪资</label>
+		        <input id="hopeSalary" type="text" class="form-control" name="hopeSalary" placeholder=""  />
+		    </div>	
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="candidatesApproach">应聘途径</label>
+	            <select id="candidatesApproach" class="form-control" name="candidatesApproach">
+				  <option value="网络通道">网络通道</option>
+				  <option value="招聘网站">招聘网站</option>
+				  <option value="校园专场招聘">校园专场招聘</option>
+				  <option value="熟人介绍">熟人介绍</option>
+				  <option value="其他">其他</option>
+				</select>
+	        </div>		    	    
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="height">身高(cm)</label>
+	            <input id="height" type="text" class="form-control" name="height" placeholder=""  />
+	        </div>
+	        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-group">
+	            <label for="weight">体重(cm)</label>
+	            <input id="weight" type="text" class="form-control" name="weight" placeholder=""  />
+	        </div>
+	         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+	            <label for="isRelation">公司有无亲友</label>
+	            <div></div>
+				<input type="radio" id="isRelation1" name="isRelation" value="无" checked class="regular-radio" /> 
+				<label for="isRelation1"></label><span class="text1">无</span> 
+				<input type="radio" id="isRelation2" name="isRelation" value="有" class="regular-radio" /> 
+				<label for="isRelation2" style="margin-left: 20px;"></label><span class="text2">有</span>
+	        </div>
+			<div id="relations" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">	
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 relation">
+		        	<label for="isRelation" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">亲友信息：</label>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="relationName">亲友姓名</label>
+				        <input id="relationName" type="text" class="form-control" name="relationName" placeholder=""  />
+				    </div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="relationShip">关系</label>
+				        <input id="relationShip" type="text" class="form-control" name="relationShip" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="relationPosition">职位</label>
+				        <input id="relationPosition" type="text" class="form-control" name="relationPosition" placeholder=""  />
+				    </div>		
+				</div>
+			</div>
+			<div id="emergents" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 emergent">
+		        	<label for="isRelation" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">紧急状况联络人：</label>
+					<div class="col-lg3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="emergentName">姓名</label>
+				        <input id="emergentName" type="text" class="form-control" name="emergentName" placeholder=""  />
+				    </div>
+
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="emergentSex">性别</label>
+				        <div></div>
+						<input type="radio" id="emergentSex1" name="emergentSex" value="男" checked class="regular-radio" /> 
+						<label for="emergentSex1"></label><span class="text1">男</span> 
+						<input type="radio" id="emergentSex2" name="emergentSex" value="女" class="regular-radio" /> 
+						<label for="emergentSex2" style="margin-left: 20px;"></label><span class="text2">女</span>
+				    </div>
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="relationShip">与本人关系</label>
+				        <input id="relationShip" type="text" class="form-control" name="relationShip" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="relationPosition">联系方式</label>
+				        <input id="relationPosition" type="text" class="form-control" name="relationPosition" placeholder=""  />
+				    </div>		
+				</div>
+			</div>
+	       
+	<!-- 教育经历 -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*教育、培训经历
+			<a href="javascript:void(0);" onclick="addEducation()" ><span id="addEducation" class="glyphicon glyphicon-plus hidden-sm hidden-xs"></span></a>
+			</div>
+			<div id="educations" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+		            <label for="highestEducation">最高学历</label>
+		            <select id="highestEducation" class="form-control" name="highestEducation">
+		            	<option value=""></option>
+					  <option value="研究生">研究生</option>
+					  <option value="本科">本科</option>
+					  <option value="双专">双专</option>
+					  <option value="大专">大专</option>
+					  <option value="其他">其他</option>
+					</select>
+		        </div>	
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 education">
+					<a href="javascript:void(0)" onclick="reduceEducation(this)" class="closed"><span class="glyphicon glyphicon-plus"></span></a>
+
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="educationCollege">学校/培训机构</label>
+				        <input id="educationCollege" type="text" class="form-control" name="educationCollege" placeholder=""  />
+				    </div>	
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="educationStart">起始年月</label>
+				        <input id="educationStart" type="text" class="form-control" name="educationStart" placeholder=""  />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="educationEnd">终止年月</label>
+				        <input id="educationEnd" type="text" class="form-control" name="educationEnd" placeholder=""  />
+				    </div>
+	    
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="educationMajor">专业课程</label>
+				        <input id="educationMajor" type="text" class="form-control" name="educationMajor" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="educationRecord">获取证书性质(统招/其他)</label>
+				        <input id="educationRecord" type="text" class="form-control" name="educationRecord" placeholder=""  />
+				   </div>	
+				</div>	       
+			</div>
+			<div id="addEducationPhone" class="col-sm-12 col-xs-12 form-group hidden-lg hidden-md text-center">
+				<a href="javascript:void(0);" class="form-control" onclick="addEducation()" ><span class="glyphicon glyphicon-plus"></span></a>
+			</div>
+			<!-- 工作经历 -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*工作/实习 
+			<a href="javascript:void(0);" onclick="addExperience()" ><span id="addExperience" class="glyphicon glyphicon-plus hidden-sm hidden-xs"></span></a>
+			</div>
+			<div id="experiences" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 experience">
+					<a href="javascript:void(0)" onclick="reduceExperience(this)" class="closed"><span class="glyphicon glyphicon-plus"></span></a>
+
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="experienceUnit">公司名称</label>
+				        <input id="experienceUnit" type="text" class="form-control" name="experienceUnit" placeholder=""  />
+				    </div>	
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="experienceStart">入职时间</label>
+				        <input id="experienceStart" type="text" class="form-control" name="experienceStart" placeholder=""  />
+				    </div>
+
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="experienceEnd">离职日期</label>
+				        <input id="experienceEnd" type="text" class="form-control" name="experienceEnd" placeholder=""  />
+				    </div>
+				   	    
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="experiencePeople">岗位</label>
+				        <input id="experiencePeople" type="text" class="form-control" name="experiencePeople" placeholder=""  />
+				    </div>
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="salaryType">薪资结构</label>
+				        <input id="salaryType" type="text" class="form-control" name="salaryType" placeholder=""  />
+				    </div>
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="experiencePeople">离职类型</label>
+				       
+				        <select id="highestEducation" class="form-control" name="highestEducation">
+						  	<option value="个人辞职">个人辞职</option>
+						  	<option value="公司解除">公司解除</option>
+						  	<option value="协商解除">协商解除</option>
+						  	<option value="合同到期">合同到期</option>
+						 	<option value="在职">在职</option>
+						</select>
+				    </div>
+				   	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+				        <label for="experienceTel">人事联络电话</label>
+				        <input id="experienceTel" type="text" class="form-control" name="experienceTel" placeholder=""  />
+	
+				   </div>	
+				</div>	       
+			</div>
+			<div id="addExperiencePhone" class="col-sm-12 col-xs-12 form-group hidden-lg hidden-md text-center">
+				<a href="javascript:void(0);" class="form-control" onclick="addExperience()" ><span class="glyphicon glyphicon-plus"></span></a>
+			</div>
+		    	
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">*家庭状况</div>
+			<div id="relatives" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 relative">
+				
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="ch-name">称谓</label>
+				       	<input type="text" class="form-control" value="父亲"  placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="father">姓名</label>
+				        <input id="father" type="text" class="form-control" name="father" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 form-group">
+				        <label for="fatherBirth">年龄</label>
+				        <input id="fatherBirth" type="text" class="form-control" name="fatherBirth" placeholder=""  />
+				    </div>
+				    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="fatherPosition">职位</label>
+				        <input id="fatherPosition" type="text" class="form-control" name="fatherPosition" placeholder=""  />
+				    </div>	
+				    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="fatherMobile">联系电话</label>
+				        <input id="fatherMobile" type="text" class="form-control" name="fatherMobile" placeholder=""  />
+				   </div>
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="fatherWork">工作单位</label>
+				        <input id="fatherWork" type="text" class="form-control" name="fatherWork" placeholder=""  />
+				    </div>
+				   	
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  relative">
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="">关系</label>
+				       	<input  type="text" class="form-control" value="母亲"  placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="mother">姓名</label>
+				        <input id="mother" type="text" class="form-control" name="mother" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 form-group">
+				        <label for="motherBirth">年龄</label>
+				        <input id="motherBirth" type="text" class="form-control" name="motherBirth" placeholder=""  />
+				    </div>	
+				    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="motherPosition">职位</label>
+				        <input id="motherPosition" type="text" class="form-control" name="motherPosition" placeholder=""  />
+				    </div>	
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="motherMobile">联系电话</label>
+				        <input id="motherMobile" type="text" class="form-control" name="motherMobile" placeholder=""  />
+				   </div>					    
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="motherWork">工作单位(职务)</label>
+				        <input id="motherWork" type="text" class="form-control" name="motherWork" placeholder=""  />
+				    </div>
+				   	
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  relative">
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="">称谓</label>
+				       	<input type="text" class="form-control" value="兄弟" placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="borther">姓名</label>
+				        <input id="borther" type="text" class="form-control" name="borther" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 form-group">
+				        <label for="bortherBirth">年龄</label>
+				        <input id="bortherBirth" type="text" class="form-control" name="bortherBirth" placeholder=""  />
+				    </div>
+				    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="bortherPosition">职位</label>
+				        <input id="bortherPosition" type="text" class="form-control" name="bortherPosition" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="bortherMobile">联系电话</label>
+				        <input id="bortherMobile" type="text" class="form-control" name="bortherMobile" placeholder=""  />
+				    </div>					    			    
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="bortherWork">工作单位(职务)</label>
+				        <input id="bortherWork" type="text" class="form-control" name="bortherWork" placeholder=""  />
+				    </div>
+
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  relative">
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="ch-name">称谓</label>
+				       	<input  type="text" class="form-control" value="姐妹" placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="sister">姓名</label>
+				        <input id="sister" type="text" class="form-control" name="sister" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 form-group">
+				        <label for="sisterBirth">年龄</label>
+				        <input id="sisterBirth" type="text" class="form-control" name="sisterBirth" placeholder=""  />
+				    </div>	
+				    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="sisterPosition">职位</label>
+				        <input id="sisterPosition" type="text" class="form-control" name="sisterPosition" placeholder=""  />
+				    </div>
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="sisterMobile">联系电话</label>
+				        <input id="sisterMobile" type="text" class="form-control" name="sisterMobile" placeholder=""  />
+				   </div>				    	    
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="sisterWork">工作单位(职务)</label>
+				        <input id="sisterWork" type="text" class="form-control" name="sisterWork" placeholder=""  />
+				    </div>
+	
+				</div>
+				<div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 relative">
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="">称谓</label>
+				       	<input  type="text" class="form-control" value="配偶" placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="spouse">姓名</label>
+				        <input id="spouse" type="text" class="form-control" name="spouse" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 form-group">
+				        <label for="spouseBirth">年龄</label>
+				        <input id="spouseBirth" type="text" class="form-control" name="spouseBirth" placeholder=""  />
+				    </div>
+				    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="spousePosition">职位</label>
+				        <input id="spousePosition" type="text" class="form-control" name="spousePosition" placeholder=""  />
+				    </div>	
+				   	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="spouseMobile">联系电话</label>
+				        <input id="spouseMobile" type="text" class="form-control" name="spouseMobile" placeholder=""  />
+				   </div>				    			    		    
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="spouseWork">工作单位(职务)</label>
+				        <input id="spouseWork" type="text" class="form-control" name="spouseWork" placeholder=""  />
+				    </div>
+
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 relative">	
+				   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="">称谓</label>
+				       	<input type="text" class="form-control" value="子女"  placeholder="" readonly="readonly" />
+				    </div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="child">姓名</label>
+				        <input id="child" type="text" class="form-control" name="child" placeholder=""  />
+				    </div>
+				   	
+				   	<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 form-group">
+				        <label for="childBirth">年龄</label>
+				        <input id="childBirth" type="text" class="form-control" name="childBirth" placeholder=""  />
+				    </div>
+				    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="childPosition">职位</label>
+				        <input id="childPosition" type="text" class="form-control" name="childPosition" placeholder=""  />
+				    </div>	
+				    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 form-group">
+				        <label for="childMobile">联系电话</label>
+				        <input id="childMobile" type="text" class="form-control" name="childMobile" placeholder=""  />
+				   </div>				    		    
+				   	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 form-group">
+				        <label for="childWork">工作单位(职务)</label>
+				        <input id="childWork" type="text" class="form-control" name="childWork" placeholder=""  />
+				    </div>
+		
+				</div>	       
+			</div>
+
+			<!-- 专业 技能 -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-title">专业 技能
+
+			</div>
+			<div id="professionals" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 professional-title">专业类</p>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 professional">
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+				        <label for="experiencePeople">Linux</label>
+				       
+				        <select id="highestEducation" class="form-control" name="highestEducation">
+						  	<option value="一般">一般</option>
+						  	<option value="熟练">熟练</option>
+						  	<option value="精通">精通</option>
+						</select>
+				    </div>
+				    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+				        <label for="experiencePeople">网络基础</label>
+				        <select id="netBase" class="form-control" name="netBase">
+						  	<option value="一般">一般</option>
+						  	<option value="熟练">熟练</option>
+						  	<option value="精通">精通</option>
+						</select>
+				    </div>
+				</div>	
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 professional-title">语言类</p>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 professional">
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+				        <label for="englishLevel">英语</label>
+				       
+				        <select id="englishLevel" class="form-control" name="englishLevel">
+						  	<option value="一般">一般</option>
+						  	<option value="熟练">熟练</option>
+						  	<option value="精通">精通</option>
+						</select>
+				    </div>
+				</div> 
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 professional-title">证书</p>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 professional">
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+					        <label for="englishLevel">证书</label>
+					       
+					        <select id="englishLevel" class="form-control" name="englishLevel">
+							  	<option value="一般">CCNA</option>
+							  	<option value="熟练">CCNP</option>
+							  	<option value="精通">CCIE</option>
+							  	<option value="高级项目经理">高级项目经理</option>
+							  	<option value="其他">其他</option>
+							</select>
+					    </div>
+
+					</div>
+				</div> 
+
+				<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 professional-title">电脑技能</p>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 professional">
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+					        <label for="englishLevel">电脑</label>
+					       
+					        <select id="englishLevel" class="form-control" name="englishLevel">
+							  	<option value="Office">Office</option>
+							  	<option value="Coreldraw">Coreldraw</option>
+							  	<option value="Visio">Visio</option>
+							  	<option value="Auto CAD">Auto CAD</option>
+							  	<option value="photoShop">photoShop</option>
+							  	<option value="其他">其他</option>
+							</select>
+					    </div>
+            
+				</div>
+
+
+			<div class="form-btn col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+				 <input class="btn btn-info" type="submit"  value="提交" style="padding: 8px 30px;font-size: 20px;">
+				<a href="javascript:void(0);" class="btn btn-default" id="reset">重置</a>
+			</div>
+
+        </form>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/date.min.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript">
+
+	jeDate({
+		dateCell:"#birthday",
+		format:"YYYY-MM-DD"
+	})
+
+ 	
+
+        //社会关系添加和减少
+        function addFriend(){
+        	
+        	var num = $(".friend").length;
+        	if( num >= 4){
+        		layer.msg("最多填写四个社会联系人!");
+        		return;
+        	}
+        	var friend = $(".friend:first").clone();
+        	$(friend.find(".form-control")[0]).attr("id","friendName"+num).attr("name","friendName"+num).val("");
+        	$(friend.find(".form-control")[1]).attr("id","friendRelation"+num).attr("name","friendRelation"+num).val("");
+        	$(friend.find(".form-control")[2]).attr("id","friendBirth"+num).attr("name","friendBirth"+num).val("");
+        	$(friend.find(".form-control")[3]).attr("id","friendWork"+num).attr("name","friendWork"+num).val("");
+        	$(friend.find(".form-control")[4]).attr("id","friendMobile"+num).attr("name","friendMobile"+num).val("");
+        	friend.find(".error").text("");
+        	$("#friends").append(friend);
+        	
+        }
+        function reduceFriend(obj){
+        	console.log(obj);
+        	if($(".friend").length<=1){
+        		layer.msg("至少填写一个社会联系人!");
+        		return;
+        	}
+        	obj.parentNode.remove()
+        	
+        }       
+        //工作经历添加和减少
+        function addExperience(){
+        	var num = $(".experience").length;
+        	if( num >= 4){
+        		layer.msg("最多填写四段工作经历!");
+        		return;
+        	}
+        	var experience = $(".experience:first").clone();
+        	$(experience.find(".form-control")[0]).attr("id","experienceStart"+num).attr("name","experienceStart"+num).val("");
+        	$(experience.find(".form-control")[1]).attr("id","experienceEnd"+num).attr("name","experienceEnd"+num).val("");
+        	$(experience.find(".form-control")[2]).attr("id","experienceUnit"+num).attr("name","experienceUnit"+num).val("");
+        	$(experience.find(".form-control")[3]).attr("id","experiencePeople"+num).attr("name","experiencePeople"+num).val("");
+        	$(experience.find(".form-control")[4]).attr("id","experienceTel"+num).attr("name","experienceTel"+num).val("");
+	        experience.find(".error").text("");
+	        $("#experiences").append(experience);
+        }
+        function reduceExperience(obj){
+        	if($(".experience").length<=1){
+        		layer.msg("至少填写一段工作经历!");
+        		return;
+        	}
+        	obj.parentNode.remove()
+        }
+        //教育经历添加和减少
+        function addEducation(){
+        	var num =$(".education").length;
+        	if( num >= 4){
+        		layer.msg("最多填写四段教育经历!");
+        		return;
+        	}
+        	var education = $(".education:first").clone();
+        	$(education.find(".form-control")[0]).attr("id","educationStart"+num).attr("name","educationStart"+num).val("");
+        	$(education.find(".form-control")[1]).attr("id","educationEnd"+num).attr("name","educationEnd"+num).val("");
+        	$(education.find(".form-control")[2]).attr("id","educationCollege"+num).attr("name","educationCollege"+num).val("");
+        	$(education.find(".form-control")[3]).attr("id","educationMajor"+num).attr("name","educationMajor"+num).val("");
+        	$(education.find(".form-control")[4]).attr("id","educationRecord"+num).attr("name","educationRecord"+num).val("");
+	        education.find(".error").text("");
+	        $("#educations").append(education);
+
+        }
+        function reduceEducation(obj){
+        	if($(".education").length<=1){
+        		layer.msg("至少填写一段教育经历!");
+        		return;
+        	}
+        	obj.parentNode.remove();
+        } 
+        //培训添加和减少
+        function addTrain(){
+        	var num =$(".train").length;
+        	
+        	if(num  >= 3){
+        		layer.msg("最多填写三段培训、资质经历!");
+        		return;
+        	}
+        	var train = $(".train:first").clone();
+        	$(train.find(".form-control")[0]).attr("id","trainStart"+num).attr("name","trainStart"+num).val("");
+        	$(train.find(".form-control")[1]).attr("id","trainEnd"+num).attr("name","trainEnd"+num).val("");
+        	$(train.find(".form-control")[2]).attr("id","trainContent"+num).attr("name","trainContent"+num).val("");
+        	$(train.find(".form-control")[3]).attr("id","trainRecord"+num).attr("name","trainRecord"+num).val("");
+        	train.find(".error").text("");
+        	$("#trains").append(train);
+        }
+        function reduceTrain(obj){
+        	if($(".train").length<=1){
+        		return;
+        	}
+        	obj.parentNode.remove();
+        }
+        //职称情况添加和减少
+        function addProfessional(){
+        	var num = $(".professional").length;
+        	if( num >= 2){
+        		layer.msg("最多填写两个职称情况!");
+        		return;
+        	}
+        	var professional = $(".professional:first").clone();
+        	$(professional.find(".form-control")[0]).attr("id","professionalTime"+num).attr("name","professionalTime"+num).val("");
+        	$(professional.find(".form-control")[1]).attr("id","professionalName"+num).attr("name","professionalName"+num).val("");
+        	professional.find(".error").text("");
+	        $("#professionals").append(professional);
+        }
+        function reduceProfessional(obj){
+        	if($(".professional").length<=1){
+        		return;
+        	}
+        	obj.parentNode.remove();
+
+        }
+        //奖惩情况
+        function addReward(){
+        	var num = $(".reward").length;
+        	if( num >= 2){
+        		layer.msg("最多填写两个奖惩情况!");
+        		return;
+        	}
+        	var reward = $(".reward:first").clone();
+        	$(reward.find(".form-control")[0]).attr("id","rewardTime"+num).attr("name","rewardTime"+num).val("");
+        	$(reward.find(".form-control")[1]).attr("id","rewardUnit"+num).attr("name","rewardUnit"+num).val("");
+        	$(reward.find(".form-control")[2]).attr("id","rewardContent"+num).attr("name","rewardContent"+num).val("");
+			reward.find(".error").text("");
+	        $("#rewards").append(reward);
+
+        }
+        function reduceReward(obj){
+        	if($(".reward").length<=1){
+        		return;
+        	}
+        	obj.parentNode.remove();
+        }
+        //专利情况
+        function addPatent(){
+        	var num = $(".patent").length;
+        	if( num >= 2){
+        		layer.msg("最多填写两个专利情况!");
+        		return;
+        	}
+        	var patent = $(".patent:first").clone();
+        	$(patent.find(".form-control")[0]).attr("id","patentYear"+num).attr("name","patentYear"+num).val("");
+        	$(patent.find(".form-control")[1]).attr("id","patentTime"+num).attr("name","patentTime"+num).val("");
+        	$(patent.find(".form-control")[2]).attr("id","patentContent"+num).attr("name","patentContent"+num).val("");
+        	patent.find(".error").text("");
+	        $("#patents").append(patent);
+        }
+        function reducePatent(obj){
+        	if($(".patent").length<=1){
+        		return;
+        	}
+        	obj.parentNode.remove();
+        }        
+</script>
+<script type="text/javascript" src="js/validate.expand.js"></script>
+<script type="text/javascript">
+
+
+ $(function(){
+
+ 	$("#isRelation2").on('click',function(){
+ 		
+           $("#relations").fadeIn(500);
+ 	});
+ 	$("#isRelation1").on('click',function(){
+        	$("#relations").fadeOut(500);
+ 	});
+ 	$("#employeeForm").validate({
+
+ 		 onfocusout: function(element) { $(element).valid();},
+ 		 
+ 		 rules:rules,
+ 		 messages:messages,
+ 		submitHandler:function(){
+ 		 	console.log($("#employeeForm").serializeArray());
+ 		 	$.ajax({
+						url : '',
+						type : 'post',
+						dataType : 'json',
+						data : $("#employeeForm").serializeArray(),
+						type : "post", //请求方式
+						success : function(data) {
+							
+							
+						},
+						error : function(data) {
+							
+							
+						}
+					});
+ 		 }
+ 	 });
+ 	 $("#reset").click(function() {
+			   window.location.reload();
+		    });
+ });
+
+
+</script>
+</body>
+
+
+
+</html>

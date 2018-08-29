@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>props</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <script src="js/vue.v1.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>    
+  
+<div id="app">
+    <input v-model = "message">  
+    <child v-bind:my-Message = "message"></child>
+</div>  
+<script>  
+    var child ="<span>{{myMessage}}</span>";
+    // 注册组件
+    Vue.component('child',{
+        props:['myMessage'],
+        template:child
+    });
+    var vm = new Vue({  
+        el: '#app',
+        data:{
+            message:""
+        }
+    });  
+</script>  
+ 
+    </body>
+</html>

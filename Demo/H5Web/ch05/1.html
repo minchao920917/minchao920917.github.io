@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+		<title>获取位置信息</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+    </header>
+		<div id="main">
+			<div id="someElm">
+			</div>
+		</div>
+    <footer>
+    </footer>
+	<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+	<script>
+	function getLocation() {
+    navigator.geolocation.getCurrentPosition(showInfo);
+  }
+  function showInfo(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var accuracy = position.coords.accuracy;
+    $('#someElm').html('latitude: '+latitude+'<br />longitude: '+longitude+'<br />accuracy: '+accuracy);
+  }
+  getLocation();
+	</script>
+	</body>
+</html>

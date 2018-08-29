@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+	<title>组件实例</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		.static{
+			width: 300px;
+			height: 200px;
+			border:10px solid #ddd;
+			border-radius: 10px;
+			margin:0 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body >
+
+
+<div id="app">
+	<currency-input label="价格" v-model="price"></currency-input>
+	<currency-input label="运费" v-model="shipping"></currency-input>
+	<currency-input label="操作费" v-model="handling"></currency-input>
+	<currency-input label="折扣减价" v-model="discount"></currency-input>
+
+	<p>应支付 : ￥ {{total()}}</p>
+</div>
+
+<script src="js/vue.js"></script>
+<script src="js/currency-validator.js"></script>
+<script type="text/javascript">
+//注册组件
+Vue.component('currency-input',{
+	template:'\
+	<div>\
+	<label v-if="label">{{label}}</label>\
+	￥\
+	<input\
+	ref="input"\
+	v-bind:value="value"\
+	v-on:input="updateValue($event.target.value)"\
+	v-on:focus="selectAll"\
+	v-on:blur="formatValue"\
+	>\
+	</div>\
+	',
+	props:{
+		value:{
+			type:Number,
+			default:0
+		},
+		label :{
+			type: String,
+			default:''
+		}
+	},
+	mounted:function(){
+		this.formatValue()
+	},
+	methods:{
+		updateValue:function(value){
+			var result = currencyValidator.parse(value,this.value);
+			if (result.warning){
+				this.$refs.input.value = result.value;
+			}
+			this.$emit('input',result.value);
+		},
+		formatValue :function(){
+			this.$refs.input.value = currencyValidator.format(this.value);
+		},
+		selectAll:function(event){
+			setTimeout(function(){
+				event.target.select();
+			},0);
+		}
+	}
+});
+
+var app = new Vue({
+	el:'#app',
+	data:{
+		price:0,
+		shipping:0,
+		handling:0,
+		discount:0
+	},
+	methods:{
+		total:function(){
+			return ((
+				this.price *100 +
+				this.shipping *100 +
+				this.handling * 100 -
+				this.discount *100
+			)/100).toFixed(2);
+		}
+	}
+});
+
+</script>
+</body>
+</html>

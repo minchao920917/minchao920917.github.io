@@ -1,0 +1,45 @@
+<!-- 注册或获取全局指令。 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue-directive</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+</head>
+<body>
+	<div id="app">
+    <input v-focus type="" name="" placeholder="aaa">
+		<input v-focus type="" name="" placeholder="bbb">
+	</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+//注册
+// Vue.directive('focus',{
+// 	bind : function(){},
+// 	inserted : function(){},
+// 	update : function(){},
+// 	componentUpdated : function(){},
+// 	unbind : function(){}
+// })
+
+
+//getter,返回已注册的指令
+var myDirective = Vue.directive('focus');
+
+
+//注册一个全局自定义指令v-focus
+Vue.directive('focus',{
+  //当绑定元素插入到DOM中
+  inserted: function(el,binding,vnode,oldVnode){
+    //聚焦元素
+    el.focus();
+    el.value="bbbb";
+  }
+});
+new Vue({
+	el:"#app"
+});
+</script>
+</body>
+
+</html>

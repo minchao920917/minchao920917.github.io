@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>class绑定</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+	<style>  
+    .green {  
+        background-color: green;  
+    }  
+    .red {  
+        background-color: red;  
+    }  
+    .fontSize{
+    	font-size: 50px;
+    }
+	</style> 
+</head>
+<body>
+
+<h2>第一种 v-bind:class="{'green':isGreen,'red':isrRed}"</h2>
+<div id="app">  
+    <div v-bind:class="{'green':isGreen,'red':isrRed}">背景颜色</div> 
+    <br> 
+    <button @click="change">变色</button>  
+</div>
+
+<h2>第二种  v-bind:class="itsClass</h2>
+<div id="app1">  
+    <div v-bind:class="itsClass">背景颜色</div> 
+    <br> 
+    <button @click="change">变色</button>  
+</div>
+
+<h2>第三种  v-bind:class="[g,r?r:s]"</h2>
+<div id="app2">  
+    <div v-bind:class="[g,r?r:s]">背景颜色</div>  
+    <br> 
+    <button @click="change">变色</button>  
+</div>
+<script type="text/javascript" src="js/vue.js"></script> 
+<script>  
+	//第一种
+    var vm = new Vue({  
+        el: '#app',  
+        data: {  
+            isGreen: true,  
+            isrRed: false  
+        },  
+        methods: {  
+            change: function () {  
+                this.isGreen = !this.isGreen;  
+                this.isrRed = !this.isrRed;  
+            }  
+        }  
+    }) ;
+    //第二种
+    var app1 = new Vue({
+    	el:'#app1',
+ 		data: {  
+            itsClass: {  
+                green: true,
+                red:false  
+            }  
+        },  
+        methods: {  
+            change: function () {  
+                this.itsClass.green = !this.itsClass.green;  
+                this.itsClass.red = !this.itsClass.red;  
+            }  
+        }  
+    }); 
+    //第三种
+     var app2 = new Vue({  
+        el: '#app2',  
+        data: {  
+            g: "green",  
+            r: "red",  
+            s: "fontSize"  
+        },  
+        methods: {  
+            change: function () { 
+            	if(this.r){
+            		this.r=false;
+            	} else{
+            		this.r="red";
+            	}
+            }  
+        }  
+    })  
+</script>  
+</body>
+</html>

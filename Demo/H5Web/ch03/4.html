@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+		<title>利用手势旋转页面元素</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<style>
+    #main {
+      text-align:center;
+    }
+		#someElm {
+      margin-top:50px;
+      margin-left:50px;
+			width: 200px;
+			height: 200px;
+			background:#ccc;
+			position:absolute;
+		}
+		</style>
+  </head>
+  <body>
+    <header>
+    </header>
+		<div id="main">
+			<div id="someElm">
+			</div>
+		</div>
+    <footer>
+    </footer>
+		
+		<script>
+		var rotation =0 ;
+    var node = document.getElementById('someElm');
+    
+    node.ongesturechange = function(e){
+      var node = e.target;
+      //alert(e.rotation);
+      node.style.webkitTransform = "rotate(" + ((rotation + e.rotation) % 360) + "deg)";
+    }
+     
+    node.ongestureend = function(e){
+      rotation = (rotation + e.rotation) % 360;
+    }
+		</script>
+	</body>
+</html>
+	
+
+
+ 

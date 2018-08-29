@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <title>输入框自动伸缩</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      #contact {width:220px; height:40px;}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>输入框自动伸缩</h1>
+    </header>
+    <div id="main">
+      <p>此处的输入框是自动伸缩的</p>
+			<textarea id="contact">
+      </textarea>
+      <p>此处的输入框不是自动伸缩的</p>
+      <textarea id="contact1">
+      </textarea>
+    </div>
+    <footer>
+    </footer>
+    <script src="js/jquery-1.8.3.min.js"></script> 
+
+    <script src="js/helper.js"></script>
+    <script>
+      var contact = document.getElementById("contact");
+      MBP.autogrow(contact);
+    </script>
+  </body>
+</html>
+
+
+ 

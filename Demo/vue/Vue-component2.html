@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2.使用HTML模板</title>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+</head>
+<body>
+	<!-- 第二种使用HTML模板 -->
+	<!-- 父组建模板 -->
+	<div id="exampleBox2" style="border:1px solid #ccc;width:500px;">
+	  <h3>{{parent.name}}</h3>
+	  <!-- 模板挂载标识 -->
+	  <children></children>
+	</div>
+
+	<!-- 子组件模板 -->
+	<template id="child-template">
+	    <h3 style="background: #eee">{{text}}</h3>
+	</template>
+
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+
+//注册组件
+Vue.component('children',{
+  //child是模板挂载的标签名
+  template:'#child-template',//id对应子组件的ID
+  data:function(){
+    return {
+      text:"这里是子组件的内容"
+    }
+  }
+});
+var parent = new Vue({
+  //初始化父组件
+  el:"#exampleBox2",
+  data:{
+    parent:{
+      name:"这里是父组件的内容"
+    }
+  }
+})
+</script>
+
+</body>
+</html>

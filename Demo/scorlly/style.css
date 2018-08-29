@@ -1,0 +1,310 @@
+/*@import url("//fonts.googleapis.com/css?family=Arvo:400,700|Raleway:400,300,500|Open+Sans:400,700,900,300");*/
+
+*{
+    font-family: 'Raleway',serif;
+    font-weight: 300;
+
+    letter-spacing: 0.4px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6,
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 *{
+      font-family: 'Arvo',serif;
+      font-weight: 400;
+  }
+h1{
+    color: #fff;
+}
+
+.breadcrumb {
+    border-left-color: #3E84C2;
+}
+
+.btn-link {
+    color: #3E84C2;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+    color: #418d49;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > li > a:focus {
+    border-bottom-color: #3E84C2;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    border-bottom-color: #3E84C2;
+}
+
+.navbar-inverse .dropdown-menu > li > a:hover,
+.navbar-inverse .dropdown-menu > li > a:focus {
+    color: #3E84C2;
+}
+
+
+
+.nav.open > a,
+.nav.open > a:hover,
+.nav.open > a:focus {
+    background-color: #3E84C2;
+    border-color: #3E84C2;
+    color: #ffffff;
+}
+
+.nav-tabs.nav-stacked > li > a:hover,
+.nav-tabs.nav-stacked > li > a:focus,
+.nav-tabs.nav-stacked > .active > a,
+.nav-tabs.nav-stacked > .active > a:hover,
+.nav-tabs.nav-stacked > .active > a:focus {
+    border-left-color: #418d49;
+    background-color: #3E84C2;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+    background-color: #3E84C2;
+}
+
+.nav .caret {
+    border-top-color: #3E84C2;
+    border-bottom-color: #3E84C2;
+}
+
+.nav a:hover .caret {
+    border-top-color: #418d49;
+    border-bottom-color: #418d49;
+}
+
+a {
+    color: #3E84C2;
+}
+
+a:hover,
+a:focus {
+    color: #418d49;
+}
+
+.nav a:hover{
+    color: #ffffff;
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus {
+    border-color: #3E84C2;
+}
+
+.jumbotron{
+   
+    background-size: cover;
+    color: #ffffff;
+    padding: 0;
+    margin-top: 50px;
+
+}
+.jumbotron .intro{
+    background: rgba(0, 0, 0,0.1);
+    padding-top: 120px;
+    padding-bottom: 40px;
+    min-height: 400px;
+}
+.row  h1{
+	margin-top:50px;
+	
+}
+.row-bottom{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.jumbotron div.ccont{
+    background: #fff;
+    min-height: 150px;
+}
+.jumbotron .row-top div.ccont{
+    -webkit-box-shadow: 0px 1px 2px rgba(100, 100, 100, 0.75);
+    -moz-box-shadow:    0px 1px 2px rgba(100, 100, 100, 0.75);
+    box-shadow:         0px 1px 2px rgba(100, 100, 100, 0.75);
+
+}
+
+.jumbotron .row-bottom div.ccont{
+    -webkit-box-shadow: -1px -1px 2px rgba(100, 100, 100, 0.75);
+    -moz-box-shadow:    -1px -1px 2px rgba(100, 100, 100, 0.75);
+    box-shadow:         -1px -1px 2px rgba(100, 100, 100, 0.75);
+
+}
+
+.jumbotron p{
+    padding: 20px 0;
+}
+
+.jumbotron .media{
+    margin: 50px 0;
+}
+.jumbotron .media-body h1{
+    margin-top: 100px;
+}
+
+.navbar-color{
+    background: rgba(0,0,0,0.7);
+}
+
+.navbar-nav{
+    margin-top: 6px;
+    float: right;
+}
+.navbar-nav li a{
+    color: #ffffff;
+    font-weight: 300;
+    text-transform: lowercase;
+    padding: 10px 20px;
+    font-size: 13pt;
+    border-radius: 2px;
+    margin-left: 3px;
+}
+.navbar-nav li a:focus,
+.navbar-nav li a:active,
+.navbar-nav li.active a,
+.navbar-nav li a:hover{
+    background: rgba(255,255,255,0.2);
+    outline: none !important;
+}
+
+@media (max-width: 980px) {
+
+    .up-triangle,.down-triangle{
+        margin-bottom: 20px;
+    }
+
+    .down-triangle:nth-child(5){
+        margin-left: 20px;
+    }
+    .icon-reorder{
+        color: #ffffff;
+    }
+    .navbar-nav{
+        clear: both !important;
+        float: none;
+        padding: 10px;
+    }
+    .navbar-header{
+        margin-left: 50% !important;
+    }
+    .navbar-brand{
+        margin-left: -80px !important;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .up-triangle,.down-triangle{
+        clear: both;
+        margin-left:50px !important;
+
+    }
+    .icon-reorder{
+        color: #ffffff;
+    }
+    .navbar-nav{
+        clear: both !important;
+        float: none;
+        padding: 10px;
+    }
+}
+
+
+.portfolio-block{
+    position: relative;
+   
+    border-radius: 3px;
+}
+.portfolio-block .portfolio-caption{
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #ffffff;
+    top: 0;
+    border: 20px solid rgba(255,255,255,0.3);
+    opacity: 0;
+}
+.portfolio-block .portfolio-caption h3{
+    font-size: 15pt;
+
+    -webkit-animation-name: zoomOut;
+    animation-name: zoomOut;
+}
+.portfolio-block .portfolio-caption .btn-sm{
+    padding-top: 11px;
+}
+.portfolio-block{
+    overflow: hidden;
+}
+.portfolio-block .portfolio-caption{
+    -webkit-animation-name: fadeOutDown;
+    animation-name: fadeOutDown;
+}
+.portfolio-block .portfolio-caption .btn-skype{
+    -webkit-animation-name: fadeOutLeft;
+    animation-name: fadeOutLeft;
+}
+.portfolio-block .portfolio-caption .btn-stack-overflow{
+    -webkit-animation-name: fadeOurRight;
+    animation-name: fadeOurRight;
+}
+.portfolio-block:hover .portfolio-caption{
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.portfolio-block:hover .portfolio-caption h3.animated{
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
+}
+
+.portfolio-block:hover .portfolio-caption .btn-skype{
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
+}
+.portfolio-block:hover .portfolio-caption .btn-stack-overflow{
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
+}
+
+#exhibition{
+    background-color: #5C3232;
+}
+#specialVideo{
+    background-color: #2F0505;
+}
+#liveExpress{
+    background-color: #070C69;
+}
+#industryPractice {
+    background-color: #5C3232;
+}
+#reportage{
+    background-color: #2F0505;
+}
+#tourGuide {
+    background-color: #070C69;
+}#previousReview  {
+    background-color: #5C3232;
+}

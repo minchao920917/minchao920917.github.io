@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>过渡效果</title>
+	    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<style type="text/css">
+
+		/* 设置持续时间和动画函数 */
+		.fade-enter-active, .fade-leave-active {
+		  transition: opacity .5s
+		}
+		.fade-enter, .fade-leave-active {
+		  opacity: 0
+		}
+
+		/* 设置持续时间和动画函数 */
+		.slide-fade-enter-active {
+		  transition: all .3s ease;
+		}
+		.slide-fade-leave-active {
+		  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+		}
+		.slide-fade-enter, .slide-fade-leave-active {
+		  transform: translateX(80px);
+		  opacity: 0;
+		}
+
+		/* 动画 */
+		.bounce-enter-active {
+		  animation: bounce-in 3s;
+		}
+		.bounce-leave-active {
+		  animation: bounce-out 3s;
+		}
+		@keyframes bounce-in {
+		  0% {
+		    transform: scale(0);
+		  }
+		  50% {
+		    transform: scale(1.5);
+		  }
+		  100% {
+		    transform: scale(1);
+		  }
+		}
+		@keyframes bounce-out {
+		  0% {
+		    transform: scale(1);
+		  }
+		  50% {
+		    transform: scale(1.5);
+		  }
+		  100% {
+		    transform: scale(0);
+		  }
+		}
+
+	</style>
+</head>
+<body>
+<div id="demo">
+  <button v-if="show" v-on:click="show = !show" class="btn btn-block btn-lg btn-primary">
+    hide
+  </button>
+  <button v-else="!show" v-on:click="show = !show" class="btn btn-block btn-lg btn-success">
+    show
+  </button>
+  <br>
+  <transition name="fade">
+    <h4 v-if="show" class="text-center">hello in fade</h4>
+  </transition>
+  <transition name="slide-fade">
+    <h4 v-if="show" class="text-center">hello in slide-fade</h4>
+  </transition>
+  <transition name="bounce">
+    <h4 v-if="show" class="text-center">hello in bounce</h4>
+  </transition>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+	  el: '#demo',
+	  data: {
+	    show: true,
+	    toggle:"show"
+	  }
+	})
+</script>
+<!-- 
+		会有 4 个(CSS)类名在 enter/leave 的过渡中切换
+	v-enter: 定义进入过渡的开始状态。在元素被插入时生效，在下一个帧移除。
+	v-enter-active: 定义进入过渡的结束状态。在元素被插入时生效，在 transition/animation 完成之后移除。
+	v-leave: 定义离开过渡的开始状态。在离开过渡被触发时生效，在下一个帧移除。
+	v-leave-active: 定义离开过渡的结束状态。在离开过渡被触发时生效，在 transition/animation 完成之后移除。
+
+ -->
+</body>
+</html>

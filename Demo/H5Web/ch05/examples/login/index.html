@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>login example</title>
+	<link rel="stylesheet" href="../shared/marelle.css" type="text/css">
+	  <script src="../../js/jquery-1.8.3.min.js"></script> 
+<!-- 	<script src="../../vendor/inflection.js" type="text/javascript" charset="utf-8"></script> -->
+	<script src="../../build/marelle.min.js" type="text/javascript" charset="utf-8"></script>	
+
+
+</head>
+<body>
+	<script type="text/javascript" charset="utf-8">
+		// Supply your foursquare client id
+		 var FSQUARE_CLIENT_ID = 'FOURSQUARE_CLIENT_ID';
+		// on DOM ready...
+		 $(function() {
+			   // setup with your key and a callback function which 
+			   // receives the Marelle Object ( "M" in this example )
+			   $.Marelle( FSQUARE_CLIENT_ID ).done( function( M ){
+					// grab an authentication promise 
+				   var authpromise = M.authenticateVisitor();
+				   //  handle logged-in user
+				   var authsuccess = function(user){
+					   M.signoutButton( document.body );
+					   console.log(user)
+				   };
+				   // handle non user 
+				   var authfailure = function() {
+					   M.signinButton( document.body );
+				   };
+				   // wait for promise to resolve
+				   authpromise.then(authsuccess,authfailure)
+				
+			   }).fail(function(){
+					consoloe.log('Marelle could not be loaded.')
+			   });
+		   });
+	</script>
+</body>
+</html>

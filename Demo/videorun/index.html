@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+        <title>html5视频</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="video.css?r=222" rel="stylesheet" />
+</head>
+<body>
+
+<!-- viedo -->
+    <div class="container">
+            <!-- pc端 -->
+            <div class="row video hidden-xs">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <figure>
+                        <img src="images/firstVideo.jpg" alt="大数据的魔法”，科达2016安博会主题宣传片" />
+                        <figcaption onclick="play_video(this,event);" data-url="http://7xnmzm.com1.z0.glb.clouddn.com/partners1.mp4|http://7xnmzm.com1.z0.glb.clouddn.com/video/brand/2017kedacompartner.webm">
+                            <div></div>
+                        </figcaption>
+                        <div class="videoTitle text-center">>视频1</div>
+                    </figure>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <figure>
+                        <img src="images/secondVideo.jpg" alt="科达2016公司宣传片" />
+                        <figcaption onclick="play_video(this,event);" data-url="http://7xnmzm.com1.z0.glb.clouddn.com/video/mp4/2016kedacomA.mp4|http://7xnmzm.com1.z0.glb.clouddn.com/video/product/bigdata.webm">
+                            <div></div>
+                        </figcaption>
+                        <div class="videoTitle text-center">>视频2</div>
+                    </figure>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <figure>
+                        <img src="images/thredVideo.jpg" alt="img21" />
+                        <figcaption onclick="play_video(this,event);" data-url="http://7xnmzm.com1.z0.glb.clouddn.com/video/brand/NexVision.mp4|http://7xnmzm.com1.z0.glb.clouddn.com/video/brand/NexVision.webm">
+                            <div></div>
+                        </figcaption>
+                        <div class="videoTitle text-center">>视频3</div>
+                    </figure>
+                </div>
+            </div>
+            <!-- 手机端 -->
+            <div class="row video-phone hidden-lg hidden-md hidden-sm">
+
+                <div  class="col-lg-4 col-md-4 col-sm-4 video-item1">
+                    <video controls poster="images/firstVideo.jpg"  preload="none" width="100%">
+                        <source src="http://7xnmzm.com1.z0.glb.clouddn.com/video/brand/2017kedacompartners.mp4" type="video/mp4"/>
+                        <source src="http://7xnmzm.com1.z0.glb.clouddn.com/video/brand/2017kedacompartner.webm" type="video/webm"/>
+                    </video>
+                    <div class="videoTitle text-center">>视频1</div>
+                    
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 video-item2">
+                    <video controls="controls" poster="images/secondVideo.jpg" preload="none" width="100%">
+                        <source src="http://7xnmzm.com1.z0.glb.clouddn.com/video/mp4/2016kedacomA.mp4" type="video/mp4"/>
+                        <source src="http://7xnmzm.com1.z0.glb.clouddn.com/video/webm/2016kedacomA.webm" type="video/webm"/>
+                    </video>    
+                    <div class="videoTitle text-center">>视频2</div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 video-item3">
+                    <video controls="controls" poster="images/thredVideo.jpg" preload="none" width="100%">
+                        <source src="http://7xnmzm.com1.z0.glb.clouddn.com/video/brand/NexVision.mp4" type="video/mp4"/>
+                        <source src="http://7xnmzm.com1.z0.glb.clouddn.com/video/brand/NexVision.webm" type="video/webm"/>
+                    </video>
+                    <div class="videoTitle text-center">>视频3</div>
+                </div>
+
+            </div>
+    </div>
+<!-- viedo end-->
+</body>
+ <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+ <script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="js/html5media.min.js"></script>
+<script type="text/javascript" src="js/v.js"></script>
+</html>

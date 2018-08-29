@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>使用DeviceOrientation事件</title>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<style>
+#no {
+	display: none;	
+}
+#ball {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	-webkit-radius: 10px;
+	background-color: red;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+}
+</style>
+</head>
+<body>
+  <div id="content"> 
+    <h1>Move the Ball</h1>
+    <div id="yes"> 
+        <p>Move your device to move the ball.</p> 
+        <div id="ball"></div> 
+    </div> 
+    <div id="no"> 
+    Your browser does not support Device Orientation and Motion API. Try this sample with iPhone, iPod or iPad with iOS 4.2+.    
+    </div> 
+  </div> 
+  <script> 
+  /*
+  Curious about the code? Great! Welcome to this code ;)
+  Feel free to copy and use this code
+  If you are going to blog or tweet about it or if you are going to create a better
+  code, please mantain the link to www.mobilexweb.com or @firt in Twitter.
+  */
+   
+  // Position Variables
+  var x = 0;
+  var y = 0;
+   
+  // Speed - Velocity
+  var vx = 0;
+  var vy = 0;
+   
+  // Acceleration
+  var ax = 0;
+  var ay = 0;
+   
+  var delay = 10;
+  var vMultiplier = 0.01;
+  
+  
+  
+  if (window.DeviceMotionEvent==undefined) {
+    document.getElementById("no").style.display="block";
+    document.getElementById("yes").style.display="none";
+   
+  } else {
+    window.ondevicemotion = function(event) {
+      ax = event.accelerationIncludingGravity.x;
+      ay = event.accelerationIncludingGravity.y;
+    }
+   
+    setInterval(function() {
+      vy = vy + -(ay);
+      vx = vx + ax;
+   
+      var ball = document.getElementById("ball");
+      y = parseInt(y + vy * vMultiplier);
+      x = parseInt(x + vx * vMultiplier);
+      
+      if (x<0) { x = 0; vx = 0; }
+      if (y<0) { y = 0; vy = 0; }
+      if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = 0; }
+      if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = 0; }
+      
+      ball.style.top = y + "px";
+      ball.style.left = x + "px";
+    }, delay);
+  }
+  </script> 
+</body>
+</html>

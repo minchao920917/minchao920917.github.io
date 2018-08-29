@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>图片模态框</title> 
+    <meta http-equiv="Content-Type" content="text/html;">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+<style>
+*{
+    margin: 0 auto;
+    text-align: center;
+}
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin:0 auto;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* 模态框 */
+.modal {
+    display: none; /*默认隐藏 */
+    position: fixed; /* 固定布局 */
+    z-index: 1; /*最上层 */
+    padding-top: 100px; /* 内框距上100px */
+    left: 0;/*离左边是0*/
+    top: 0;/*离上边是0*/
+    width: 100%; /* 宽度*/
+    height: 100%; /* 高度设置 */
+    overflow: auto; /* 超出部分显示滑轮 */
+    background-color: rgb(0,0,0); /* 背景色 */
+    background-color: rgba(0,0,0,0.9); /* 透明度 */
+}
+
+/* M模态框内容 */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+}
+
+/*  */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* 动画 */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<h2>图片模态框</h2>
+
+<img id="myImg" src="img/1.jpg" alt="图片名称" width="300" height="200">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// 获取模态窗口
+var modal = document.getElementById('myModal');
+
+// 获取图片模态框，alt 属性作为图片弹出中文本描述
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    modalImg.alt = this.alt;
+    captionText.innerHTML = this.alt;
+}
+
+// 获取 <span> 元素，设置关闭模态框按钮
+var span = document.getElementsByClassName("close")[0];
+
+// 点击 <span> 元素上的 (x), 关闭模态框
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+
+</body>
+</html>

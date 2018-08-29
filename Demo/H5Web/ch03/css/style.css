@@ -1,0 +1,30 @@
+html {
+	background:#F1F2CE;
+}
+html, body, #screen {
+	padding:0; 
+	margin:0;
+}
+#screen {
+	text-align:center;
+	-moz-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+}
+#screen div {
+	padding-top:130px;
+}
+@media screen and (min-width: 321px){
+	#screen {
+		text-align:center;
+		-moz-transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+		-o-transform:rotate(0deg);
+		-ms-transform:rotate(0deg);
+
+	}
+	#screen div {
+		padding-top:70px;
+	}
+}

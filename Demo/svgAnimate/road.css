@@ -1,0 +1,169 @@
+/*video end*/
+/*road*/
+.road {
+  background:#f5f6f8;
+  width: 100%;
+  margin: 2em auto;
+}
+    .road .row{
+        padding: 0 10.5rem;
+    }
+    .road input, .road section {
+      clear: both;
+      padding-top: 10px;
+      display: none;
+    }
+    .road label {
+      font-weight: 100;
+      font-size: 20px;
+      display: block;
+      float: left;
+      padding: 10px 30px;
+
+      border-bottom: 0px solid #DDD;
+        text-decoration: none;
+    }
+    .road label:hover {
+      cursor: pointer;
+      text-decoration: none;
+
+    }
+    #tab1:checked ~ #north, #tab2:checked ~ #south
+    {
+      display: block;
+    }
+    .road input:checked + label {
+      border-bottom-color: #000;
+      border-bottom-width: 2px;
+
+      font-weight:bold;
+      text-decoration: none;
+    }
+    #north,#south{
+        height: 450px;
+        margin: 0 auto;
+    }
+    .road #south-road text tspan,.road #north-road text tspan{
+            font-size: 1em;
+    }
+    @media screen and (max-width: 767px)
+    {
+        .road{
+            padding-left: 15px;
+            margin: .5rem auto;
+        }
+        .road .row{
+            padding: 0 0;
+        }
+        #north,#south{
+            height: 260px;
+            margin: 0 auto;
+        }
+        .road #south-road text tspan,.road #north-road text tspan{
+            font-size: 1.5em;
+        }
+        #north-road .city10 text{
+            transform:matrix(1 0 0 1 800.5002 50.9193);
+        }
+    }
+
+
+ @-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes go {
+    0% {
+        stroke-dashoffset: 1600;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+ @keyframes go {
+    0% {
+        stroke-dashoffset: 1600;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+ }
+#south-road #south-line,#north-road #north-line{
+    stroke-dasharray: 1600;
+    stroke-dashoffset: 0;
+    -webkit-animation: go 14s ease-in-out forwards;
+            animation: go 14s ease-in-out forwards;
+}
+#south-road .city1,#north-road .city1{
+  -webkit-animation: fadeInUp 1s ease-in-out 1s backwards;
+                    animation: fadeInUp 1s ease-in-out 1s backwards;
+}
+#south-road .city2,#north-road .city2{
+  -webkit-animation: fadeInUp 1s ease-in-out 2s backwards;
+                    animation: fadeInUp 2s ease-in-out 2s backwards;
+}
+#south-road .city3,#north-road .city3{
+  -webkit-animation: fadeInUp 1s ease-in-out 3s backwards;
+                    animation: fadeInUp 2s ease-in-out 3s backwards;
+}
+#south-road .city4,#north-road .city4{
+  -webkit-animation: fadeInUp 1s ease-in-out 4s backwards;
+                    animation: fadeInUp 2s ease-in-out 4s backwards;
+}
+#south-road .city5,#north-road .city5{
+  -webkit-animation: fadeInUp 1s ease-in-out 5s backwards;
+                    animation: fadeInUp 2s ease-in-out 5s backwards;
+}
+#south-road .city6,#north-road .city6{
+  -webkit-animation: fadeInUp 1s ease-in-out 6s backwards;
+                    animation: fadeInUp 2s ease-in-out 6s backwards;
+}
+#south-road .city7,#north-road .city7{
+  -webkit-animation: fadeInUp 1s ease-in-out 7s backwards;
+                    animation: fadeInUp 2s ease-in-out 7s backwards;
+}
+#south-road .city8,#north-road .city8{
+  -webkit-animation: fadeInUp 1s ease-in-out 8s backwards;
+                    animation: fadeInUp 2s ease-in-out 8s backwards;
+}
+#south-road .city9,#north-road .city9{
+  -webkit-animation: fadeInUp 1s ease-in-out 9s backwards;
+                    animation: fadeInUp 2s ease-in-out 9s backwards;
+}
+#south-road .city10,#north-road .city10{
+  -webkit-animation: fadeInUp 1s ease-in-out 10s backwards;
+                    animation: fadeInUp 2s ease-in-out 10s backwards;
+}
+#south-road .city11{
+  -webkit-animation: fadeInUp 1s ease-in-out 11s backwards;
+                    animation: fadeInUp 2s ease-in-out 11s backwards;
+}
+#south-road .city12{
+  -webkit-animation: fadeInUp 1s ease-in-out 12s backwards;
+                    animation: fadeInUp 2s ease-in-out 12s backwards;
+}
+/*road end*/

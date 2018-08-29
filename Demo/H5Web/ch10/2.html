@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+		<title>使用ECMAScript5中的新方法</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    </style>
+  </head>
+  <body>
+		<script>
+			/*** freeze ***/
+			var dog = {
+				eat: function () {},
+				hair: "black"
+			};
+			var o = Object.freeze(dog);
+
+			// test if dog is frozen
+			assert(Object.isFrozen(dog) === true);
+
+			// can't alter the property
+			dog.hair = "yellow";
+
+			// can't remove property
+			delete dog.hair;
+
+			// can't add new property
+			dog.height = "0.5m";
+
+
+			/*** seal ***/
+			var human = {
+				eat: function () {},
+				hair: "black"
+			};
+			human.hair = "blonde";
+			var o = Object.seal(obj);
+			// changing property works
+			human.hair = "grey";
+			// can't convert
+			Object.defineProperty(obj, "hair", { get: function() { return "green"; } });
+			// silently doesn't add the property
+			human.height = "1.80m";
+			// silently doesn't delete the property
+			delete human.hair;
+			// detect if an object is sealed
+			assert(Object.isSealed(human) === true);
+
+
+			/*** preventExtensions ***/
+			var nonExtensible = { removable: true };
+			Object.preventExtensions(nonExtensible);
+			Object.defineProperty(nonExtensible, "new", { value: 8675309 }); // throws a TypeError
+			assert(Object.isExtensible(nonExtensible) === true);
+
+
+			/*** bind ***/
+			var x = 9; 
+			var module = {
+				x: 81,
+				getX: function() { return this.x; }
+			};
+
+			module.getX(); // 81
+
+			var getX = module.getX;
+			getX(); // 9, because in this case, "this" refers to the global object
+
+			// create a new function with 'this' bound to module
+			var boundGetX = getX.bind(module);
+			boundGetX(); // 81
+		</script>
+	</body>
+</html>

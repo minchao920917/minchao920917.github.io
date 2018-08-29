@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue+Bootstrap4模拟后台列表管理</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <style>
+        tr{
+            vertical-align: inherit;
+        }
+    </style>
+
+    <script src="js/vue.js"></script>
+    
+</head>
+<body>
+<br>
+    <div class="container">
+        <form role="form">
+            <div class="form-group">
+                <label for="username">用户名：</label>
+                <input placeholder="输入用户名" type="text"
+                       v-model="username"
+                       id="username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="age">年龄：</label>
+                <input placeholder="输入年龄" type="text"
+                       v-model="age"
+                       id="age" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-info" v-on:click="add()" value="添加">
+                <input type="button" class="btn btn-info" v-on:click="reset()" value="重置">
+            </div>
+        </form>
+        <hr>
+        <table class="table table-bordered table-hover">
+            <caption>用户信息表</caption>
+            <tr class="text-danger">
+                <td class="text-center">序号</td>
+                <td class="text-center">名字</td>
+                <td class="text-center">年龄</td>
+                <td class="text-center">操作</td>
+            </tr>
+            <tr v-for="(item,index) in myData">
+                <td class="text-center">{{index+1}}</td>
+                <td class="text-center">{{item.name}}</td>
+                <td class="text-center">{{item.age}}</td>
+                <td class="text-center">
+                    <button class="btn btn-danger btn-sm"
+                        v-on:click="del(index)"
+                        data-toggle="dialog" data-target="#layer"
+                    >删除</button>
+                </td>
+            </tr>
+            <tr v-show="myData.length!=0">
+                <td colspan="4" class="text-right">
+                    <button v-on:click="delAll()" class="btn btn-danger btn-sm">删除全部</button>
+                </td>
+            </tr>
+            <tr v-show="myData.length==0">
+                <td colspan="4" class="text-center">
+                    <p>暂无数据</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        window.onload= function(){
+            //创建实例对象
+            var vm = new Vue({
+                el:'.container',
+                data:{
+                    myData:[],  //定义数组
+                    username:'',
+                    age:''
+                },
+                methods:{
+                    //添加方法
+                    add:function(){
+                        this.myData.push({
+                            name:this.username,
+                            age:this.age
+                        });
+                        //重置
+                        this.reset();
+                    },
+                    //重置方法
+                    reset:function(){
+                        this.username="";
+                        this.age="";
+                    },
+                    //删除方法
+                    del:function(index){
+                        this.myData.splice(index,1);//将myData中index移除
+                    },
+                    //删除全部
+                    delAll:function(){
+                        this.myData=[];
+                    }
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>

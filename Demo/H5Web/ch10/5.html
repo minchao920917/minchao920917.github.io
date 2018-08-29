@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+		<title>position:fixed</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+			#fixedDiv { height:25px; background:#ccc; }
+    </style>
+  </head>
+  <body>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<p>Lorem Ipsum</p>
+	<div id="fixedDiv">footer</div>
+	<script>
+		window.onscroll = function() {
+			document.getElementById('fixedDiv').style.top =
+				(window.pageYOffset + window.innerHeight - 25) + 'px';
+		};
+	</script>
+	</body>
+</html>

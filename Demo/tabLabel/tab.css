@@ -1,0 +1,191 @@
+/*activitices*/
+.activities {
+  background: #f5f6f8;
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px 15px 10px 15px;
+}
+    .activities .row{
+        padding: 0 10.5rem;
+    }
+    .activities input, .activities section {
+      clear: both;
+      padding-top: 10px;
+      display: none;
+    }
+    .activities section {
+      clear: both;
+      padding-top: 0;
+      display: none;
+    }
+    .activities label {
+        font-weight: 400;
+      font-size: 1.2em;
+      padding: 10px 50px;
+      border-bottom: 1px solid #00a0e9;
+    }
+
+    .activities label:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .activities input:checked + label{
+        background: #00a0e9;
+        color: #fff;
+        border-bottom-color: transparent;
+        text-decoration: none;
+    }
+    .activities-label {
+      background: #00a0e9;
+      color: #fff;
+      border-bottom-color: transparent;
+      text-decoration: none;
+    }
+    .activities-label {
+      background: #00a0e9;
+      color: #fff;
+      border-bottom-color: transparent;
+      text-decoration: none;
+    }
+    @media screen and (max-width: 767px)
+    {
+        .activities{
+            margin: 0 auto;
+        }
+        .activities .row{
+                padding: 0;
+        }
+        .agendum{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .activities label {
+              padding: 10px 10px;
+        }
+    }
+
+    /*cooperate*/
+    #cooperate .col-sm-4{
+        padding-left: 0;
+    }
+     #cooperate .cooperate-text p{
+        padding: 4em 0;
+        font-size: 1.2em;
+        margin: 0 auto;
+     }
+     #cooperate{
+        display: block;
+     }
+        @media screen and (max-width: 767px){
+         #cooperate .cooperate-text p{
+            padding: 2em 0 0 0;
+            font-size: 1em;
+         }
+        }
+    #product {
+
+    }
+    
+        #product .product-item{
+            padding: 2em 0 1em 0;
+            border-bottom: 1px solid #ddd;
+        }
+        #product .product-item .product-img,#product .product-item .product-midlink{
+            height: 140px;
+        }
+        #product .product-item .product-text h3{
+           padding-top: 0px;
+           margin-top: 0px;
+        }
+
+        @media screen and (max-width: 767px){
+            #product .product-item .product-text{
+                /*margin-top:140px;*/
+            }
+        }
+        #product .product-item .product-alink a,#product .product-item .product-midlink a{
+            display: block;
+            text-decoration:none;
+            margin-bottom: 5px;
+            color: #00a0e9;
+        }
+        #product .product-item .product-alink a{
+            font-size: .8em;
+        }
+        #product .product-item .product-midlink a{
+            font-size: .9em;
+        }
+
+    #industry{
+
+    }    
+        #industry .col-sm-4{
+            padding: 0 6rem;
+        }
+        #industry a{
+            margin: 1em;
+            text-decoration:none;
+            color:#000;
+        }
+        #industry a:hover{
+            color:#00a0e9;
+        }
+            #industry a img{
+                margin:0 auto;
+            }
+        /*before 画横线*/
+        #industry a:before {
+            content: '';                 
+            position: absolute;         
+            top: 100%;
+            left:20%;
+            background: #ddd;       
+            width: 60%;
+            height: 1px;
+        }
+        /* after画竖线*/
+        #industry a:after {
+            content: '';                 
+            position: absolute;         
+            left: 100%;
+            top:20%;
+            background: #ddd;       
+            width: 1px;
+            height: 60%;
+        }
+        /*去掉第三个和第六个的竖线线*/
+        #industry .img3:after,#industry .img6:after{
+            height: 0px;
+        }
+        /*去掉四五六的底线*/
+        #industry .img4:before,#industry .img5:before,#industry .img6:before{
+            height: 0;
+        }
+@media screen and (max-width: 767px)
+    {
+        #industry .col-sm-4{
+            padding: 0 3rem;
+        }
+        #industry .img2:after,#industry .img4:after{
+            height: 0;
+        }
+        #industry .img3:after{
+            content: '';                 
+            position: absolute;         
+            left: 100%;
+            top:20%;
+            background: #ddd;       
+            width: 1px;
+            height: 60%;
+        }
+        #industry .img4:before{
+            content: '';                 
+            position: absolute;         
+            top: 100%;
+            left:20%;
+            background: #ddd;       
+            width: 60%;
+            height: 1px;
+        }
+    }

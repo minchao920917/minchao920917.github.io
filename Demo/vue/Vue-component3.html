@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3.嵌套的组件</title>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+</head>
+<body>
+	<!-- 嵌套的组件与复用 -->
+	<div id="example">
+	  <!-- 所有的模板挂件，都必须在根实例ID内部，否则找不到挂件 -->
+	  <my-component></my-component>
+	  <!-- 模板可以重用多次...只不过一样的东西没有这个必要 -->
+	  <child></child>
+	  <child></child>
+	  <child></child>
+	  <child></child>
+	</div>
+	<!-- 比如这里是找不到的 -->
+	<child></child>
+
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+//定义子组件，子组件必须在父组件之前定义
+var Child = Vue.extend({template:'<div> A child component!</div>'});
+//定义父组件
+var Parent = Vue.extend({
+  template:'<div style="border:1px solid #ccc;width:200px;">\
+            Parent\
+            <child-component></child-component>\
+            父模版内部\
+            </div>',
+  components:{
+    //调用子组件
+    'child-component':Child
+  }
+});
+  //注册父组件
+  Vue.component('my-component',Parent);
+  //复用子组件
+  Vue.component('child',Child);
+  //创建根实例，所有组件都需要在根实例之前创建。
+  new Vue({
+    el:'#example'
+  });
+</script>
+
+</body>
+</html>

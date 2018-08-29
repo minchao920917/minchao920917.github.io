@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KEDACOM 门户网站</title>
+
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-target="#topnav">
+<!-- 导航栏 -->
+<div class="navbar navbar-color navbar-fixed-top" id="topnav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-reorder"></span>
+
+            </button>
+            <a class="navbar-brand active" href="#home">KEDACOM </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#exhibition">展会概要</a></li>
+                <li><a href="#specialVideo">专题视频</a></li>
+                <li><a href="#liveExpress">现场速递</a></li>
+                <li><a href="#industryPractice ">行业实践</a></li>
+                <li><a href="#reportage">新闻报道</a></li>
+                <li><a href="#tourGuide ">参观指南</a></li>
+                <li><a href="#previousReview ">往届回顾</a></li>
+            </ul>
+
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+<!-- HOME -->
+<div class="jumbotron storen" id="home">
+    <div class="intro">
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center">大数据 <span>用起来</span></h1>
+                <p class="text-center">2016年10月25日-29日</p><br/>
+                <p class="text-center">北京国际展览中心(新馆) E2C19</p><br/>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- 六个strone块 -->
+<div class="panel">
+    <!-- 会展概要 -->
+    <section class="storen" id="exhibition">
+        <div class="container">
+                    <div class="row">
+                        <h1 class="text-center">展会概要</h1>
+                    </div>
+                </div>
+    </section>
+    <!-- 专题视频 -->
+    <section class="storen" id="specialVideo">
+            <div class="container">
+                    <div class="row">
+                        <h1 class="text-center">专题视频</h1>
+                    </div>
+            </div>
+    </section>
+
+    <!-- 现场速递 -->
+    <section class="storen" id="liveExpress">
+            <div class="container">
+                    <div class="row">
+                        <h1 class="text-center">现场速递</h1>
+                    </div>
+            </div>
+    </section>
+    <!-- 行业实践 -->
+    <section class="storen" id="industryPractice">
+            <div class="container">
+                    <div class="row">
+                        <h1 class="text-center">行业实践</h1>
+                    </div>
+            </div>
+    </section>
+    <!-- 新闻报道 -->
+    <section class="storen" id="reportage">
+        <div class="container">
+                    <div class="row">
+                        <h1 class="text-center">新闻报道</h1>
+                    </div>
+        </div>
+    </section>
+    <!-- 参观指南 -->
+    <section class="storen" id="tourGuide">
+        <div class="container">
+                    <div class="row">
+                        <h1 class="text-center">参观指南</h1>
+                    </div>
+        </div>
+    </section>
+    <!-- 往届回顾 -->
+    <section class="storen" id="previousReview">
+        <div class="container">
+            <div class="row">
+                 <h1 class="text-center">往届回顾</h1>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- <script src="js/jquery.js"></script> -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.scrollify.min.js"></script>
+
+ 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <script src="js/DiyScroll.js"></script> -->
+
+<script type="text/javascript">
+// $('.storen').css({'height': $('.panel').height()});
+$(function() {
+    $('.storen').css({'height': $(window).height()});
+    $.scrollify({
+        section: '.storen'
+    });
+});
+
+
+</script>
+</body>
+
+</html>

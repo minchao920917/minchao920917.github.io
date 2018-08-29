@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>目录</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/vue.js"></script>
+
+<style type="text/css">
+  .row h3 a,.row h2 a,.row h4 a,#reward a{
+    text-decoration: none;
+  }
+  h3 a:hover{
+    cursor: pointer;
+  }
+  h1,h2,h3,h4,h5,h6{
+    line-height: 1 !important;
+  }
+  ul{
+      list-style: none;
+    }
+    *{
+      margin:0;
+      padding: 0;
+    }
+</style>
+</head>
+<body >
+
+<h1 class="text-center">vue js目录</h1>
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+              <h2 class="text-success text-center">
+                入门
+              </h2>
+              
+              <h3 class="text-primary text-center ">
+                <a href="Vue-dataBind.html">数据绑定</a>
+              </h3>
+              
+              <h3 class="text-primary text-center">
+                <a data-toggle="collapse" data-target="#xuanran">网页渲染 </a>
+              </h3>
+              <div id="xuanran" class="collapse">
+                  <h4 class="text-center"><a class="text-warning" href="Vue-if.html">1.条件渲染</a></h4>
+                  <h4 class="text-center"><a class="text-warning" href="Vue-repeat.html">2.列表渲染</a></h4>
+              </div>
+
+              <h3 class="text-primary text-center"><a href="Vue-method.html">数据处理</a></h3>
+
+              <h3 class="text-primary text-center"><a href="Vue-filter.html">过滤器</a></h3>
+
+              <h3 class="text-primary text-center">
+                <a data-toggle="collapse" data-target="#classBing">class和style绑定</a>
+              </h3>
+              <div id="classBing" class="collapse">
+                <h4 class="text-center">
+                  <a class="text-warning" href="Vue-class.html">class绑定</a>
+                </h4>                
+                <h4 class="text-center">
+                  <a class="text-warning" href="Vue-style.html">Style绑定</a>
+                </h4>
+              </div>
+
+              <h3 class="text-primary text-center">
+                <a data-toggle="collapse" data-target="#transition">过渡、动画</a>
+              </h3>
+              <div id="transition" class="collapse">
+                <h4 class="text-center">
+                  <a class="text-warning" href="Vue-transition.html">过渡和动画</a>
+                </h4>
+                <h4 class="text-center">
+                  <a class="text-warning" href="Vue-transition-a.html">animate.css例子</a>
+                </h4>
+                <h4 class="text-center">
+                  <a class="text-warning" href="Vue-transition-v.html">Velocity.js例子</a>
+                </h4>
+              </div>
+
+              <h3 class="text-primary text-center">
+                <a data-toggle="collapse" data-target="#directives">指令 </a>
+              </h3>
+              <div id="directives" class="collapse">
+                  <h4 class="text-center"><a class="text-warning" href="Vue-directive1.html">1、钩子函数</a></h4>
+                  <h4 class="text-center"><a class="text-warning" href="Vue-directive.html">2、自定义指令</a></h4>
+                  <h4 class="text-center"><a class="text-warning" href="Vue-directive3.html">3、对象字面量</a></h4>
+                  
+              </div>
+
+              <h3 class="text-primary text-center">
+                <a data-toggle="collapse" data-target="#component">组件 </a>
+              </h3>
+              <div id="component" class="collapse">
+                  <h4 class="text-center"><a class="text-warning" href="Vue-component1.html">1.子组件直接写在js里</a></h4>
+                  <h4 class="text-center"><a class="text-warning" href="Vue-component2.html">2.使用HTML模板</a></h4>
+                  <h4 class="text-center"><a class="text-warning" href="Vue-component3.html">3.嵌套的组件</a></h4>
+                  <h4 class="text-center"><a class="text-warning" href="Vue-component4.html">4.组件实例</a></h4>
+              </div>
+
+              
+              
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+              <h2 class="text-success text-center">进阶</h2>
+              <!-- <h3 class="text-primary text-center"><a href="#" target="_blank">单文件组件</a></h3>  -->
+              <h3 class="text-primary text-center"><a href="http://localhost:8080/" target="_blank">路由（需要启动node本地服务器）</a></h3>
+              <h3 class="text-primary text-center"><a href="Vue-mixins.html">混合</a></h3> 
+          
+
+        </div>
+    </div>
+</div>
+<div class="visible-lg hidden-md hidden-sm hidden-xs" style="height: 100px"></div>
+
+<div class="text-center text-success"><h2 >Vue+bootstarp实践</h2></div>
+<div class="container">
+    <div class="row">
+        <h3 class="text-primary text-center"><a href="Vue-bootstrap1.html">模拟搜索框</a></h3>
+        <h3 class="text-primary text-center"><a href="Vue-bootstrap2.html">模拟搜索匹配</a></h3>
+        <h3 class="text-primary text-center"><a href="Vue-bootstrap3.html">模拟购物车</a></h3>
+        <h3 class="text-primary text-center"><a href="Vue-bootstrap4.html">模拟后台列表管理</a></h3>
+        <h3 class="text-primary text-center"><a href="Vue-pager.html">分页</a></h3>
+    </div>
+</div>
+<div class="text-center text-success"><h2 >Vue在移动端的应用</h2></div>
+<div class="container">
+    <div class="row">
+        <h3 class="text-primary text-center"><a href="http://localhost:8888/" target="_blank">Vue+nodejs实现微信（需要启动node本地服务器）</a></h3>
+        <h3 class="text-primary text-center"><a href="http://localhost:8000/" target="_blank">Vue+nodejs实现饿了吗（需要启动node本地服务器）</a></h3>
+        <h3 class="text-primary text-center"><a href="http://localhost:3000/" target="_blank">Vue+nodejs实现酷狗音乐（需要启动node本地服务器）</a></h3>
+    </div>
+</div>
+</body>
+</html>
+
+

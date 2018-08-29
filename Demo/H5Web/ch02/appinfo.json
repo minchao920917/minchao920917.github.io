@@ -1,0 +1,12 @@
+{
+	"title": "Hello, world!",
+	"version": "0.0.1",
+	"type": "web",
+	"main": "index.html",
+	"id": "org.webosinternals.evanpro.app.helloworld",
+	"icon": "apple-touch-icon-precomposed.png",
+	"vendor": "Evan Coury",
+	"vendorurl": "http://www.evan.pro/",
+	"visible": true,
+	"removable": true
+}

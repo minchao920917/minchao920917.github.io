@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>vue 数组遍历</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <!--<script src="src/vue.js"></script>-->
+   <style type="text/css">
+        ul{
+            list-style:none;
+        }
+   </style>
+</head>
+<body>
+    <div id="app">
+        <h2>正常集合</h2>
+        <ul>
+            <li v-for="item in items">{{item.name}}</li>
+        </ul>
+
+        <h2>拥有对父作用域的完全访问权限</h2>
+        <ul v-for="(item,index) in items1">
+            <li>{{parent}} - {{index}} - {{item.message}}</li>
+        </ul>
+
+        <h2>集合嵌对象-用到了filter</h2>
+
+        <ul>
+            <li v-for="(item,index) in items2">{{index}} - >{{item|getObj}}</li>
+        </ul>
+        
+        <h2> of 替代 in</h2>
+
+        <ul>
+            <li v-for="item of items3">{{item.name}}</li>
+        </ul>
+
+        <h2> 整数迭代 </h2>
+        <ul >
+            <li v-for="(n,index) in 10">{{n}}--{{index}}</li>
+        </ul>
+
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var items = [{
+            name : "服务器A"
+        },{
+            name : "服务器B"
+        },{
+            name : "服务器C"
+        }];
+
+        var items1 =[
+            {message:"hello"},
+            {message:"vuejs"}
+        ];
+
+        var items2 =[
+            {  "11111" : "a"},
+            {  "22222": "b"},
+            {  "33333" : "c"}
+        ]
+
+
+        var items3 = [
+            { "name" : "Object1"},
+            { "name" : "Object2"},
+            { "name" : "Object3"},
+        ]
+
+        // 集合渲染
+        new Vue({
+            el : "#app",
+            data : {
+                parent:"hello vuejs",
+                items : items,
+                items1 :items1,
+                items2 :items2,
+                items3 :items3
+            },
+            filters : {
+                getObj : function(item){
+                    var keys = Object.keys(item);
+                    //Object.keys()，该方法返回一个数组
+                    return  keys[0] + "-"+  item[keys[0]];
+                }
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

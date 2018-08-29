@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Modernizr 是一个用来检测浏览器功能支持情况的</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="modernizr-1.7.min.js"></script>
+  <style>
+  header, footer {display:block;}
+  </style>
+  </head>
+  <body>
+    <header>
+      Main Navigation here
+    </header>
+    body content here
+    <footer>
+      Footer links here
+    </footer>
+  </body>
+  <script type="text/javascript">
+/**
+ * 第一种用法：检测浏览器是否支持某项特性
+ */
+//Modernizr对象是类库创建的全局变量，我们可以在页面的任意位置使用
+if(Modernizr.webgl){
+    console.log("支持WebGL");
+}
+else{
+    console.log("不支持WebGL");
+}
+
+/**
+ * 第二种用法:根据一些条件判断来动态选择加载CSS和JavaScript
+ */
+/*Modernizr.load({test:"Modernizr.webgl",yep: 'three.js',nope:'jebgl.js'});*/
+//当浏览器支持WebGL的时候，就引入 three.js 这个类库做一些3D效果。浏览器不支持WebGL的时候可以使用 jebgl.js 做一些fallback操作。
+  </script>
+</html>

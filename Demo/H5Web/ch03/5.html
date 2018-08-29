@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+		<title>利用滑动创建图库</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			html, body {
+				padding:0;
+				margin:10px auto;
+			}
+			#checkbox {
+				border:5px solid #ccc; 
+				width:30px; 
+				height:30px;
+			}
+			#wrapper {
+				width:210px;
+				height:100px;
+				position:relative;
+				overflow:hidden;
+				margin:0 auto;
+			}
+			#inner {
+				position:absolute;
+				width:630px;
+			}
+			#inner div {
+				width:200px;
+				height:100px;
+				margin:0 5px;
+				background:#ccc;
+				float:left;
+			}
+			.full-circle {
+				 background-color: #ccc;
+				 height: 10px;
+				 -moz-border-radius:5px;
+				 -webkit-border-radius: 5px;
+				 width: 10px;
+				 float:left;
+				 margin:5px;
+			}
+			.cur {
+				background-color: #555;
+			}
+			#btns {
+				width:60px;
+				margin:0 auto;
+			}
+		</style>
+  </head>
+  <body>
+    <header>
+    </header>
+		<div id="main">
+			<div id="wrapper">
+				<div id="inner">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div id="btns">
+				<div class="full-circle cur"></div>
+				<div class="full-circle"></div>
+				<div class="full-circle"></div>
+			</div>
+		</div>
+    <footer>
+    </footer>
+		<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+		<script>
+		var curNum = 0;
+		$('#wrapper').swipeleft(function () {
+      //alert('hi');
+			$('#inner').animate({
+			left: '-=210'
+			}, 500, function() {
+				// Animation complete.
+				curNum +=1;
+				$('.full-circle').removeClass('cur');
+				$('.full-circle').eq(curNum).addClass('cur');
+			});
+		});
+		
+		$('#wrapper').swiperight(function () {
+			$('#inner').animate({
+			left: '+=210'
+			}, 500, function() {
+				// Animation complete.
+				curNum -=1;
+				$('.full-circle').removeClass('cur');
+				$('.full-circle').eq(curNum).addClass('cur');	
+			});
+		});
+		</script>
+	</body>
+</html>
+	
+
+
+ 

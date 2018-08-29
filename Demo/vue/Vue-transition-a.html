@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>过渡效果+animate.css</title>
+      <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	
+</head>
+<body>
+<div id="example-3">
+  <button v-if="show" @click="show = !show" class="btn btn-block btn-primary">
+    click to leave
+  </button>
+  <button v-else="show" @click="show = !show" class="btn btn-block btn-success">
+    clcik to enter
+  </button>
+  <transition
+   
+    enter-active-class="animated tada"
+    leave-active-class="animated bounceOutRight"
+  >
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+   new Vue({
+	  el: '#example-3',
+	  data: {
+	    show: true
+	  }
+	})
+</script>  
+
+
+</body>
+</html>

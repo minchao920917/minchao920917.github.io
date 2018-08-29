@@ -1,0 +1,144 @@
+html{
+  
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+body{font-size:12px;}
+a{color:#666;text-decoration:none;}
+
+#main{
+  width: 100%;
+  height:100%;
+  padding-top:10px;
+}
+#main .left{
+  float:left;
+  width: 20%;
+  text-align: center;
+}
+#main .right{
+  float:right;
+  width: 70%;
+  margin-right:20px;
+  
+}
+
+
+/**
+ * 设置日历的大小
+ */
+.calendar{
+  width: 100%;
+
+  display: block;
+}
+ #calendar{}
+#main .left #calendar{
+  width: 200px;
+  margin:0 auto;
+  text-align: center;
+}
+/**
+ * 设置日历顶部盒子
+ */
+.calendar .calendar-title-box{
+  position: relative;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align:center;
+  border-bottom: 1px solid #ddd;
+}
+ 
+/**
+ * 设置上个月的按钮图标
+ */
+.calendar .prev-month {
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  border-left: 0px;
+  border-top: 6px solid transparent;
+  border-right: 8px solid #999;
+  border-bottom: 6px solid transparent;
+  cursor: pointer;
+}
+ 
+/**
+ * 设置下个月的按钮图标
+ */
+.calendar .next-month {
+  position: absolute;
+  top: 12px;
+  right: 0px;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  border-right: 0px;
+  border-top: 6px solid transparent;
+  border-left: 8px solid #999;
+  border-bottom: 6px solid transparent;
+  cursor: pointer;
+}
+ 
+ 
+/* 设置日历表格样式 */
+.calendar-table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align:center;
+}
+ 
+/* 表格行高 */
+.calendar-table tr{
+  height: 30px;
+  line-height: 30px;
+}
+ 
+/* 当前天 颜色特殊显示 */
+.currentDay {
+    color: red !important;
+  background-color: #eee;
+}
+ 
+/* 本月 文字颜色 */
+.currentMonth {
+  color: #333;
+}
+  .calendar-table tr td:hover{
+    cursor:hand;
+  }
+ .calendar-table tr td.active{
+    background-color: #f90;
+    color:#fff;
+}
+/* 其他月颜色 */
+.otherMonth{
+  color: #ede;
+}
+.tips {
+  margin-top: 20px;
+  text-align: left;
+}
+.tips div{
+  width: 60%;
+    margin-left: 20%;
+}
+.tips div span.square {
+  width: 15px;
+  height: 15px;
+  
+  display: -webkit-inline-box;
+}
+.tips div span.square-last{
+  border: 1px solid #75abc5;
+  background-color: #75abc5; 
+}
+.tips div span.square-now{
+  border: 1px solid #9bd2ec;
+  background-color: #9bd2ec; 
+}

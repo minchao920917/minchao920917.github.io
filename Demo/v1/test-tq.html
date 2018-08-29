@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<style type="text/css">
+.all span {font:bold 30px/50px "宋体";color:red;}
+</style>
+<title>天气预报</title>
+</head>
+<body>
+<div class="all">
+这里是：<span class="place">城市</span>,
+气温是<span class="temp">气温</span>，
+风向：<span class="wind">风向</span>，
+风力：<span class="windPower">风力</span>
+</div>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(function () {
+	$.ajax({
+		//请求的地址
+		url :　"tqcx.php",
+		//请求成功后执行的函数
+		success : function (data) {
+			console.log(data);
+			// console.log(typeof(data));
+			// console.log(JSON.stringify(data));
+			// console.log(JSON.parse(data));
+
+			//用eval()解析返回来的数据，将字符串转成JSON格式
+			var oD = eval('('+data+')');
+			//用jquery-1.8.2获取元素
+			var $place = $(".place"),
+			$temp = $(".temp"),
+			$wind = $(".wind"),
+			$windPower = $(".windPower");
+			//将返回来的数据放到相应的位置
+			$place.html(oD["weatherinfo"]["city"]);
+			$temp.html(oD["weatherinfo"]["temp"] + "°");
+			$wind.html(oD["weatherinfo"]["WD"]);
+			$windPower.html(oD["weatherinfo"]["WS"]);
+		}
+	});
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<title>使用Web Workers</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/modernizr.custom.54685.js"></script>
+</head>
+<body onload="loadDeals()">
+  <input type="text" id="x" value="6" />
+  <br />
+  <input type="text" id="y" value="3" />
+  <br />
+  <input type="text" id="output" />
+  <br />
+  <input type="button" id="minusButton" value="Minus" />
+  <input type="button" id="addButton" value="Add" />
+  <script>
+  if (Modernizr.webworkers){
+    alert('hi');
+  }
+  
+  /* Create a new worker */
+  arithmeticWorker = new Worker("math.js");
+  /* 
+    Add a event listener to the worker, this will
+    be called whenever the worker posts any message.
+  */
+  arithmeticWorker.onmessage = function (event) {
+    document.getElementById("output").value = event.data;
+  };
+  /* Register events for buttons */
+  document.getElementById("minusButton").onclick = function() {
+    /* Get the values to do operation on */
+    x = parseFloat(document.getElementById("x").value);
+    y = parseFloat(document.getElementById("y").value);
+    message = {
+      'op' : 'min',
+      'x'  : x,
+      'y'  : y
+    };
+    arithmeticWorker.postMessage(message);
+  }
+  document.getElementById("addButton").onclick = function() {
+    /* Get the values to do operation on */
+    x = parseFloat(document.getElementById("x").value);
+    y = parseFloat(document.getElementById("y").value);
+    message = {
+      'op' : 'add',
+      'x'  : x,
+      'y'  : y
+    };
+
+    arithmeticWorker.postMessage(message);
+  }
+  </script>
+</body>
+</html>

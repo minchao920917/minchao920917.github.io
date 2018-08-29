@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <title>快速响应按钮</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      #contact {
+        width:220px; height:40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Contact Form</h1>
+    </header>
+    <div id="main">
+      <textarea id="contact"></textarea><br />
+      <button id="btn">INSTANT button!!!</button><br />
+      <span id="result"></span>
+    </div>
+    <footer>
+      <small>&copy; 2011 first.fm</small>
+    </footer>
+    <script src="js/jquery-1.8.3.min.js"></script> 
+    <script src="js/helper.js"></script>
+    <script>
+      var btn = document.getElementById("btn");
+      MBP.fastButton(btn,showForm);
+      function showForm() {
+        alert("111");
+        $("#result").html("谢谢反馈，将很快回应！");
+      }
+    </script>
+  </body>
+</html>

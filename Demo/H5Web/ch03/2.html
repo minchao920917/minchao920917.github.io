@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+		<title>锁定页面为横屏模式</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+		html, body {
+			padding: none;
+			margin: none;
+		}
+		</style>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+  </head>
+  <body>
+    <div id="a">
+    </div>
+		<script>
+			var metas = document.getElementsByTagName('meta');
+			var i;
+			if (navigator.userAgent.match(/iPhone/i)) {
+				for (i=0; i<metas.length; i++) {
+					if (metas[i].name == "viewport") {
+						metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+					}
+				}
+				document.addEventListener("gesturestart", gestureStart, false);
+			}
+			function gestureStart() {
+				for (i=0; i<metas.length; i++) {
+					if (metas[i].name == "viewport") {
+						metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+					}
+				}
+			}
+		</script>
+    
+		<script>
+      $(window).bind('orientationchange',function(event){
+        updateOrientation(event.orientation);
+      })
+			function updateOrientation(orientation) {
+       			 $("#a").html("<p>"+orientation.toUpperCase()+"</p>");
+			}
+		</script>
+	</body>
+</html>
+	
+
+
+ 

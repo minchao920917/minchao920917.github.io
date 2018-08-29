@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>vue 数据绑定</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>(1)、单向绑定    { { ....} }</h2>
+        <p id="p">{{msg}}</p>
+
+         <h2>(2)、双向绑定 v-model</h2>
+         <input v-model="name" placeholder="输入你的名字!" id="input">
+         <p>hello {{name}}</p>
+
+         <h2>(3)、函数返回值</h2>
+         <p>{{getMessage()}}</p>
+
+         <h2>(4)、绑定表达式: html?html:val</h2>
+         <p>{{ html ? html : val }}</p>
+
+         <h2>(5)、单次插值 v-once</h2>
+         <p v-once>{{once}}</p>
+
+         <h2>(6)、属性插值</h2>
+         <p v-bind:data-title="title">{{title}}</p>
+
+         <h2>(7)、纯HTML文本插值</h2>
+         <p v-html="rawHtml">qqq</p>
+    </div>
+    <script>
+
+    var data = {
+        msg:"单向绑定数据",
+        name:"",
+        getMessage:function(){
+            return "函数返回的数据"
+        },
+        html:"html",
+        val:"",
+        once:"单词插值，不会改变",
+        title:"属性插值title",
+        rawHtml:"<span style='background:red'>A html contain</span>"
+    };
+
+    var vm = new Vue({
+        el : "#app",
+        data : data
+    });
+
+    // 由模型改变视图
+    data.msg="单向绑定数据1";
+    vm.msg="单向绑定数据1";
+    console.log(vm.msg===data.msg);
+    
+    vm.once ="aaa";
+    // 由视图改变模型
+    document.getElementById("p").innerHTML = "单向绑定数据2";
+
+    console.log(vm.msg);
+    console.log(data.msg);
+
+    // document.getElementsByTagName("input")[0].value="aaa";
+
+    </script>
+</body>
+</html>

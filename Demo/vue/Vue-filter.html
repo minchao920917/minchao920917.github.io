@@ -1,0 +1,47 @@
+<!-- 注册或获取全局过滤器。 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue-filter</title>
+	    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+	<style type="text/css">
+		ul{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<ul >
+			<h2>加1乘2减3</h2>
+			<li v-for="item in 10">({{item}}+1)×{{two}}-{{three}}= {{item |addOne |double(two) | decreaseThree(three) }}</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		//全局过滤器
+		Vue.filter('addOne',function(value){
+				return value+1;
+		});
+		//实例过滤器(局部)
+		var vm = new Vue({
+			el :"#app",
+			data:{
+				two:2,
+				three:3
+			},
+			filters:{
+				double:function(value,two){
+					return value*two;
+				},
+				decreaseThree:function(value,three){
+					return value-three;
+				}
+			}
+		});
+
+
+	</script>
+</body>
+</html>

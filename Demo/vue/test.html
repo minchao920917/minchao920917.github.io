@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>test</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>    
+  
+<app-layout id="aaa">
+<div class="container">
+  <header>
+    <slot name="header"></slot>
+  </header>
+  <main>
+    <slot></slot>
+  </main>
+  <footer>
+    <slot name="footer"></slot>
+  </footer>
+</div>
+</app-layout>
+
+<div id="app">
+<app-layout>
+  <h1 slot="header">这里可能是一个页面标题header</h1>
+  <p>主要内容的一个段落。</p>
+  <p>另一个主要段落。</p>
+  <p slot="footer">这里有一些联系信息footer</p>
+</app-layout>
+</div>
+<script>  
+
+    //定义注册一步合并
+    Vue.component('app-layout',{
+        template:'#aaa'
+    });
+
+    //创建实例
+    var vm =new Vue({
+       
+    })
+    vm.$mount("#app");
+</script>  
+</script>  
+    </body>
+</html>

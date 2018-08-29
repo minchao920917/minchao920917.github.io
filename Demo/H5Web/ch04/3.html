@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <title>获取经纬度</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/modernizr.custom.54685.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>当前位置</h1>
+    </header>
+    <div id="main">
+      你的地理位置是: <span id="geo"></span>
+    </div>
+    <footer>
+      
+    </footer>
+
+    <script>
+      yepnope({
+        test : Modernizr.geolocation,
+        nope : ['js/geolocation.js'],
+        complete: function () {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            document.getElementById('geo').innerHTML = position.coords.latitude+", "+position.coords.longitude;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+ 

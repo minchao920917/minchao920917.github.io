@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+        <title>svg地图动画</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="road.css?r=222" rel="stylesheet" />
+</head>
+<body>
+
+<!-- road -->
+<div class="road">
+    <div class="container">
+        <div class="row" >
+
+            <input id="tab1" type="radio" name="tabs1" checked>
+            <label for="tab1">北线</label>
+
+            <input id="tab2" type="radio" name="tabs1">
+            <label for="tab2">南线</label> 
+
+            <section id="north">
+                <svg version="1.1" id="north-road" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%"  viewBox="0 0 1000 500" enable-background="new 0 0 1000 500" xml:space="preserve">
+                    <g >
+                        <path id="north-line" fill="none" stroke="#231815" stroke-miterlimit="10" stroke-dasharray="5.9943,5.9943" d="M5.375,139.384
+                    C26.128,170.22,105.712,286.06,131.849,288.779c63.301,23.282,132.775-106.649,203.884-106.911
+                    c71.109-0.262,111.747,142.698,159.319,149.875c47.572,7.176,65.15-156.008,138.151-157.868
+                    C706.204,172.015,700.689,280.064,767,314.5c4.855,2.892,65.532,40.661,72.5,27c18.5-12,60.613-169.609,27.669-188.606
+                    c-28.389-16.37-31.414-22.876-25.625-34.971c5.293-11.058,107.137-48.45,131.314-64.143"/>
+                    </g>
+                    <g class="city1">
+                        <text  transform="matrix(1 0 0 1 21.4998 100.9996)"><tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月5日</tspan><tspan x="0" y="20" font-family="'Microsoft YaHei'">苏州</tspan></text>
+                        <path fill="#40BDE6" d="M31.5,131c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249                  C41.5,135.365,37.022,131,31.5,131L31.5,131z M37.5,141c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006c0-3.318,2.686-6.007,6-6.007
+                        S37.5,137.683,37.5,141L37.5,141z"/>
+                    </g>
+                    <g class="city2">
+                        <text  transform="matrix(1 0 0 1 94.4995 199.0001)"><tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月9日</tspan><tspan x="0" y="20" font-family="'Microsoft YaHei'">武汉</tspan></text>
+                        <path fill="#40BDE6" d="M104.5,227c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C114.5,231.365,110.022,227,104.5,227L104.5,227z M110.5,237c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S110.5,233.683,110.5,237L110.5,237z"/>
+                    </g>
+                    <g class="city3"> 
+                        <text  transform="matrix(1 0 0 1 225.4998 175.3932)"><tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月12日</tspan><tspan x="0" y="20" font-family="'Microsoft YaHei'">郑州</tspan></text>
+                        <path fill="#40BDE6" d="M235.5,202c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C245.5,206.365,241.022,202,235.5,202L235.5,202z M241.5,212c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S241.5,208.683,241.5,212L241.5,212z"/>
+                    </g>
+                    <g class="city4">
+                        <text  transform="matrix(1 0 0 1 317.6094 120.9655)"><tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月16日</tspan><tspan x="0" y="20" font-family="'Microsoft YaHei'">济南</tspan></text>
+                            <path fill="#40BDE6" d="M330.5,148c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                            C340.5,152.365,336.022,148,330.5,148L330.5,148z M336.5,158c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                            c0-3.318,2.686-6.007,6-6.007S336.5,154.683,336.5,158L336.5,158z"/>
+                    </g>
+                    <g class="city5">
+                        <text transform="matrix(1 0 0 1 420.4998 183.3933)"><tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月19日</tspan><tspan x="0" y="20" font-family="'Microsoft YaHei'">石家庄</tspan></text>
+                        <path fill="#40BDE6" d="M430.5,214c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C440.5,218.365,436.022,214,430.5,214L430.5,214z M436.5,224c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S436.5,220.683,436.5,224L436.5,224z"/>
+                    </g>
+                    <g class="city6">
+                        <text  transform="matrix(1 0 0 1 489.9998 268.9424)"><tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月23日</tspan><tspan x="0" y="20" font-family="'Microsoft YaHei'">太原</tspan></text>
+                        <path fill="#40BDE6" d="M502.5,297c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C512.5,301.365,508.022,297,502.5,297L502.5,297z M508.5,307c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S508.5,303.683,508.5,307L508.5,307z"/>
+                    </g>
+                    <g class="city7">
+                        <text transform="matrix(1 0 0 1 620.4996 110.9193)"><tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月25日</tspan><tspan x="0" y="20" font-family="'Microsoft YaHei'">北京</tspan></text>   
+                        <path fill="#40BDE6" d="M630.5,134c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C640.5,138.365,636.022,134,630.5,134L630.5,134z M636.5,144c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S636.5,140.683,636.5,144L636.5,144z"/>
+                    </g>
+                    <g class="city8">
+                        <text transform="matrix(1 0 0 1 730.4994 208.9193)"><tspan x="0" y="-3" font-family="'Microsoft YaHei'">6月3日</tspan><tspan x="0" y="20" font-family="'Microsoft YaHei'">呼和浩特</tspan></text>
+                        <path fill="#40BDE6" d="M740.5,237c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C750.5,241.365,746.022,237,740.5,237L740.5,237z M746.5,247c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S746.5,243.683,746.5,247L746.5,247z"/>
+                    </g>
+                    <g class="city9">
+                        <text  transform="matrix(1 0 0 1 820.4994 278.4193)"><tspan x="0" y="-3" font-family="'Microsoft YaHei'">6月7日</tspan><tspan x="0" y="20" font-family="'Microsoft YaHei'">兰州</tspan></text>
+                        <path fill="#40BDE6" d="M835.5,307c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C845.5,311.365,841.022,307,835.5,307L835.5,307z M841.5,317c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S841.5,313.683,841.5,317L841.5,317z"/>
+                    </g>
+                    <g class="city10">   
+                        <text transform="matrix(1 0 0 1 820.5002 50.9193)"><tspan x="-16" y="-3" font-family="'Microsoft YaHei'">6月13日</tspan><tspan x="-16" y="20" font-family="'Microsoft YaHei'">乌鲁木齐</tspan></text>
+                        <path fill="#40BDE6" d="M897.5,47c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C907.5,51.365,903.022,47,897.5,47L897.5,47z M903.5,57c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006c0-3.318,2.686-6.007,6-6.007
+                        S903.5,53.683,903.5,57L903.5,57z"/>
+                    </g>
+                </svg>
+            </section>
+
+            <section id="south">
+                <svg version="1.1" id="south-road" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1000 500" enable-background="new 0 0 1000 500" xml:space="preserve">
+                    <g>
+                        <path id="south-line" fill="none" stroke="#231815" stroke-miterlimit="10" stroke-dasharray="5.9943,5.9943" d="M5.375,139.384
+                    C26.128,170.22,105.712,286.06,131.849,288.779c63.301,23.282,132.775-106.649,203.884-106.911
+                    c71.109-0.262,111.747,142.698,159.319,149.875c47.572,7.176,65.15-156.008,138.151-157.868
+                    C706.204,172.015,700.689,280.064,767,314.5c4.855,2.892,65.532,40.661,72.5,27c18.5-12,60.613-169.609,27.669-188.606
+                    c-28.389-16.37-31.414-22.876-25.625-34.971c5.293-11.058,107.137-48.45,131.314-64.143"/>
+                    </g>
+                    <g class="city1"> 
+                        <text transform="matrix(1 0 0 1 21.4998 100.9996)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月9日</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'">合肥</tspan></text>
+                        <path fill="#40BDE6" d="M31.5,131c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                            C41.5,135.365,37.022,131,31.5,131L31.5,131z M37.5,141c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006c0-3.318,2.686-6.007,6-6.007
+                            S37.5,137.683,37.5,141L37.5,141z"/>
+                    </g>
+                    <g class="city2">
+                      <text transform="matrix(1 0 0 1 94.4995 199.0001)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月12日</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'">南京</tspan></text>
+                      <path fill="#40BDE6" d="M104.5,227c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C114.5,231.365,110.022,227,104.5,227L104.5,227z M110.5,237c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                         c0-3.318,2.686-6.007,6-6.007S110.5,233.683,110.5,237L110.5,237z"/>
+                    </g >
+                    <g class="city3">
+                      <text transform="matrix(1 0 0 1 140.4998 225.6964)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月16日</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'">杭州</tspan></text>
+                      <path fill="#40BDE6" d="M150.5,254.303c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C160.5,258.668,156.022,254.303,150.5,254.303L150.5,254.303z M156.5,264.303c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S156.5,260.986,156.5,264.303L156.5,264.303z"/>
+                    </g >    
+                    <g class="city4">
+                      <text transform="matrix(1 0 0 1 217.4643 182.4021)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月19日</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'">福州</tspan></text>
+                      <path fill="#40BDE6" d="M230.355,209.437c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                            C240.355,213.802,235.877,209.437,230.355,209.437L230.355,209.437z M236.355,219.437c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                            c0-3.318,2.686-6.007,6-6.007S236.355,216.12,236.355,219.437L236.355,219.437z"/>
+                    </g >    
+                    <g class="city5">
+                      <text transform="matrix(1 0 0 1 317.4998 115.6965)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月22日</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'">广州</tspan></text>
+                      <path fill="#40BDE6" d="M327.5,146.303c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C337.5,150.668,333.022,146.303,327.5,146.303L327.5,146.303z M333.5,156.303c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S333.5,152.986,333.5,156.303L333.5,156.303z"/>
+                    </g >    
+                    <g class="city6">
+                      <text transform="matrix(1 0 0 1 394.9998 155.3734)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">5月26日</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'">海口</tspan></text>
+                     <path fill="#40BDE6" d="M407.5,183.431c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                    C417.5,187.796,413.022,183.431,407.5,183.431L407.5,183.431z M413.5,193.431c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                     c0-3.318,2.686-6.007,6-6.007S413.5,190.114,413.5,193.431L413.5,193.431z"/>
+                    </g >
+                    <g class="city7">
+                      <text transform="matrix(1 0 0 1 480.7341 264.3218)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">6月2日</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'">南宁</tspan></text>
+                      <path fill="#40BDE6" d="M490.734,291.403c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                            C500.734,295.768,496.256,291.403,490.734,291.403L490.734,291.403z M496.734,301.403c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                            c0-3.318,2.686-6.007,6-6.007S496.734,298.086,496.734,301.403L496.734,301.403z"/>
+                    </g >    
+                    <g class="city8">
+                      <text transform="matrix(1 0 0 1 628.312 110.8229)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">6月6日</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'">贵阳</tspan></text>
+                      <path fill="#40BDE6" d="M638.313,138.904c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                            C648.313,143.269,643.835,138.904,638.313,138.904L638.313,138.904z M644.313,148.904c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                            c0-3.318,2.686-6.007,6-6.007S644.313,145.587,644.313,148.904L644.313,148.904z"/>
+                    </g >    
+                    <g class="city9">
+                      <text transform="matrix(1 0 0 1 700.9707 171.7099)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">6月9日</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'">成都</tspan></text>
+                      <path fill="#40BDE6" d="M715.971,200.291c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                    C725.971,204.656,721.493,200.291,715.971,200.291L715.971,200.291z M721.971,210.291c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                    c0-3.318,2.686-6.007,6-6.007S721.971,206.974,721.971,210.291L721.971,210.291z"/>
+                    </g >    
+                    <g class="city10">
+                      <text transform="matrix(1 0 0 1 809.0002 279.1121)">
+                            <tspan x="0" y="-3" font-family="'Microsoft YaHei'">6月13日</tspan>
+                            <tspan x="0" y="20" font-family="'Microsoft YaHei'" >长沙</tspan>
+                      </text> 
+                      <path fill="#40BDE6" d="M826,303.693c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C836,308.058,831.522,303.693,826,303.693L826,303.693z M832,313.693c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.317,2.686-6.007,6-6.007S832,310.376,832,313.693L832,313.693z"/>
+                    </g >
+                    <g class="city11">
+                      <text transform="matrix(1 0 0 1 814.0001 75.4592)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">6月16日&nbsp;</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'" >南昌</tspan></text>
+                      <path fill="#40BDE6" d="M828,100.54c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C838,104.905,833.522,100.54,828,100.54L828,100.54z M834,110.54c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S834,107.223,834,110.54L834,110.54z"/>
+                    </g >
+                    <g class="city12">
+                      <text transform="matrix(1 0 0 1 903.5001 20.4598)">
+                        <tspan x="0" y="-3" font-family="'Microsoft YaHei'">6月21日&nbsp;</tspan>
+                        <tspan x="0" y="20" font-family="'Microsoft YaHei'" >昆明</tspan></text>
+                     <path fill="#40BDE6" d="M917.5,45.54c-5.522,0-10,4.366-10,9.751c0,5.384,10,16.249,10,16.249s10-10.865,10-16.249
+                        C927.5,49.905,923.022,45.54,917.5,45.54L917.5,45.54z M923.5,55.54c0,3.317-2.686,6.006-6,6.006s-6-2.69-6-6.006
+                        c0-3.318,2.686-6.007,6-6.007S923.5,52.223,923.5,55.54L923.5,55.54z"/>
+                    </g >
+                </svg>
+            </section> 
+
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>
