@@ -151,7 +151,7 @@
           {
               demo_link: '../Demo/opp_v2/index.html',
               img_link: 'https://i.loli.net/2018/08/29/5b86297fd82f2.png',
-              code_link: 'https://github.com/minchao920917/time-axis',
+              code_link: 'https://github.com/minchao920917/Dome/tree/master/opp_v2',
               title: '活动日历翻页倒计时',
               core_tech: 'css+js',
               description: '使用jquery插件'
