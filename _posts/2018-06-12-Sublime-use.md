@@ -1,4 +1,19 @@
-#   使用说明：
+---
+layout: post
+title:  " Sublime Text3"
+date:   2018-06-12 23:06:05
+categories: 开发工具
+tags: 开发工具
+excerpt: 一直都在介绍编程技术和知识点，但是编码工具还是不能忘记的，ublime是近年来最流行的前端开发编辑器。这里总结一些快捷键为了方便前端开发工程师的工作　　
+mathjax: true
+author:	闵超
+---
+
+* content
+{:toc}
+
+
+#   Sublime 3 操作说明及快捷键
 
 Emmet(原名为Zen Coding)使用说明：www.webqianduan.cn/491.html (想高效率开发必看此教程)
 相关配置教程：www.webqianduan.cn/561.html 【rem、皮肤主题等相关设置】

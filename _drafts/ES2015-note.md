@@ -1,8 +1,13 @@
+
 ---
 layout: post
-title:  "ES2015学习笔记1-let和const、变量解构赋值、字符串、正则、数值"
-categories: JavaScript
-tags:  ES2015
+title:  "ES2015学习笔记1"
+date:   2015-5-18 15:14:54
+categories: ES6
+tags:	ES6
+excerpt:	let和const、变量解构赋值、字符串、正则、数值
+mathjax: true
+author:	闵超
 ---
 
 * content

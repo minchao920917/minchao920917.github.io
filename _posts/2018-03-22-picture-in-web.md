@@ -1,3 +1,17 @@
+---
+layout: post
+title:  " 网页制作中的图片"
+date:   2018-03-22 23:06:05
+categories: 前端知识
+tags: 前端知识
+excerpt: 总有人问我为什么他在html展示的时候图片变形了，或者部分没展示出来，图片尺寸应该怎么弄，因此，我觉得还是有必要在这里对网页中的图片做一下说明
+mathjax: true
+author:	闵超
+---
+
+* content
+{:toc}
+
 #	网页制作中的图片
 
 图片：jpg，png，gif
@@ -21,7 +35,7 @@ IE6图片边框
  如果在img标签外面套了一个a标签，在IE6里会给图片加一个边框。我们需要清除这个边框。
 
 	img{
-	    border:none;3	
+	    border:none;
 	}
 
 

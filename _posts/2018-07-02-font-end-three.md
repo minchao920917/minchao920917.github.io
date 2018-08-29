@@ -1,4 +1,17 @@
-#   前端三层结构与应用
+---
+layout: post
+title:  " 前端三层结构与应用"
+date:   2018-07-02 23:06:05
+categories: 前端知识
+tags: 前端知识
+excerpt: 前端都知道的事情，前端有三个基本构成：结构层HTML，表现层CSS和行为层JavaScript。如果你不知道，那你肯定是个假前端或者后端的卧底，就不能成为一个正在的前端。
+mathjax: true
+author:	闵超
+---
+
+* content
+{:toc}
+
 
 前端都知道的事情，前端有三个基本构成：结构层HTML，表现层CSS和行为层JavaScript。
 如果你不知道，那你肯定是个假前端或者后端的卧底，就不能成为一个正在的前端。
