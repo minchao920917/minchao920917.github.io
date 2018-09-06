@@ -155,6 +155,14 @@
               title: '活动日历翻页倒计时',
               core_tech: 'css+js',
               description: '使用jquery插件'
+          },
+          {
+              demo_link: '../Demo/iconFont/index.html',
+              img_link: 'https://i.loli.net/2018/09/06/5b90e0c8ba016.png',
+              code_link: 'https://github.com/minchao920917/Dome/tree/master/iconFont',
+              title: '自定义字体图标',
+              core_tech: 'css+js',
+              description: '自定义字体图标'
           }
   ];
 
