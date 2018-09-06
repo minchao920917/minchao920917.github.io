@@ -1,0 +1,223 @@
+/* 大事记 样式 */
+.calendar
+{
+    text-align: center;
+    margin:10rem auto;
+}
+
+    /* 时间轴 */
+    .calendar .times-axis
+    {
+        width: 50%;
+    }
+
+    /* 奇数*/
+    .calendar .times-axis:nth-of-type(odd)
+    {
+        text-align: right;
+        border-right: 2px solid #008d88;
+        float: left;
+        margin-left: 1px;
+    }
+
+    /* 偶数 */
+    .calendar .times-axis:nth-of-type(even)
+    {
+        text-align: left;
+        border-left: 2px solid #008d88;
+        float: right;
+        margin-right: 1px;
+    }
+
+    .calendar .times-axis:last-child
+    {
+        border-left: none;
+        border-right: none;
+    }
+
+        /* 事件 */
+        .calendar .times-axis .events
+        {
+
+        }
+
+        /* 奇数 */
+        .calendar .times-axis:nth-of-type(odd) .events
+        {
+            margin-right: 8rem;
+        }
+
+        /* 偶数 */
+        .calendar .times-axis:nth-of-type(even) .events
+        {
+            margin-left: 8rem;
+        }
+
+            .calendar .times-axis .events .year
+            {
+                font-size: 2.6rem;
+                color: #008d88;
+                font-weight: bold;
+            }
+
+            .calendar .times-axis .events .desc
+            {
+
+            }
+
+                .calendar .times-axis .events .desc p
+                {
+                    font-size: 1.4rem;
+                    color: #666;
+                }
+
+    /* 时间轴的线 */
+    .calendar .times-base
+    {
+        position: relative;
+        width: 7rem;
+        border-top: 2px solid #008d88;
+        margin-top: .5rem;
+    }
+
+    /* 奇数 */
+    .calendar .times-axis:nth-of-type(odd) .times-base
+    {
+        float: right;
+    }
+
+    /* 偶数 */
+    .calendar .times-axis:nth-of-type(even) .times-base
+    {
+        float: left;
+    }
+
+        .calendar .times-axis .times-base .circle
+        {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #008d88;
+            border-radius: 8px;
+            top:-5px;
+        }
+
+        /* 奇数 */
+        .calendar .times-axis:nth-of-type(odd) .times-base .circle
+        {
+            left: -4px;
+        }
+
+        /* 偶数 */
+        .calendar .times-axis:nth-of-type(even) .times-base .circle
+        {
+            right: -4px;
+        }
+
+        .calendar .times-axis .times-base .hollow
+        {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #008d88;
+            background: #fff;
+            border-radius: 16px;
+            top:-8px
+        }
+
+        /* 奇数 */
+        .calendar .times-axis:nth-of-type(odd) .times-base .hollow
+        {
+            right: -8px;
+        }
+
+        /* 偶数 */
+        .calendar .times-axis:nth-of-type(even) .times-base .hollow
+        {
+            left: -8px;
+        }
+
+            .calendar .times-axis .times-base .hollow:after
+            {
+                content: "";
+                width: 6px;
+                height: 6px;
+                background: #008d88;
+                border-radius: 6px;
+                position: absolute;
+                top:3px;
+            }
+
+            .calendar .times-axis:nth-of-type(odd) .times-base .hollow:after
+            {
+                right: 3px;
+            }
+
+            .calendar .times-axis:nth-of-type(even) .times-base .hollow:after
+            {
+                left: 3px;
+            }
+
+
+/* 小屏幕 横向放置的手机和竖向放置的平板之间的分辨率*/
+@media screen and (max-width:767px) {
+
+    .container .row
+    {
+        padding:1rem;
+    }
+
+    .calendar
+    {
+        text-align: left;
+    }
+
+    .calendar .times-axis
+    {
+       width: 100%;
+        margin:0 auto;
+    }
+
+    /* 奇数 */
+    .calendar .times-axis:nth-of-type(odd)
+    {
+        text-align: left;
+        border-left: 2px solid #008d88;
+        float: right;
+        margin-right: 1px;
+        border-right: none;
+    }
+
+    .calendar .times-axis:last-child
+    {
+        border-left: none ;
+    }
+
+    .calendar .times-axis .times-base
+    {
+        width:4rem;
+    }
+
+    .calendar .times-axis:nth-of-type(odd) .times-base
+    {
+        float: left;
+    }
+
+    .calendar .times-axis:nth-of-type(odd) .times-base .circle
+    {
+        right: -4px;
+        left: auto;
+    }
+
+    .calendar .times-axis:nth-of-type(odd) .times-base .hollow
+    {
+        left: -8px;
+    }
+
+    .calendar .times-axis:nth-of-type(odd) .events,.calendar .times-axis:nth-of-type(even) .events
+    {
+        margin-left: 5rem;
+        margin-right: auto ;
+    }
+}
+

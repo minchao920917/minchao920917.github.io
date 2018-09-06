@@ -143,7 +143,7 @@
           {
               demo_link: '../Demo/timesAxis/index.html',
               img_link: 'https://i.loli.net/2018/04/28/5ae3ca7131ee4.png',
-              code_link: 'https://github.com/minchao920917/Dome/tree/master/time-axis',
+              code_link: 'https://github.com/minchao920917/Dome/tree/master/timesAxis',
               title: '纯css手写时间轴',
               core_tech: 'css',
               description: '使用node+mysql初步封装测试增删改查数据库'
