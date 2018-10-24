@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "浅谈颜色的分类和含义以及网页结构"
-date:   2016-5-18 23:00:54
-categories: 浅谈
-tags:	浅谈
+date:   2016-05-18 23:00:54
+categories: UI
+tags:	UI
 excerpt:	身为一个前端工程师，必须对颜色敏感，于是随便找了一些关于色彩的进行了一些了解。附属一些常见的网站布局。
 mathjax: true
 author:	闵超

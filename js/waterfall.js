@@ -179,6 +179,14 @@
           title: '蜗牛游戏宣传网站模板',
           core_tech: 'html+css+js',
           description: '蜗牛游戏宣传网站模板'
+      },
+      {
+          demo_link: 'http://www.ngjjtg.com/land/actives/broadcast/index.html?v=1111',
+          img_link: 'https://i.loli.net/2018/10/24/5bd018084d9aa.png',
+          code_link: 'javascript:void(0);',
+          title: '股票文字直播网站',
+          core_tech: 'html+css+js',
+          description: '股票文字直播网站'
       }
   ];
 
