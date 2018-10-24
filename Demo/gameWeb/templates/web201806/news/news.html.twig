@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>{{node.getTitle()}}</title>
+        <meta name="description" content="{{ node.getDesciption() }}" />
+        <meta name="keywords" content="{{ node.getKeywords() }}" />
+
+        <!-- 强制双核浏览器使用极速模式打开 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="renderer" content="webkit|ie-comp|ie-stand"> 
+        <meta name="renderer" content="webkit"> 
+
+        <link rel="stylesheet" href="//static.woniu.com/stylesheets/base.css">
+        <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/css/common.css">
+        <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/news/css/common.css">
+        <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/news/css/news.css">
+    </head>
+    
+    <body>
+        {% set list = lister.getContentList(8,  'c.publishTime|DESC', node.getId(), true) %}
+        <!-- {% set  pc_1712_qq = block.getPosterByCode('pc_1712_qq',site.getID()) %} -->
+        <!-- 滑动导航栏 -->
+        {% include "jy2.woniu.com/web201806/includes/flnav.html.twig" %}
+
+        <div class="main">
+            <div class="headerbg">
+                <!-- 固定导航栏 -->
+                {% include "jy2.woniu.com/web201806/includes/header.html.twig" %}
+            </div>
+            <div class="headerbg-blank"></div>
+            <div class="bg">
+                <div class="newslistbox">
+                    <div class="newslisttit">
+                        <span>新闻资讯</span>news</div>
+                    <div class="swtagbox">
+                        <a href="//jy2.woniu.com/all/" class="swtag{% if node.getNodeCode() == 'all' %} cur{% endif %}">综合</a>
+                        <a href="//jy2.woniu.com/all/news/" class="swtag{% if node.getNodeCode() == 'all_news' %} cur{% endif %}">新闻</a>
+                        <a href="//jy2.woniu.com/all/notice/" class="swtag{% if node.getNodeCode() == 'all_notice' %} cur{% endif %}">公告</a>
+                        <a href="//jy2.woniu.com/all/act/" class="swtag{% if node.getNodeCode() == 'all_act' %} cur{% endif %} swtag4">活动</a></div>
+                    <div class="l-one-box cur">
+                        {%  for c in  list %}
+                        <div class="l-one ">
+                            <a href="{{ c.getUrl() }}" class="l-cont">
+                                <div class="tytag">{{ c.getNode.getName() }}</div>
+                                <div class="date">{{ c.getPublishTime()|date("Y/m/d") }}</div>
+                                <div class="tit">{{ c.getTitle() }}</div>
+                                <div class="desc">{{ c.getDesciption()|raw }}</div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                        {% set pages = lister.getPaging() %}
+                        {%if pages%}
+                        <div class="pagebox">
+                            {% if pages['currPage'] > 1 %}
+                                <a href="{{pages['urls'][pages['currPage'] - 1]}}" class="pagelf">&nbsp;</a>
+                            {% endif %}
+                            {% for page in pages['urls'] %}
+                                <a href="{{ page}}" class="page {% if loop.index == pages['currPage']%} cur{% endif %}">{{ loop.index}}</a>
+                            {% endfor %}
+                            {% if pages['currPage'] < pages['sumPage'] %}
+                               <a href="{{pages['urls'][pages['currPage'] + 1]}}" class="pagerg">&nbsp;</a>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="qrcodefooter">
+                    <div class="tit">真实江湖归来 重温公平经典</div>
+                    <div class="subtit">扫码关注官方微信,更多精彩活动等着您</div>
+                    <img src="{{ pc_1712_qq[0].getAttachment() }}" alt="" class="btm-qrcode">
+                    <a href="javascript:void(0)" class="duebtn-btm">立即预约</a></div>
+                    <a href="javascript:void(0)" class="scrolltop none">
+                        <div class="bgbox"></div>
+                        <div class="topbox">TOP</div>
+                    </a>
+            </div>
+
+        </div>
+        <!-- qrcode -->
+        <div class="qrcode-pop">
+            <div id="qrcode_box">
+                <a href="javascript:void(0)" class="close"></a>
+                <p class="p-title">扫一扫分享给好友</p>
+                <p>用手机扫一扫二维码，即可把网站分享给您的好友们哦！</p>
+                <div id="qrcode"></div>
+            </div>
+        </div>
+        <!-- 预约弹窗 -->
+        {% include "jy2.woniu.com/web201806/news/apt.html.twig" %}
+
+        <script charset="utf-8" src="//static.woniu.com/scripts/jquery/jquery-1.10.2.min.js"></script>
+        <script charset="utf-8" src="{{ site.getStaticUrl() }}web201806/news/js/qrcode.js"></script>
+        <script charset="utf-8" src="{{ site.getStaticUrl() }}web201806/js/common.js"></script>
+        <script charset="utf-8" src="{{ site.getStaticUrl() }}web201806/news/js/news.js"></script>
+        <script charset="utf-8" id="wn-gamehead" login="//www.woniu.com/account/login/?gameid=119&amp;pagename=t;goto=//jy2.woniu.com/" register="//www.woniu.com/account/register/?gameid=119&amp;pagename=t&amp;goto=//jy2.woniu.com/" src="//www.woniu.com/include/gm_header.js"></script>
+        <script charset="utf-8" id="pub-footer" gamename="黎明陨落" src="//static.woniu.com/footer_dl/pub-footer.js?v=2"></script>
+        <script src="//static.woniu.com/script/module/statistics/0.1/statistics.js"></script>
+    </body>
+
+</html>

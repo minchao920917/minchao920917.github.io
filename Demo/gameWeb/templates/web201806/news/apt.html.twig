@@ -1,0 +1,82 @@
+{% set  pc_1712_qq = block.getPosterByCode('pc_1712_qq',site.getID()) %}
+<div class="popbox popdue ">
+    <a href="javascript:;" class="close"></a>
+    <div class="content">
+        <div class="system-head">
+            <a href="javascript:;" class="sys-btn ios-btn cur">APP Store首发预约<i></i></a>
+            <a href="javascript:;" class="sys-btn android-btn">安卓预约<i></i></a>
+        </div>
+        <div class="sys-cont sys-cont-ios cur">
+            <div class="text">2018年ARPG王者之作，破晓来袭！《黎明陨落》邀您抢先体验！超强的游戏打击感，宏大的世界观设定，自研新引擎打造完美画面效果，多种职业选择，酷炫技能搭配，丰富的游戏互动交互体验，协力对抗邪恶势力！抢先预约，获取首发测试礼包！</div>
+            <form action="">
+                <div class="inputbox ios-phone-inputbox">
+                    <input type="text" id="ios-phone" type="text" maxlength=11 pattern="[0-9]*" oninput="if(isNaN(value))value=value.slice(0,value.length-1)" placeholder="请填写真实手机号码">
+                    <div class="ios-phone-msg inputmsg"></div>
+                </div>
+                <div class="inputbox ios-email-inputbox">
+                    <input type="text" id="ios-email" placeholder="请填写您的常用邮箱">
+                    <div class="ios-email-msg inputmsg"></div>
+                </div>
+                <p>建议填写QQ邮箱，以便及时获取测试邀请信息</p>
+                <div class="inputbox ios-devicelist-inputbox">
+                    <div id="device" class="list">
+                        <span>请选择您的设备型号</span>
+                        <div class="device-list swiper-free-mode">
+                            <ul>
+                                <li>iPhoneX</li>
+                                <li>iPhone8</li>
+                                <li>iPhone8 plus</li>
+                                <li>iPhone7</li>
+                                <li>iPhone7 plus</li>
+                                <li>iPhone6s plus</li>
+                                <li>iPhone6s</li>
+                                <li>iPhone6 plus</li>
+                                <li>iPhone6</li>
+                                <li>iPhoneSE</li>
+                                <li>iPhone5S</li>
+                                <li>iPad Pro</li>
+                                <li>iPad Air2</li>
+                                <li>iPad Mini4</li>
+                                <li>iPad Mini2</li>
+                                <li>其他</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="ios-device-msg inputmsg"></div>
+                </div>
+                <a href="javascript:;" class="due-now-btn ios-due-now">立即预约</a>
+            </form>
+        </div>
+        <div class="sys-cont sys-cont-android">
+            <p>
+                <span>第1步 |</span>下载蜗牛免商店（微端7M放心下）
+                <br>
+                <span>第2步 |</span>打开蜗牛免商店，点击首页《黎明陨落》手游预约专题
+                <br>
+                <span>第3步 |</span>填写真实手机号即可成功预约
+                <br>
+            </p>
+            <div class="sns">
+                <img src="{{ site.getStaticUrl() }}web201806/images/mian.jpg">
+                <h3>扫一扫下载免商店</h3>
+                <p>加入官方QQ群：{{ pc_1712_qq[0].getText() }}
+                    <br> 优先获测试资格！
+                    <a href="{{ pc_1712_qq[0].getUrl() }}" target="_blank" class="join">加入Q群</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="due-success none">
+        <div class="text"><span>恭喜您，预约成功</span>
+            <br>扫码加入官方QQ群，更多精彩活动等着您
+            <br>更多游戏礼包和精美周边等你拿！</div>
+        <div class="share-qrcode">
+            <div class="qrcode-box"><img src="{{ pc_1712_qq[0].getAttachment() }}"></div>
+            <!-- <br> 微信搜索“我的恐龙”（
+            <b>snailwdkl</b>）
+            <br>关注官方微信公众号 -->
+        </div>
+        <div class="enter-qq">加入官方QQ群：<b>{{ pc_1712_qq[0].getText() }}</b>，优先获测试资格<a href="{{ pc_1712_qq[0].getUrl() }}" target="_blank">加入Q群</a></div>
+    </div>
+</div>

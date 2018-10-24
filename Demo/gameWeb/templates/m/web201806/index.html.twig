@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{node.getTitle()}}</title>
+    <meta name="description" content="{{ node.getDesciption() }}" />
+    <meta name="keywords" content="{{ node.getKeywords() }}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link rel="stylesheet" href="{{ site.getPubMStatic() }}web201806/lib/base.css">
+    <link rel="stylesheet" href="{{ site.getPubMStatic() }}web201806/css/swiper.min.css">
+    <link rel="stylesheet" href="{{ site.getPubMStatic() }}web201806/css/index.css">
+    <script type="text/javascript">
+        //为页面html动态设置font-size值
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if(clientWidth>750){
+                            clientWidth=750;
+                        }
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = clientWidth / 7.5 + 'px';
+                        //等价于clientWidth / 750 * 100 + 'px';
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);//resize
+            doc.addEventListener('DOMContentLoaded', recalc, false);//reload
+        })(document, window);
+    </script>
+</head>
+<body>
+    {% set 	m_index_02_swiperbig = block.getPosterByCode('m_index_02_swiperbig',site.getId())[:5] %}
+    {% set 	m_index_03_swiperbox = block.getPosterByCode('m_index_03_swiperbox',site.getId())[:7] %}
+
+
+    {% set 	newest = block.getRecommend('m_index_04_newestpublish',site.getId())[:7] %}
+    {% set 	news = block.getRecommend('m_index_04_newspublish',site.getId())[:5] %}
+    {% set 	notice = block.getRecommend('m_index_04_noticepublish',site.getId())[:5] %}
+    {% set 	act = block.getRecommend('m_index_04_actpublish',site.getId())[:5] %}
+
+    {% set  pc_1712_qq = block.getPosterByCode('pc_1712_qq',site.getID()) %}
+<div class="bg bg1">
+    <div class="topnav">
+        <div class="logo"></div>
+        <h1 class="maintit">九阳神功2</h1>
+        <h2 class="subtit">全公平3DMMO手游巨制</h2>
+        <a href="javascript:void(0);" class="morenav">
+            <i></i>
+            <i></i>
+            <i></i>
+        </a>
+        <div class="headslidenav" style="display:none;">
+
+            <div class="closeblackdiv"><div class="closeblack"></div></div>
+            <div class="menu">MENU</div>
+            <div class="linkbox">
+                <a href="." class="linkone"><span>官方首页</span><br>HOME</a>
+                <a href="./all" class="linkone"><span>新闻资讯</span><br>NEWS</a>
+                {# <a href="//wdkl.bbs.woniu.com/" class="linkone welfare"><span>官方论坛</span><br>FORUM</a> #}
+                <a href="{{ pc_1712_qq[0].getUrl() }}" class="linkone commu"><span>官方社群</span><br>COMMUNITY</a>
+            </div>
+        </div>
+    </div>
+    <img src="{{ site.getPubMStatic() }}web201806/images/slogan.png" class="slogan ">
+    <div class="btn-wrapper disnone" id="iosBtns">
+      <a href="javascript:void(0)" class="apt-btn" id="pre-btn"></a>
+      <!-- <a href="//www.taptap.com/app/77432" class="tap-tap" target="_blank"></a> -->
+    </div>
+    <div class="btn-wrapper disnone" id="androidBtns">
+      <a href="//gwact.woniu.com/api/channel/874" class="android-download-m" target="_blank"></a>
+    </div>
+</div>
+<div class="bg bg2">
+     <div class="swiper-container3">
+        <div class="swiper-wrapper">
+            {% for biglink in m_index_02_swiperbig %}
+            <div class="swiper-slide swbigvideobox">
+                <img src="{{ biglink.getAttachment() }}">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination3"></div>
+    </div>
+</div>
+<!-- <div class="bg bg3">
+    <div class="bgtit"></div>
+    <div class="boxbox">
+        <div class="infobox infobox1"></div>
+        <div class="infobox infobox2"></div>
+        <div class="infobox infobox3"></div>
+        <div class="infobox infobox4"></div>
+        <div class="infobox infobox5"></div>
+        <div class="infobox infobox6"></div>
+        <div class="infobox infobox7"></div>
+        <div class="infobox infobox8"></div>
+        <a href="javascript:void(0);" class="infomore">更多活动</a>
+    </div>
+</div> -->
+<div class="bg bg4">
+    <div class="bgtit"></div>
+    <div class="swiperbox">
+        <div class="swiper-container swiper-container1">
+            <div class="swiper-wrapper">
+                {% for link in m_index_03_swiperbox %}
+                    <div class="swiper-slide swiper-link" url="{{link.getUrl()}}"><img src="{{link.getAttachment()}}" class="slideimg"/></div>
+                {% endfor %}
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination1"></div>
+        </div>
+    </div>
+</div>
+<div class="bg bg5">
+    <div class="news-nav">
+        <a href="javascript:void(0);" class="nav-one cur">最新</a>
+        <a href="javascript:void(0);" target="_blank" class="nav-one">新闻</a>
+        <a href="javascript:void(0);" target="_blank" class="nav-one">公告</a>
+        <a href="javascript:void(0);" class="nav-one">活动</a>
+    </div>
+    <div class="news-content">
+        <div class="newsone-detail cur">
+            {% if newest[0] %}
+            <a href="{{newest[0].getUrl()}}" class="one-max">
+                <!-- <div class="arr-box"><div class="right-arr"></div></div> -->
+                <div class="tit">{{newest[0].getTitle()}}</div>
+                <div class="desc">{{newest[0].getDesciption()}}</div>
+                <div class="date">{{newest[0].getPublishTime()|date('Y/m/d')}}<span>{{ newest[0].getNode.getname() }}</span></div>
+            </a>
+            {% endif %}
+
+            {% if newest[1] %}
+            <div class="one-sm-box">
+            {% for c in newest %}
+            {% if loop.index > 1 and loop.index < 8 %}
+            {% if newest[loop.index-1] %}
+                <a href="{{newest[loop.index-1].getUrl()}}" class="one-sm"><div class="titbox">【{{ newest[loop.index-1].getNode.getname() }}】{{newest[loop.index-1].getTitle()}}</div><span>{{newest[loop.index-1].getPublishTime()|date('Y/m/d')}}</span></a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="newsone-detail">
+            {% if news[0] %}
+            <a href="{{news[0].getUrl()}}" class="one-max">
+                <!-- <div class="arr-box"><div class="right-arr"></div></div> -->
+                <div class="tit">{{news[0].getTitle()}}</div>
+                <div class="desc">{{news[0].getDesciption()}}</div>
+                <div class="date">{{news[0].getPublishTime()|date('Y/m/d')}}<span>{{ news[0].getNode.getname() }}</span></div>
+            </a>
+            {% endif %}
+            {% if news[1] %}
+            <a href="{{news[1].getUrl()}}" class="one-max">
+                <!-- <div class="arr-box"><div class="right-arr"></div></div> -->
+                <div class="tit">{{news[1].getTitle()}}</div>
+                <div class="desc">{{news[1].getDesciption()}}</div>
+                <div class="date">{{news[1].getPublishTime()|date('Y/m/d')}}<span>{{ news[1].getNode.getname() }}</span></div>
+            </a>
+            {% endif %}
+            {% if news[2] %}
+            <div class="one-sm-box">
+            {% for c in news %}
+            {% if loop.index > 2 and loop.index < 6 %}
+            {% if news[loop.index-1] %}
+                <a href="{{news[loop.index-1].getUrl()}}" class="one-sm"><div class="titbox">【{{ news[loop.index-1].getNode.getname() }}】{{news[loop.index-1].getTitle()}}</div><span>{{news[loop.index-1].getPublishTime()|date('Y/m/d')}}</span></a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="newsone-detail">
+            {% if notice[0] %}
+            <a href="{{notice[0].getUrl()}}" class="one-max">
+                <!-- <div class="arr-box"><div class="right-arr"></div></div> -->
+                <div class="tit">{{notice[0].getTitle()}}</div>
+                <div class="desc">{{notice[0].getDesciption()}}</div>
+                <div class="date">{{notice[0].getPublishTime()|date('Y/m/d')}}<span>{{ notice[0].getNode.getname() }}</span></div>
+            </a>
+            {% endif %}
+            {% if notice[1] %}
+            <a href="{{notice[1].getUrl()}}" class="one-max">
+                <!-- <div class="arr-box"><div class="right-arr"></div></div> -->
+                <div class="tit">{{notice[1].getTitle()}}</div>
+                <div class="desc">{{notice[1].getDesciption()}}</div>
+                <div class="date">{{notice[1].getPublishTime()|date('Y/m/d')}}<span>{{ notice[1].getNode.getname() }}</span></div>
+            </a>
+            {% endif %}
+            {% if notice[2] %}
+            <div class="one-sm-box">
+            {% for c in notice %}
+            {% if loop.index > 2 and loop.index < 6 %}
+            {% if notice[loop.index-1] %}
+                <a href="{{notice[loop.index-1].getUrl()}}" class="one-sm"><div class="titbox">【{{ notice[loop.index-1].getNode.getname() }}】{{notice[loop.index-1].getTitle()}}</div><span>{{notice[loop.index-1].getPublishTime()|date('Y/m/d')}}</span></a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="newsone-detail">
+            {% if act[0] %}
+            <a href="{{act[0].getUrl()}}" class="one-max">
+                <!-- <div class="arr-box"><div class="right-arr"></div></div> -->
+                <div class="tit">{{act[0].getTitle()}}</div>
+                <div class="desc">{{act[0].getDesciption()}}</div>
+                <div class="date">{{act[0].getPublishTime()|date('Y/m/d')}}<span>{{ act[0].getNode.getname() }}</span></div>
+            </a>
+            {% endif %}
+            {% if act[1] %}
+            <a href="{{act[1].getUrl()}}" class="one-max">
+                <!-- <div class="arr-box"><div class="right-arr"></div></div> -->
+                <div class="tit">{{act[1].getTitle()}}</div>
+                <div class="desc">{{act[1].getDesciption()}}</div>
+                <div class="date">{{act[1].getPublishTime()|date('Y/m/d')}}<span>{{ act[1].getNode.getname() }}</span></div>
+            </a>
+            {% endif %}
+            {% if act[2] %}
+            <div class="one-sm-box">
+            {% for c in act %}
+            {% if loop.index > 2 and loop.index < 6 %}
+            {% if act[loop.index-1] %}
+                <a href="{{act[loop.index-1].getUrl()}}" class="one-sm"><div class="titbox">【{{ act[loop.index-1].getNode.getname() }}】{{act[loop.index-1].getTitle()}}</div><span>{{act[loop.index-1].getPublishTime()|date('Y/m/d')}}</span></a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <a href="//jy2.woniu.com/m/all/" class="morenews">更多新闻</a>
+</div>
+
+<div class="bg bg6">
+    <div class="sharelinkbox">
+        <a href="{{ pc_1712_qq[0].getUrl() }}" class="sharelink weixin"></a>
+        <a href="//jy2.bbs.woniu.com/" class="sharelink bbs"></a>
+        <a href="https://weibo.com/p/1006066432596916" class="sharelink weibo"></a>
+        <a href="https://tieba.baidu.com/f?kw=%E9%BB%8E%E6%98%8E%E9%99%A8%E8%90%BD%E6%89%8B%E6%B8%B8" class="sharelink tieba"></a>
+    </div>
+    <a href="javascript:void(0);" class="duebtn-btm" id="duebtn-btm-ios"></a>
+    <a href="javascript:void(0);"  class="sharetofriend">分享给好友</a>
+</div>
+<div class="footer">
+    2017 蜗牛 苏州蜗牛数字科技股份有限公司 版权所有<br />
+    地址：苏州工业园区中新大道西171号<br/>
+    苏ICP备08012323号-6 客服电话：0512-67621819
+</div>
+<div class="flnav">
+    <a href="." class="btn cur"><span>首页</span></a>
+    <a href="./all" class="btn"><span>新闻</span></a>
+    <!-- <a href="{{ pc_1712_qq[0].getUrl() }}" class="btn commu"><span>社群</span></a> -->
+     <a href="//jy2.woniu.com/m/static/info/" class="btn marterial"><span>资料站</span></a> 
+    <!-- <a href="javascript:void(0);" class="duebtn duebtn-and" id="duebtnflnav-and">游戏下载</a> -->
+    <a href="javascript:void(0);" class="duebtn duebtn-ios" id="duebtnflnav-ios">游戏下载</a>
+</div>
+
+
+<div class="mask"></div>
+
+
+<!--预约-->
+    <div class="pop ios" id="pre-ios">
+        <a href="javascript:void(0)" class="close"></a>
+        <div class="pop-box">
+            <p class="title">公测预约</p>
+            <p class="normal">2018年ARPG王者之作，破晓来袭！《黎明陨落》邀您抢先体验！超强的游戏打击感，宏大的世界观设定，自研新引擎打造完美画面效果，多种职业选择，酷炫技能搭配，丰富的游戏互动交互体验，协力对抗邪恶势力！抢先预约，获取首发测试礼包！</p>
+            <input type="tel" id="phone" class="input" placeholder="请填写真实手机号码" maxlength="11">
+            <input type="text" id="mail" class="input" placeholder="请填写您的常用邮箱">
+            <p class="normal">需与苹果商店账号（AppStore ID）一致。填写可优先获取测试资格</p>
+            <div id="device" class="list">
+                <span>请选择您的设备型号</span>
+                <div class="device-list">
+                    <ul>
+                        <li>iPhoneX</li>
+                        <li>iPhone8 plus</li>
+                        <li>iPhone8</li>
+                        <li>iPhone7 plus</li>
+                        <li>iPhone7</li>
+                        <li>iPhone6s plus</li>
+                        <li>iPhone6s</li>
+                        <li>iPhone6 plus</li>
+                        <li>iPhone6</li>
+                        <li>iPhoneSE</li>
+                        <li>iPhone5S</li>
+                        <li>iPad Pro</li>
+                        <li>iPad Air2</li>
+                        <li>iPad Mini4</li>
+                        <li>iPad Mini2</li>
+                        <li>其他</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="javascript:void(0)" class="go-apt" id="j-order">立即预约</a>
+        </div>
+    </div>
+
+    <div class="pop android" id="pre-android">
+        <a href="javascript:void(0)" class="close"></a>
+        <div class="pop-box">
+            <h2>预约步骤</h2>
+            <p class="bz"><em>第 1 步</em> | 下载蜗牛免商店</p>
+            <p class="bz"><em>第 2 步</em> | 打开蜗牛免商店，点击首页
+                <span>《黎明陨落》手机预约专题</span>
+            </p>
+            <p class="bz bt"><em>第 3步</em> | 填写真实手机号即可成功预约</p>
+            <a href="https://gwact.woniu.com/api/channel/852 " class="down">下载蜗牛免商店</a>
+            <p class="normal">微信搜索“黎明陨落手游”<br>关注官方微信公众号</p>
+            <div class="normal qq">
+                <img src="{{ site.getPubMStatic() }}web201806/images/qq.png" /><br>
+                加入官方QQ群： <b>{{ pc_1712_qq[0].getText() }}</b><br> 优先获测试资格<br><br>
+                <a href="{{ pc_1712_qq[0].getUrl() }}">加入Q群</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop success" id="pre-success">
+        <a href="javascript:void(0)" class="close"></a>
+        <div class="pop-box">
+            <p class="title">恭喜您,预约成功！</p>
+            <p class="normal">更多资讯，请关注“黎明陨落手游”官方微信，<br>优先领取测试资格，更有海量福利等你拿！</p>
+            <img src="{{ site.getPubMStatic() }}web201806/images/qrcode.png" class="qrcode">
+            <p class="qr-lang"></p>
+            <p class="normal">关注公众号<br>官方微信公众号 搜索“黎明陨落手游”<br>获取官方最新动态</p>
+            <div class="normal qq">
+                <img src="{{ site.getPubMStatic() }}web201806/images/qq.png" /><br>
+                加入官方QQ群： <b>{{ pc_1712_qq[0].getText() }}</b><br> 优先获测试资格<br><br>
+                <a href="{{ pc_1712_qq[0].getUrl() }}">加入Q群</a>
+            </div>
+        </div>
+    </div>
+
+    <!--社群-->
+    <div class="pop popsns">
+        <a href="javascript:void(0)" class="close"></a>
+        <div class="cont">
+            <h2>游戏社群</h2>
+            <p>[长按识别二维码]</p>
+            <img src="{{ site.getPubMStatic() }}web201806/images/qrcode.jpg">
+            <p>关注公众号<br>官方微信公众号 搜索“黎明陨落手游”<br>获取官方最新动态</p>
+            <div class="popshare">
+                立即分享
+            </div>
+        </div>
+        <div class="sns">
+            <a href="{{ pc_1712_qq[0].getUrl() }}" class="a1">
+                官方QQ群<br>{{ pc_1712_qq[0].getText() }}
+            </a>
+            <a href="https://tieba.baidu.com/f?kw=%E9%BB%8E%E6%98%8E%E9%99%A8%E8%90%BD%E6%89%8B%E6%B8%B8" class="a2">百度贴吧</a>
+            <a href="https://weibo.com/p/1006066432596916" class="a3">新浪微博</a>
+        </div>
+    </div>
+
+<!--视频弹窗-->
+<div class="popup-video popup" id="popup-video">
+    <div class="layer"></div>
+    <div class="wrap">
+        <div class="video"></div>
+    </div>
+    <div class="close"></div>
+</div>
+
+    <!-- 菜单弹框 -->
+    <div class="pop menu" id="pre-menu">
+        <a href="javascript:void(0)" class="close"></a>
+        <div class="pop-box">
+
+          <img class="word" src="{{ site.getPubMStatic() }}web201806/images/menu-word.png"  alt="">
+
+          <ul>
+            <li>
+              <a class="menu-home" href="http://jy2.woniu.com/m" target="_blank"> </a>
+            </li>
+             <li>
+              <a class="menu-forum" href="http://jy2.bbs.woniu.com" target="_blank" ></a>
+            </li>
+             <li>
+              <a class="menu-comm" href="https://jq.qq.com/?_wv=1027&k=5aL0Aer" target="_blank"></a>
+            </li>
+          </ul>
+        </div>
+    </div>
+
+<script charset="utf-8" src="{{ site.getPubMStatic() }}web201806/lib/jquery-1.10.2.min.js"></script>
+<script src="//static.woniu.com/script/module/mshare/mshare.js"></script>
+<script charset="utf-8" src="{{ site.getPubMStatic() }}web201806/js/swiper.min.js"></script>
+<script charset="utf-8" src="{{ site.getPubMStatic() }}web201806/js/index.js"></script>
+</body>
+</html>

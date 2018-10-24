@@ -1,0 +1,8 @@
+{% set list = [] %}
+{% set material = lister.getContentList(200,'c.keywords|ASC',node.getId(), false) %}
+
+{% for c in material %}
+    {% set list = list|merge([{'title':c.getTitle(),'grandpa':c.getSubtitle(),'parent':c.getTag(),'url':c.getUrl()}]) %}
+{% endfor %}
+
+{{ list|json_encode()|raw }}

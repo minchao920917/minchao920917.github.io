@@ -1,0 +1,38 @@
+{% set  pc_1712_qq = block.getPosterByCode('pc_1712_qq',site.getID()) %}
+<div class="headerbg">
+    <div class="bar-box">
+        <div class="link-box">
+            <a href="//jy2.woniu.com/">官方首页</a>
+            <span></span>
+            <a href="//jy2.woniu.com/all/">新闻活动</a>
+            <span></span>
+            <a href="javascript:alert('敬请期待！')">官方论坛</a>
+            <span></span>
+        </div>
+        <div class="share-box">
+            <div class="s-icon-box">
+                <div class="weixin-box">
+                    <div>
+                        <img src="//jy2.woniu.com/static/web201806/images/wx-qrcode.jpg">
+                        <p>扫一扫关注公众号</p>
+                    </div>
+                </div>
+                <a href="https://tieba.baidu.com/f?ie=utf-8&kw=%20%E9%BB%8E%E6%98%8E%E9%99%A8%E8%90%BD%E6%89%8B%E6%B8%B8&fr=search" class="tieba" target="_blank"></a>
+                <a href="{{ pc_1712_qq[0].getUrl() }}" class="qq" target="_blank">
+                    <div class="qq-box show">
+                        <img src="{{ pc_1712_qq[0].getAttachment() }}" alt="">
+                    </div>
+                </a>
+                <div class="more">
+                    <div class="more-box">
+                        <a href="javascript:void(0)" class="s-link s-weixin"></a>
+                        <a href="" class="s-link s-weibo" target="_blank"></a>
+                        <a href="" class="s-link s-qzone" target="_blank"></a>
+                        <a href="" class="s-link s-qq" target="_blank"></a>
+                        <a href="" class="s-link s-tieba" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

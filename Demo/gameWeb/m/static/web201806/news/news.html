@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+	<link rel="stylesheet" href="http://static.woniu.com/stylesheets/base.css">
+	<link rel="stylesheet" href="./css/newscenter.css">
+
+	<script type="text/javascript">
+        //为页面html动态设置font-size值
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = clientWidth / 7.5 + 'px';
+                        //等价于clientWidth / 750 * 100 + 'px';
+                    };9
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);//resize
+            doc.addEventListener('DOMContentLoaded', recalc, false);//reload
+        })(document, window);
+    </script>
+</head>
+<body>
+<div class="bg bg5">
+	<div class="news-nav">
+		<div class="navtit"><span>游戏资讯</span><br>GAME&nbsp;NEWS</div>
+		<a href="javascript:history.back();" class="returnbtn"></a>
+		<div class="navlink">
+			<a href="." class="nav-one cur">最新</a>
+			<a href="./news" class="nav-one">新闻</a>
+			<a href="./bullentins" class="nav-one">公告</a>
+			<a href="./events" class="nav-one">活动</a>
+		</div>
+	</div>
+	<div class="news-content">
+		<div class="newsone-detail">
+			<a href="javascript:;" class="one-max">
+				<div class="arr-box"><div class="right-arr"></div></div>
+				<div class="tit">《太极熊猫：猎龙》评测：一起进入大坐骑时代</div>
+				<div class="desc">上周五(2月17日)，蜗牛旗舰级手游《太极熊猫3：猎龙》于iOS平台进行了首次TF测试，在为期三天的测试时间中...</div>
+				<div class="date">2017/02/28<span>活动</span></div>
+			</a>
+			<a href="javascript:;" class="one-max">
+				<div class="arr-box"><div class="right-arr"></div></div>
+				<div class="tit">《太极熊猫：猎龙》评测：一起进入大坐骑时代一起进入大坐骑时代</div>
+				<div class="desc">上周五(2月17日)，蜗牛旗舰级手游《太极熊猫3：猎龙》于iOS平台进行了首次TF测试，在为期三天的测试时间中...</div>
+				<div class="date">2017/02/28<span>活动</span></div>
+			</a>
+			<a href="javascript:;" class="one-max">
+				<div class="arr-box"><div class="right-arr"></div></div>
+				<div class="tit">《太极熊猫：猎龙》评测：一起进入大坐骑时代一起进入大坐骑时代</div>
+				<div class="desc">上周五(2月17日)，蜗牛旗舰级手游《太极熊猫3：猎龙》于iOS平台进行了首次TF测试，在为期三天的测试时间中...</div>
+				<div class="date">2017/02/28<span>活动</span></div>
+			</a>
+			<a href="javascript:;" class="one-max">
+				<div class="arr-box"><div class="right-arr"></div></div>
+				<div class="tit">《太极熊猫：猎龙》评测：一起进入大坐骑时代一起进入大坐骑时代</div>
+				<div class="desc">上周五(2月17日)，蜗牛旗舰级手游《太极熊猫3：猎龙》于iOS平台进行了首次TF测试，在为期三天的测试时间中...</div>
+				<div class="date">2017/02/28<span>活动</span></div>
+			</a>
+		</div>
+	</div>
+	<!-- <a href="javascript:;" class="morenews">点击查看更多</a> -->
+	<div class="pagebox">
+        <a href="http://panda3.woniu.com/all/events/index.html" class="pagelf">上一页</a>
+<!--         <a href="http://panda3.woniu.com/all/events/index.html" class="page">1</a>
+        <a href="http://panda3.woniu.com/all/events/list_2.html" class="page">2</a>
+        <a href="http://panda3.woniu.com/all/events/list_3.html" class="page ">3</a>
+        <a href="http://panda3.woniu.com/all/events/list_4.html" class="page ">4</a> -->
+	    <a href="http://panda3.woniu.com/all/events/list_3.html" class="pagerg">下一页</a>
+	</div>
+</div>
+
+<script charset="utf-8" src="http://static.woniu.com/scripts/jquery/jquery-1.10.2.min.js"></script>
+<script charset="utf-8" src="./js/newscenter.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{node.getTitle()}}</title>
+  <meta name="description" content="{{ node.getDesciption() }}" />
+  <meta name="keywords" content="{{ node.getKeywords() }}" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+
+  <link rel="stylesheet" href="//static.woniu.com/stylesheets/base.css" />
+  <link rel="stylesheet" type="text/css" href="{{ site.getPubMStatic() }}web201804/css/index.css">
+  <script type="text/javascript">
+    //为页面html动态设置font-size值
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (clientWidth > 1024) {
+            clientWidth = 750;
+        }
+        if (!clientWidth) return;
+        docEl.style.fontSize = clientWidth / 7.5 + 'px';
+        //等价于clientWidth / 750 * 100 + 'px';
+      };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);//resize
+      doc.addEventListener('DOMContentLoaded', recalc, false);//reload
+    })(document, window);
+  </script>
+<!-- code:sunhao -->
+</head>
+<body>
+
+  {% set pc_index_qqgroup = block.getPosterByCode('pc_index_qqgroup',site.getID()) %}
+
+  <div class="container bg">
+    <div class="topnav">
+      <div class="logo"></div>
+      <h1 class="maintit">九阳神功2</h1>
+      <h2 class="subtit">全公平3DMMO手游巨制</h2>
+      <a href="javascript:void(0);" class="morenav">
+          <i></i>
+          <i></i>
+          <i></i>
+      </a>
+      <div class="headslidenav" style="display:none;">
+        <div class="closeblackdiv"><div class="closeblack"></div></div>
+        <div class="menu">MENU</div>
+        <div class="linkbox">
+          <a href="." class="linkone"><span>官方首页</span><br>HOME</a>
+          <a href="./all" class="linkone"><span>新闻资讯</span><br>NEWS</a>
+          <a href="https://www.baidu.com/" class="linkone commu"><span>官方社群</span><br>COMMUNITY</a>
+        </div>
+      </div>
+    </div>
+    <img src="{{ site.getPubMStatic() }}web201804/images/slogan.png" class="slogan">
+    <div class="btn-wrapper hide" id="iosBtns">
+      <a href="javascript:void(0)" class="apt-btn" id="pre-btn"></a>
+      <a href="//www.taptap.com/app/77432" class="tap-tap" target="_blank"></a>
+    </div>
+    <div class="btn-wrapper hide" id="androidBtns">
+      <a href="//gwact.woniu.com/api/channel/874" class="android-download-m" target="_blank"></a>
+    </div>
+  </div>
+
+  
+  <div class="pop ios" id="pre-ios">
+    <a href="javascript:void(0)" class="close"></a>
+    <div class="pop-box">
+      <p class="title">公测预约</p>
+      <p class="normal">2018年全公平3DMMO手游巨制，真实江湖归来，重温经典武侠，《九阳神功2》邀您抢先体验！精益求精的主机工艺，恢弘无缝大江湖，拳拳到肉的打击感，开放性格养成，自由冒险奇遇，五大职业重出江湖，带你领略最真实的武林纷争！抢先预约，获取首测礼包！</p>
+      <input type="tel" id="phone" class="input" placeholder="请填写真实手机号码" maxlength="11">
+      <input type="text" id="mail" class="input" placeholder="请填写您的常用邮箱">
+      <p class="normal">需与苹果商店账号（AppStore ID）一致。填写可优先获取测试资格</p>
+      <div id="device" class="list">
+        <span>请选择您的设备型号</span>
+        <div class="device-list">
+          <ul>
+            <li>iPhoneX</li>
+            <li>iPhone8 plus</li>
+            <li>iPhone8</li>
+            <li>iPhone7 plus</li>
+            <li>iPhone7</li>
+            <li>iPhone6s plus</li>
+            <li>iPhone6s</li>
+            <li>iPhone6 plus</li>
+            <li>iPhone6</li>
+            <li>iPhoneSE</li>
+            <li>iPhone5S</li>
+            <li>iPad Pro</li>
+            <li>iPad Air2</li>
+            <li>iPad Mini4</li>
+            <li>iPad Mini2</li>
+            <li>其他</li>
+          </ul>
+        </div>
+      </div>
+      <a href="javascript:void(0)" class="go-apt" id="j-order">立即预约</a>
+    </div>
+  </div>
+
+  <div class="pop android" id="pre-android">
+    <a href="javascript:void(0)" class="close"></a>
+    <div class="pop-box">
+      <h2>预约步骤</h2>
+      <p class="bz"><em>第 1 步</em> | 下载蜗牛免商店</p>
+      <p class="bz"><em>第 2 步</em> | 打开蜗牛免商店，点击首页
+        <span>《九阳神功2》手机预约专题</span>
+      </p>
+      <p class="bz bt"><em>第 3步</em> | 填写真实手机号即可成功预约</p>
+      <a href="//gwact.woniu.com/api/channel/871" class="down">下载蜗牛免商店</a>
+      <div class="normal qq">
+        <img src="{{ site.getPubMStatic() }}web201804/images/qq.png" /><br>
+        加入官方QQ群： <b>{{ pc_1712_qq[0].getText() }}</b><br> 优先获测试资格<br><br>
+        <a href="{{ pc_index_qqgroup[0].getUrl() }}">加入Q群</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="pop success" id="pre-success">
+    <a href="javascript:void(0)" class="close"></a>
+    <div class="pop-box">
+      <p class="title">恭喜您，预约成功</p>
+      <p class="normal">更多资讯，请加入“九阳神功2”官方qq群，<br>带你领略最真实的武林纷争，更多游戏礼包和精美周边等你拿！</p>
+      <img src="{{ site.getPubMStatic() }}web201804/images/qrcode.jpg" class="qrcode">
+      <p class="qr-lang"></p>
+      {# <p class="normal">关注公众号<br>官方微信公众号 <b class="yellow">snailmjfy</b> 或搜索“九阳神功2”<br>获取官方最新动态</p> #}
+      <div class="normal qq">
+        <img src="{{ site.getPubMStatic() }}web201804/images/qq.png" /><br>
+        加入官方QQ群： <b>{{ pc_1712_qq[0].getText() }}</b><br> 优先获测试资格<br><br>
+        <a href="{{ pc_index_qqgroup[0].getUrl() }}">加入Q群</a>
+      </div>
+    </div>
+  </div>
+<div class="pop menu" id="pre-menu">
+    <a href="javascript:void(0)" class="close"></a>
+    <div class="pop-box">
+
+      <img class="word" src="{{ site.getPubMStatic() }}web201804/images/menu-word.png"  alt="">
+
+      <ul>
+        <li>
+          <a class="menu-home" href="http://jy2.woniu.com/m" target="_blank"> </a>
+        </li>
+         <li>
+          <a class="menu-forum" href="http://jy2.bbs.woniu.com" target="_blank" ></a>
+        </li>
+         <li>
+          <a class="menu-comm" href="https://jq.qq.com/?_wv=1027&k=5aL0Aer" target="_blank"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script charset="utf-8" src="//static.woniu.com/scripts/jquery/jquery-1.10.2.min.js"></script>
+  <script src="{{ site.getPubMStatic() }}web201804/js/index.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9aa3c6faca7a4f94b791b5083ce42f96";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{node.getTitle()}}</title>
+  <meta name="description" content="{{ node.getDesciption() }}" />
+  <meta name="keywords" content="{{ node.getKeywords() }}" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="//static.woniu.com/stylesheets/base.css" />
+  <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201804/css/common.css">
+  <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201804/css/index.css">
+</head>
+<body>
+  {% set pc_index_qqgroup = block.getPosterByCode('pc_index_qqgroup',site.getID()) %}
+
+  <div class="main">
+    <div class="nav">
+      <div class="links">
+        {# <a href="javascript:void(0)" class="wx">
+          <img class="weixin-qrcode" src="{{ site.getStaticUrl() }}web201804/images/s_wx.png" alt="">
+        </a> #}
+        <a href="http://jy2.bbs.woniu.com/" target="_blank" class="text"></a>
+            <a href="javascript:alert('敬请期待')" target="_blank" class="wx"></a>
+        <a href="javascript:alert('敬请期待')" class="weibo"></a>
+        <a href="javascript:alert('敬请期待')" class="tieba"></a>
+        <a href="{{ pc_index_qqgroup[0].getUrl() }}" target="_blank" class="qq"></a>
+        <div href="javascript:void(0)" class="sharemore">
+          <div class="sharelink-more-box">
+            <a href="javascript:;" class="more share-weixin"></a>
+            <a href="javascript:;" target="_blank" class="more share-weibo"></a>
+            <a href="javascript:;" target="_blank" class="more share-qqzone"></a>
+            <a href="javascript:;" target="_blank" class="more share-qq"></a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="tabs">
+        <a href="javascript:void(0)" class="tab fp1 active"></a>
+        <a href="//lm.woniu.com/all/" class="tab fp2"></a>
+        <a href="//lm.bbs.woniu.com" class="tab fp3"></a>
+      </div> -->
+    </div>
+    <div class="bg">
+      <div class="wrapper">
+        <div class="logo-wrapper">
+          <div class="icon"></div>
+          <div class="logo"></div>
+        </div>
+        <div class="slogan"></div>
+        {# <div class="btn-wrapper">
+          <div class="btn apt-btn"></div>
+          <a href="https://www.taptap.com/app/85825" class="btn taptap"></a>
+        </div> #}
+
+<!--         <div class="btn-wrapper">
+          <div class="btn apt-btn"></div>
+          <a href="https://www.taptap.com/app/85825" class="btn taptap"></a>
+        </div> -->
+
+        <div class="btn-wrapper">
+          <div class="qr-bg">
+            <img class="word" src="{{ site.getStaticUrl() }}web201804/images/download-word.png" alt="">
+            <img class="erweima" src="{{ site.getStaticUrl() }}web201804/images/download-erweima.png" alt="">
+          </div>
+          <div class="download-bg">
+            <a href="javascript:alert('敬请期待')" class="iOS-download"></a>
+            <a href="http://gwact.woniu.com/api/channel/874" class="android-download"></a>
+          </div>
+      </div>
+    </div>
+
+    <!-- 预约 -->
+    <div class="popbox popdue ">
+      <a href="javascript:;" class="close"></a>
+      <div class="content ">
+        <div class="system-head">
+          <a href="javascript:;" class="sys-btn ios-btn cur">APP Store首发预约<i></i></a>
+          <a href="javascript:;" class="sys-btn android-btn">安卓预约<i></i></a>
+        </div>
+        <div class="sys-cont sys-cont-ios cur">
+          <div class="text">2018年全公平3DMMO手游巨制，真实江湖归来，重温经典武侠，《九阳神功2》邀您抢先体验！精益求精的主机工艺，恢弘无缝大江湖，拳拳到肉的打击感，开放性格养成，自由冒险奇遇，五大职业重出江湖，带你领略最真实的武林纷争！抢先预约，获取首测礼包！
+          </div>
+          <form action="">
+            <div class="inputbox ios-phone-inputbox">
+              <input type="text" id="ios-phone" type="text" maxlength=11 pattern="[0-9]*" oninput="if(isNaN(value))value=value.slice(0,value.length-1)" placeholder="请填写真实手机号码">
+              <div class="ios-phone-msg inputmsg"></div>
+            </div>
+            <div class="inputbox ios-email-inputbox">
+              <input type="text" id="ios-email" placeholder="请填写您的常用邮箱">
+              <div class="ios-email-msg inputmsg"></div>
+            </div>
+            <p>建议填写QQ邮箱，以便及时获取测试邀请信息</p>
+            <div class="inputbox ios-devicelist-inputbox">
+              <div id="device" class="list">
+                <span>请选择您的设备型号</span>
+                <div class="device-list swiper-free-mode">
+                  <ul>
+                    <li>iPhoneX</li>
+                    <li>iPhone8</li>
+                    <li>iPhone8 plus</li>
+                    <li>iPhone7</li>
+                    <li>iPhone7 plus</li>
+                    <li>iPhone6s plus</li>
+                    <li>iPhone6s</li>
+                    <li>iPhone6 plus</li>
+                    <li>iPhone6</li>
+                    <li>iPhoneSE</li>
+                    <li>iPhone5S</li>
+                    <li>iPad Pro</li>
+                    <li>iPad Air2</li>
+                    <li>iPad Mini4</li>
+                    <li>iPad Mini2</li>
+                    <li>其他</li>
+                  </ul>
+                </div>
+              </div>
+              <br>
+              <div class="ios-device-msg inputmsg"></div>
+            </div>
+            <a href="javascript:;" class="due-now-btn ios-due-now">立即预约</a>
+          </form>
+        </div>
+        <div class="sys-cont sys-cont-android">
+            <p>
+              <span>第1步 |</span>下载蜗牛免商店（微端7M放心下）
+              <br>
+              <span>第2步 |</span>打开蜗牛免商店，点击首页《九阳神功2》手游预约专题
+              <br>
+              <span>第3步 |</span>填写真实手机号即可成功预约
+              <br>
+            </p>
+            <div class="sns">
+              <img src="{{ site.getStaticUrl() }}web201804/images/mian.jpg">
+              <h3>扫一扫下载免商店</h3>
+              <p>加入官方QQ群：{{ pc_1712_qq[0].getText() }}
+                <br> 优先获测试资格！
+                <a href="{{ pc_index_qqgroup[0].getUrl() }}" target="_blank" class="join">加入Q群</a>
+              </p>
+            </div>
+        </div>
+      </div>
+      <div class="due-success none">
+        <div class="text">
+          <span>恭喜您，预约成功</span>
+          <br>更多资讯内容，请加入“九阳神功2”官方qq群，带你领略最真实的武林纷争，<br>更多游戏礼包和精美周边等你拿！
+        <div class="share-qrcode">
+          <div class="qrcode-box"><img src="{{ site.getStaticUrl() }}web201804/images/gongzhonghao.jpg"></div>
+          {# <br> 微信搜索“九阳神功2”（
+          <b>snailwdkl</b>）
+          <br>关注官方微信公众号 #}
+        </div>
+        <div class="enter-qq">加入官方QQ群：<b>{{ pc_1712_qq[0].getText() }}</b>，优先获测试资格<a href="{{ pc_index_qqgroup[0].getUrl() }}" target="_blank">加入Q群</a></div>
+      </div>
+    </div>
+
+    <!--视频弹窗-->
+    <div class="popup popup-video" id="popup-video" style="display:none">
+      <div class="layer"></div>
+      <div class="wrap">
+        <span class="close2"></span>
+        <div class="video" id="videobox"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--popup-weixin-qrcode-->
+  <div class="popup popup-weixin-qrcode" id="popup-weixin-qrcode">
+    <div class="layer"></div>
+    <div class="wrap">
+      <span class="close2"></span>
+      <h2>扫一扫分享给好友</h2>
+      <p>用手机扫一扫二维码，即可把网站分享给您的好友们哦！</p>
+      <!-- <img src="./images/share.jpg" alt=""> -->
+      <div id="qrcode"></div>
+    </div>
+  </div>
+
+  <script charset="utf-8" src="//static.woniu.com/scripts/jquery/jquery-1.10.2.min.js"></script>
+  <script src="{{ site.getStaticUrl() }}web201804/js/qrcode.js"></script>
+  <script src="{{ site.getStaticUrl() }}web201804/js/common.js"></script>
+  <script charset="utf-8" id="pub-footer" gamename="九阳神功2" src="//static.woniu.com/footer_dl/pub-footer.https.js?v=2"></script>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9aa3c6faca7a4f94b791b5083ce42f96";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</body>
+</html>

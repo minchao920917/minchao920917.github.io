@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>{{node.getTitle()}}</title>
+    <meta name="description" content="{{ node.getDesciption() }}" />
+    <meta name="keywords" content="{{ node.getKeywords() }}" />
+    <meta name="copyright" content="苏州蜗牛数字科技股份有限公司" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link rel="stylesheet" href="//static.woniu.com/stylesheets/base.css">
+    <link rel="stylesheet" href="//jy2.woniu.com/m/static/web201806/news/css/newsdetail.css">
+
+	<script type="text/javascript">
+        //为页面html动态设置font-size值
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = clientWidth / 7.5 + 'px';
+                        //等价于clientWidth / 750 * 100 + 'px';
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);//resize
+            doc.addEventListener('DOMContentLoaded', recalc, false);//reload
+        })(document, window);
+    </script>
+</head>
+<body>
+
+<div class="main">
+    <div class="news-nav show">
+        <div class="navtit"><span>新闻资讯</span>&nbsp;NEWS</div>
+        <a href="javascript:history.back();" class="returnbtn"></a>
+    </div>
+    <div class="news-content">
+        <div class="newstit">{{ content.getTitle() }}<br><span>{{ content.getPublishTime()|date("Y/m/d")}}</span></div>
+        <div class="newscont">{{content.getContent()|raw}}</div>
+    </div>
+</div>
+<script charset="utf-8" src="//static.woniu.com/scripts/jquery/jquery-1.10.2.min.js"></script>
+<script charset="utf-8" src="//jy2.woniu.com/m/static/web201806/news/js/newsdetail.js"></script>
+<script src="//static.woniu.com/script/module/statistics/0.1/statistics.js"></script>
+</body>
+</html>
+

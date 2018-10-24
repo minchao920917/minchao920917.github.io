@@ -1,0 +1,461 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{node.getTitle()}}</title>
+  <meta name="description" content="{{ node.getDesciption() }}" />
+  <meta name="keywords" content="{{ node.getKeywords() }}" />
+  <meta name="copyright" content="苏州蜗牛数字科技股份有限公司" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <meta name="renderer" content="webkit">
+  <meta name="baidu-site-verification" content="BDoD5rdVCp" />
+  <script>
+    (function() {
+        var sUserAgent = navigator.userAgent;
+        if (sUserAgent.indexOf('Android') > -1 && sUserAgent.indexOf('Mobile') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Symbian') > -1 || sUserAgent.indexOf('IEMobile') > -1) {
+          location.href = "//jy2.woniu.com/m/";
+        }
+    })();
+  </script>
+  <link rel="stylesheet" href="//static.woniu.com/stylesheets/base.css">
+  <link rel="stylesheet" href="//www.woniu.com/static/wnheader/css/wn-gamehead-1.1.css?v=4.0.1" media="all">
+  <link rel="stylesheet" type="text/css" href="//static.woniu.com/footer_dl/pub-footer.css?clearCDN=1.2">
+  <!-- <link rel="stylesheet" href="./css/animate.css"> -->
+  <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/css/idangerous.swiper.css">
+  <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/css/animate.min.css">
+  <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/css/common.css">
+  <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/css/index.css">
+</head>
+
+<body>
+{# {% set list_all = lister.getContentList(6, 'c.publishTime|DESC', 'all', true) %}
+{% set list_news = lister.getContentList(6, 'c.publishTime|DESC', 'news', false) %}
+{% set list_events = lister.getContentList(6, 'c.publishTime|DESC', 'act', false) %}
+{% set list_bullentins = lister.getContentList(6, 'c.publishTime|DESC', 'notice', false) %} #}
+
+{% set pc_index_02_swiperbox = block.getPosterByCode('pc_index_02_swiperbox',site.getId())[:7] %}
+{% set pc_index_02_giftbox = block.getPosterByCode('pc_index_02_giftbox',site.getId())[:4] %}
+
+{% set pc_index_02_newestpublish = block.getRecommend('pc_index_02_newestpublish',site.getId())[:6] %}
+
+{% set pc_index_02_newspublish = block.getRecommend('pc_index_02_newspublish',site.getId())[:6] %}
+
+{% set pc_index_02_noticepublish = block.getRecommend('pc_index_02_noticepublish',site.getId())[:6] %}
+
+{% set pc_index_02_actpublish = block.getRecommend('pc_index_02_actpublish',site.getId())[:6] %}
+
+{% set  pc_1712_qq = block.getPosterByCode('pc_1712_qq',site.getID()) %}
+<!-- 
+{# {% set pc_index_17173link = block.getPosterByCode('pc_index_17173link',site.getId())[:4] %}
+{% set pc_index_18183link = block.getPosterByCode('pc_index_18183link',site.getId())[:4] %}
+{% set pc_index_superplaylink = block.getPosterByCode('pc_index_superplaylink',site.getId())[:4] %}
+{% set pc_index_pocketlink = block.getPosterByCode('pc_index_pocketlink',site.getId())[:4] %}
+{% set pc_index_gamedoglink = block.getPosterByCode('pc_index_gamedoglink',site.getId())[:4] %} #}
+
+{# {% set medianame = block.getPosterByCode('pc_index_medianame',site.getId())[:4] %}
+{% set medialink1 = block.getPosterByCode('pc_index_medialink1',site.getId())[:4] %}
+{% set medialink2 = block.getPosterByCode('pc_index_medialink2',site.getId())[:4] %}
+{% set medialink3 = block.getPosterByCode('pc_index_medialink3',site.getId())[:4] %}
+{% set medialink4 = block.getPosterByCode('pc_index_medialink4',site.getId())[:4] %}
+{% set medialink5 = block.getPosterByCode('pc_index_medialink5',site.getId())[:4] %}
+{% set medialink6 = block.getPosterByCode('pc_index_medialink6',site.getId())[:4] %}
+{% set medialink7 = block.getPosterByCode('pc_index_medialink7',site.getId())[:4] %} #} 
+
+{# {% set pc_index_medialogo = block.getPosterByCode('pc_index_medialogo',site.getId()) %} #}
+-->
+
+<!-- 导航栏2 -->
+{% include "jy2.woniu.com/web201806/includes/flnav.html.twig" %}
+
+
+<!-- 主要内容 -->
+<div class="main">
+  <!-- <div class="hover">
+    <a href="#" class="ios"></a>
+    <a href="#" class="android"></a>
+  </div> -->
+  <div class="bg1">
+
+    {% include "jy2.woniu.com/web201806/includes/header.html.twig" %}
+
+    <div class="wrapper">
+        <div class="logo-wrapper">
+          <div class="icon"></div>
+          <div class="logo"></div>
+        </div>
+        <div class="slogan"></div>
+        <div class="btn-wrapper">
+          <div class="qr-bg">
+            <img class="word" src="{{ site.getStaticUrl() }}web201806/images/download-word.png" alt="">
+            <img class="erweima" src="{{ site.getStaticUrl() }}web201806/images/download-erweima.png" alt="">
+          </div>
+          <div class="download-bg">
+            <a href="javascript:alert('敬请期待')" target="_blank" class="iOS-download"></a>
+            <a href="http://gwact.woniu.com/api/channel/874" target="_blank" class="android-download"></a>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="bg0"></div>
+  <div class="bg bg3">
+  <div class="char2-2"></div>
+  <div class="char3"></div>
+    <div class="bg-tit">
+      <div class="line"></div>
+      <div class="tit-box">
+        <div class="tit-icon"></div>
+        <div class="bg-tit-text"><span>新闻资讯</span><br>&nbsp;&nbsp;NEWS&amp;INFORMATION</div>
+      </div>
+    </div>
+    <div class="newsbox">
+      <div class="left">
+        <div class="swdiv">
+          <div class="swiper-container swiper1">
+            <div class="swiper-wrapper">
+              {% for link in pc_index_02_swiperbox %}
+              {# <a href="{{link.getUrl()}}"><img src="{{link.getAttachment()}}" alt=""></a> #}
+                <div class="swiper-slide"> <a href="{{link.getUrl()}}"><img src="{{link.getAttachment()}}"></a></div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="pagination"></div>
+        </div>
+        <div class="gameactbox">
+          {% for link in pc_index_02_giftbox %}
+          <a href="{{link.getUrl()}}" target="_blank" class="gameact">
+            <img src="{{link.getAttachment()}}" alt="">
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="middle">
+        <a href="//jy2.woniu.com/all/" target="_blank" class="vernavtag cur">综合</a>
+        <a href="//jy2.woniu.com/all/news/" target="_blank" class="vernavtag">新闻</a>
+        <a href="//jy2.woniu.com/all/notice/" target="_blank" class="vernavtag">公告</a>
+        <a href="//jy2.woniu.com/all/act/" target="_blank" class="vernavtag">活动</a>
+        <a href="//jy2.woniu.com/all/" target="_blank" class="vernavtag vernavtagmore">MORE</a>
+      </div>
+      <div class="right">
+        <div class="infobigbox infobigbox1 cur">
+        {% for c in pc_index_02_newestpublish %}
+        {% if loop.index < 4 %}
+          <a target="_blank" href="{{c.getUrl()}}" class="infobox infobox{{ loop.index }}">
+            <div class="infotag
+            {% if c.getTag()=='今日' %} today {% endif %}
+            {% if c.getTag()=='最新' %} mostnew {% endif %}
+            infotag{{ loop.index }}"></div>
+            <div class="infotit">{{c.getTitle()}}</div>
+            <div class="infodesc">{{c.getDesciption()}}</div>
+            <div class="infodate">{{c.getPublishTime()|date('Y/m/d')}}
+              <span>{{c.getNode.getName()}}</span>
+            </div>
+            <div class="infodetail">详情</div>
+          </a>
+        {% endif %}
+        {% endfor %}
+        {% if pc_index_02_newestpublish[3] %}
+          <div href="javascript:;" class="infobox infobox4">
+          {% for c in pc_index_02_newestpublish %}
+          {% if loop.index > 3 %}
+            <a target="_blank" href="{{c.getUrl()}}" class="newslink newslink{{ loop.index-3 }}">
+              <div class="tit">{{c.getTitle()}}</div>
+              <div class="date">{{c.getPublishTime()|date('Y/m/d')}}</div>
+            </a>
+          {% endif %}
+          {% endfor %}
+          </div>
+        {% endif %}
+        </div>
+        <div class="infobigbox infobigbox2">
+        {% for c in pc_index_02_newspublish %}
+        {% if loop.index < 4 %}
+          <a target="_blank" href="{{c.getUrl()}}" class="infobox infobox{{ loop.index }}">
+            <div class="infotag
+            {% if c.getTag()=='今日' %} today {% endif %}
+            {% if c.getTag()=='最新' %} mostnew {% endif %}
+            infotag{{ loop.index }}"></div>
+            <div class="infotit">{{c.getTitle()}}</div>
+            <div class="infodesc">{{c.getDesciption()}}</div>
+            <div class="infodate">{{c.getPublishTime()|date('Y/m/d')}}
+              <span>{{c.getNode.getName()}}</span>
+            </div>
+            <div class="infodetail">详情</div>
+          </a>
+        {% endif %}
+        {% endfor %}
+        {% if pc_index_02_newspublish[3] %}
+          <div href="javascript:;" class="infobox infobox4">
+          {% for c in pc_index_02_newspublish %}
+          {% if loop.index > 3 %}
+            <a target="_blank" href="{{c.getUrl()}}" class="newslink newslink{{ loop.index-3 }}">
+              <div class="tit">{{c.getTitle()}}</div>
+              <div class="date">{{c.getPublishTime()|date('Y/m/d')}}</div>
+            </a>
+          {% endif %}
+          {% endfor %}
+          </div>
+        {% endif %}
+        </div>
+        <div class="infobigbox infobigbox3">
+        {% for c in pc_index_02_noticepublish %}
+        {% if loop.index < 4 %}
+          <a target="_blank" href="{{c.getUrl()}}" class="infobox infobox{{ loop.index }}">
+            <div class="infotag
+            {% if c.getTag()=='今日' %} today {% endif %}
+            {% if c.getTag()=='最新' %} mostnew {% endif %}
+            infotag{{ loop.index }}"></div>
+            <div class="infotit">{{c.getTitle()}}</div>
+            <div class="infodesc">{{c.getDesciption()}}</div>
+            <div class="infodate">{{c.getPublishTime()|date('Y/m/d')}}
+              <span>{{c.getNode.getName()}}</span>
+            </div>
+            <div class="infodetail">详情</div>
+          </a>
+        {% endif %}
+        {% endfor %}
+        {% if pc_index_02_noticepublish[3] %}
+          <div href="javascript:;" class="infobox infobox4">
+          {% for c in pc_index_02_noticepublish %}
+          {% if loop.index > 3 %}
+            <a target="_blank" href="{{c.getUrl()}}" class="newslink newslink{{ loop.index-3 }}">
+              <div class="tit">{{c.getTitle()}}</div>
+              <div class="date">{{c.getPublishTime()|date('Y/m/d')}}</div>
+            </a>
+          {% endif %}
+          {% endfor %}
+          </div>
+        {% endif %}
+        </div>
+        <div class="infobigbox infobigbox4">
+        {% for c in pc_index_02_actpublish %}
+        {% if loop.index < 4 %}
+          <a target="_blank" href="{{c.getUrl()}}" class="infobox infobox{{ loop.index }}">
+            <div class="infotag
+            {% if c.getTag()=='今日' %} today {% endif %}
+            {% if c.getTag()=='最新' %} mostnew {% endif %}
+            infotag{{ loop.index }}"></div>
+            <div class="infotit">{{c.getTitle()}}</div>
+            <div class="infodesc">{{c.getDesciption()}}</div>
+            <div class="infodate">{{c.getPublishTime()|date('Y/m/d')}}
+              <span>{{c.getNode.getName()}}</span>
+            </div>
+            <div class="infodetail">详情</div>
+          </a>
+        {% endif %}
+        {% endfor %}
+        {% if pc_index_02_actpublish[3] %}
+          <div href="javascript:;" class="infobox infobox4">
+          {% for c in pc_index_02_actpublish %}
+          {% if loop.index > 3 %}
+            <a target="_blank" href="{{c.getUrl()}}" class="newslink newslink{{ loop.index-3 }}">
+              <div class="tit">{{c.getTitle()}}</div>
+              <div class="date">{{c.getPublishTime()|date('Y/m/d')}}</div>
+            </a>
+          {% endif %}
+          {% endfor %}
+          </div>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg bg4">
+    <div class="tit tit1">
+      游戏特色<span>GAME FEATURES</span>
+    </div>
+    <div class="wrap">
+      <a href="javascript:;" class="lf"></a>
+      <a href="javascript:;" class="rig"></a>
+      <div class="swiper-container swiper2">
+        <div class="swiper-wrapper showbox">
+          <div class="swiper-slide showcontbox">
+            <div class="descimg descimg1">
+              <img src="{{ site.getStaticUrl() }}web201806/images/swiper-right-1.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide showcontbox">
+            <div class="descimg descimg2">
+              <img src="{{ site.getStaticUrl() }}web201806/images/swiper-right-2.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide showcontbox">
+            <div class="descimg descimg3">
+              <img src="{{ site.getStaticUrl() }}web201806/images/swiper-right-3.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide showcontbox">
+            <div class="descimg descimg4">
+              <img src="{{ site.getStaticUrl() }}web201806/images/swiper-right-4.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-a-box">
+      <div>
+        <div class="hr hr1"></div>
+        <div class="hr hr2"></div>
+        <div class="hr hr2-mov"></div>
+        <div class="hr hr3"></div>
+      </div>
+      <div class="page-a-btn-box">
+        <a href="javascript:;" class="page-a page-a1 cur">
+          <div class="imgbox"><img src="{{ site.getStaticUrl() }}web201806/images/page4-tag1.png" alt=""></div>
+          <p>公平对决</p>
+        </a>
+        <a href="javascript:;" class="page-a page-a2">
+          <div class="imgbox"><img src="{{ site.getStaticUrl() }}web201806/images/page4-tag2.png" alt=""></div>
+          <p>开放江湖</p>
+        </a>
+        <a href="javascript:;" class="page-a page-a3">
+          <div class="imgbox"><img src="{{ site.getStaticUrl() }}web201806/images/page4-tag3.png" alt=""></div>
+          <p>自创神功</p>
+        </a>
+        <a href="javascript:;" class="page-a page-a4">
+          <div class="imgbox"><img src="{{ site.getStaticUrl() }}web201806/images/page4-tag4.png" alt=""></div>
+          <p>主机英雄</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="bg bg5" style="display:none;">
+    {# <div class="media-box">
+      <div class="weibo-box">
+        <iframe width="100%" height="306" class="share_self"  frameborder="0" scrolling="no" src="//widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=6396593636&verifier=7c7e93c7&dpc=1"></iframe>
+      </div>
+      <div class="media">
+        <div class="medianews">
+          <div class="medianav">
+            {% for name in medianame %}
+                <a href="javascript:void(0);" {%if loop.index==1%}class="cur"{%endif%}>{{name.getTitle()}}</a>
+            {% endfor %}
+            <div class="thumb" style="left: 0px;"></div>
+
+          </div>
+          <dl class="newscont newscont1 cur">
+            <img src="{{ medialink1[0].getAttachment() }}" alt="">
+            <div class="dd-box">
+            {% for news in medialink1 %}
+              <dd><a href="{{news.getUrl()}}" target="_blank">{{news.getTitle()}}</a><span>{{news.getPublishTime()|date('m/d')}}</span></dd>
+            {% endfor %}
+            </div>
+          </dl>
+          <dl class="newscont newscont2">
+            <img src="{{ medialink2[0].getAttachment() }}" alt="">
+            <div class="dd-box">
+            {% for news in medialink2 %}
+              <dd><a href="{{news.getUrl()}}" target="_blank">{{news.getTitle()}}</a><span>{{news.getPublishTime()|date('m/d')}}</span></dd>
+            {% endfor %}
+            </div>
+          </dl>
+          <dl class="newscont newscont3">
+            <img src="{{ medialink3[0].getAttachment() }}" alt="">
+            <div class="dd-box">
+            {% for news in medialink3 %}
+              <dd><a href="{{news.getUrl()}}" target="_blank">{{news.getTitle()}}</a><span>{{news.getPublishTime()|date('m/d')}}</span></dd>
+            {% endfor %}
+            </div>
+          </dl>
+          <dl class="newscont newscont4">
+            <img src="{{ medialink4[0].getAttachment() }}" alt="">
+            <div class="dd-box">
+            {% for news in medialink4 %}
+              <dd><a href="{{news.getUrl()}}" target="_blank">{{news.getTitle()}}</a><span>{{news.getPublishTime()|date('m/d')}}</span></dd>
+            {% endfor %}
+            </div>
+          </dl>
+          <dl class="newscont newscont5">
+            <img src="{{ medialink5[0].getAttachment() }}" alt="">
+            <div class="dd-box">
+            {% for news in medialink5 %}
+              <dd><a href="{{news.getUrl()}}" target="_blank">{{news.getTitle()}}</a><span>{{news.getPublishTime()|date('m/d')}}</span></dd>
+            {% endfor %}
+            </div>
+          </dl>
+          <dl class="newscont newscont6">
+            <img src="{{ medialink6[0].getAttachment() }}" alt="">
+            <div class="dd-box">
+            {% for news in medialink6 %}
+              <dd><a href="{{news.getUrl()}}" target="_blank">{{news.getTitle()}}</a><span>{{news.getPublishTime()|date('m/d')}}</span></dd>
+            {% endfor %}
+            </div>
+          </dl>
+          <dl class="newscont newscont7">
+            <img src="{{ medialink7[0].getAttachment() }}" alt="">
+            <div class="dd-box">
+            {% for news in medialink7 %}
+              <dd><a href="{{news.getUrl()}}" target="_blank">{{news.getTitle()}}</a><span>{{news.getPublishTime()|date('m/d')}}</span></dd>
+            {% endfor %}
+            </div>
+          </dl>
+        </div>
+        <div class="medialink">
+          <a href="javascript:;" class="media-left"></a>
+          <div class="mediascroll-box">
+            <div class="mediascroll">
+            {% for logo in pc_index_medialogo %}
+              <a target="_blank" href="{{logo.getUrl()}}" class="medialogo"><img src="{{logo.getAttachment()}}" alt=""></a>
+            {% endfor %}
+            </div>
+          </div>
+          <a href="javascript:;" class="media-right"></a>
+        </div>
+      </div>
+    </div> #}
+    <div class="promptbox">
+      <div class="prompt">
+        <span>温馨提示：本游戏适合18岁（含）以上玩家娱乐</span><br>
+        抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑
+沉迷游戏伤身 合理安排时间 享受健康生活
+      </div>
+      <div class="service">
+        <span>7*24小时蜗牛客服中心</span><br>
+        <a href="//www3.woniu.com/callcenter/self_help.html" target="_blank">自助服务中心</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="//www3.woniu.com/support/useragreement.html" target="_blank">用户协议</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="//www3.woniu.com/usercenter/fcm_info.html" target="_blank">防沉迷补填</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="//www3.woniu.com/safecenter/find_pwd.html" target="_blank">找回密码</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="//www3.woniu.com/usercenter/fcm_info.html?method=checkEpsStatus" target="_blank">家长监护系统</a><br>客服专线：0512-67621819
+      </div>
+    </div>
+  </div> -->
+  <div class="bg bg6">
+    <div class="tit">真实江湖归来 重温公平经典</div>
+    <div class="subtit">扫码关注官方微信,更多精彩活动等着您</div>
+    <div class="hr"></div>
+    <img src="{{ site.getStaticUrl() }}web201806/images/s_wx.png" alt="" class="btm-qrcode">
+    <!-- <div class="hr"></div> -->
+    <a href="javascript:;" class="duebtn-btm" id="duebtn3">立即预约</a>
+  </div>
+</div>
+
+
+<!-- 各种弹窗 -->
+{% include "jy2.woniu.com/web201806/includes/pop.html.twig" %}
+
+
+
+
+<script charset="utf-8" src="//static.woniu.com/scripts/jquery/jquery-1.10.2.min.js"></script>
+
+<!-- <script charset="utf-8" src="./js/jquery.mousewheel.min.js"></script> -->
+<script charset="utf-8" src="{{ site.getStaticUrl() }}web201806/js/idangerous.swiper.min.js"></script>
+<script type="text/javascript" src="//static.woniu.com/script/jwplayer/jwplayer.js"></script>
+<script charset="utf-8" id="wn-gamehead" login="//www.woniu.com/account/login/?gameid=119&amp;pagename=GW.lm.TL&amp;goto=//jy2.woniu.com/index.html" register="//www.woniu.com/account/register/?gameid=119&amp;pagename=GW.lm.TL&amp;goto=//jy2.woniu.com/index.html" src="//www.woniu.com/include/gm_header.js"></script>
+<script charset="utf-8" id="pub-footer" gamename="黎明陨落" src="//static.woniu.com/footer_dl/pub-footer.js?v=2"></script>
+
+<script src="{{ site.getStaticUrl() }}web201806/js/qrcode.js"></script>
+<script src="{{ site.getStaticUrl() }}web201806/js/common.js"></script>
+<script src="{{ site.getStaticUrl() }}web201806/js/index.js"></script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6599794932969e5fda4067efe1fc968a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+</body>
+</html>

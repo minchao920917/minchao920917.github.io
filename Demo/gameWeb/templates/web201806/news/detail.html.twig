@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>{{node.getTitle()}}</title>
+        <meta name="description" content="{{ node.getDesciption() }}" />
+        <meta name="keywords" content="{{ node.getKeywords() }}" />
+
+        <!-- 强制双核浏览器使用极速模式打开 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="renderer" content="webkit|ie-comp|ie-stand"> 
+        <meta name="renderer" content="webkit"> 
+
+        <link rel="stylesheet" href="//static.woniu.com/stylesheets/base.css">
+        <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/css/common.css">
+        <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/news/css/common.css">
+        <link rel="stylesheet" href="{{ site.getStaticUrl() }}web201806/news/css/news.css">
+    </head>
+    
+    <body>
+        {% set  pc_1712_qq = block.getPosterByCode('pc_1712_qq',site.getID()) %}
+        <!-- 滑动导航栏 -->
+        {% include "jy2.woniu.com/web201806/includes/flnav.html.twig" %}
+        <div class="main">
+
+            <div class="headerbg">
+                <!-- 固定导航栏 -->
+                {% include "jy2.woniu.com/web201806/includes/header.html.twig" %}
+            </div>
+            <div class="headerbg-blank"></div>
+            <div class="bg">
+                <div class="newscont">
+                    <div class="newstit">
+                        <h2>{{ content.getTitle() }}</h2>
+                        <span>{{ content.getPublishTime()|date("Y/m/d")}}</span>
+                        <a href="javascript:history.back();" class="back">
+                            <div class="backbgbox"></div>
+                        </a>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="newstext">
+                        {{content.getContent()|raw}}
+                    </div>
+                </div>
+                <div class="qrcodefooter">
+                    <div class="tit">ARPG王者之作，现已破晓来袭！</div>
+                    <div class="subtit">扫码加入官方QQ群，更多精彩活动等着您</div>
+                    <img src="{{ pc_1712_qq[0].getAttachment() }}" alt="" class="btm-qrcode">
+                    <a href="javascript:void(0)" class="duebtn-btm">立即预约</a>
+                </div>
+                <a href="javascript:void(0)" class="scrolltop none">
+                    <div class="bgbox"></div>
+                    <div class="topbox">TOP</div>
+                </a>
+            </div>
+            
+        </div>
+        <!-- qrcode -->
+        <div class="qrcode-pop">
+            <div id="qrcode_box">
+                <a href="javascript:void(0)" class="close"></a>
+                <p class="p-title">扫一扫分享给好友</p>
+                <p>用手机扫一扫二维码，即可把网站分享给您的好友们哦！</p>
+                <div id="qrcode"></div>
+            </div>
+        </div>
+        <!-- 预约弹窗 -->
+        {% include "jy2.woniu.com/web201806/news/apt.html.twig" %}
+
+
+        <script charset="utf-8" src="//static.woniu.com/scripts/jquery/jquery-1.10.2.min.js"></script>
+        <script charset="utf-8" src="{{ site.getStaticUrl() }}web201806/news/js/qrcode.js"></script>
+        <script charset="utf-8" src="{{ site.getStaticUrl() }}web201806//js/common.js"></script>
+        <script charset="utf-8" src="{{ site.getStaticUrl() }}web201806/news/js/news.js"></script>
+        <script charset="utf-8" id="wn-gamehead" login="//www.woniu.com/account/login/?gameid=119&amp;pagename=t;goto=//jy2.woniu.com/" register="//www.woniu.com/account/register/?gameid=119&amp;pagename=t&amp;goto=//jy2.woniu.com/" src="//www.woniu.com/include/gm_header.js"></script>
+        <script charset="utf-8" id="pub-footer" gamename="黎明陨落" src="//static.woniu.com/footer_dl/pub-footer.js?v=2"></script>
+        <script src="//static.woniu.com/script/module/statistics/0.1/statistics.js"></script>
+    </body>
+
+</html>

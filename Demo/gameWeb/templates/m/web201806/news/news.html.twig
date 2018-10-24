@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{node.getTitle()}}</title>
+    <meta name="description" content="{{ node.getDesciption() }}" />
+    <meta name="keywords" content="{{ node.getKeywords() }}" />
+    <meta name="copyright" content="苏州蜗牛数字科技股份有限公司" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link rel="stylesheet" href="//static.woniu.com/stylesheets/base.css">
+    <link rel="stylesheet" href="//jy2.woniu.com/m/static/web201806/news/css/newscenter.css">
+
+    <script type="text/javascript">
+        //为页面html动态设置font-size值
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = clientWidth / 7.5 + 'px';
+                        //等价于clientWidth / 750 * 100 + 'px';
+                    };9
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);//resize
+            doc.addEventListener('DOMContentLoaded', recalc, false);//reload
+        })(document, window);
+    </script>
+</head>
+<body>
+{% set listnewest = lister.getContentList(8, 'c.publishTime|DESC',node.getId(),true) %}
+<div class="bg bg5">
+    <div class="news-nav">
+        <div class="navtit"><span>新闻资讯</span><br>NEWS</div>
+        <a href="//jy2.woniu.com/m/" class="returnbtn"></a>
+        <div class="navlink">
+            <a href="//jy2.woniu.com/m/all/" class="nav-one{% if node.getNodeCode() == 'm_all' %} cur{% endif %}">最新</a>
+            <a href="//jy2.woniu.com/m/all/news/" class="nav-one{% if node.getNodeCode() == 'm_news' %} cur{% endif %}">新闻</a>
+            <a href="//jy2.woniu.com/m/all/notice/" class="nav-one{% if node.getNodeCode() == 'm_notice' %} cur{% endif %}">公告</a>
+            <a href="//jy2.woniu.com/m/all/act/" class="nav-one{% if node.getNodeCode() == 'm_act' %} cur{% endif %}">攻略</a>
+        </div>
+    </div>
+    <div class="news-content">
+        <div class="newsone-detail">
+            {%  for c in  listnewest %}
+            <a href="{{ c.getUrl() }}" class="one-max">
+                <div class="arr-box"><div class="right-arr"></div></div>
+                <div class="tit">{{ c.getTitle() }}</div>
+                <div class="desc">{{ c.getDesciption()|raw }}</div>
+                <div class="date">{{ c.getPublishTime()|date("y/m/d") }}<span>{{ c.getNode.getName() }}</span></div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% set pages = lister.getPaging() %}
+
+    {%if pages%}
+    <div class="pagebox">
+        {% if pages['currPage'] > 1 %}
+        <a href="/{{pages['urls'][pages['currPage'] - 1]}}" class="pagelf">上一页</a>
+        {% endif %}
+
+        {% if pages['currPage'] < pages['sumPage'] %}
+        <a href="/{{pages['urls'][pages['currPage'] + 1]}}" class="pagerg">下一页</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+
+<script charset="utf-8" src="//static.woniu.com/scripts/jquery/jquery-1.10.2.min.js"></script>
+<script charset="utf-8" src="//jy2.woniu.com/m/static/web201806/news/js/newscenter.js"></script>
+<script src="//static.woniu.com/script/module/statistics/0.1/statistics.js"></script>
+</body>
+</html>

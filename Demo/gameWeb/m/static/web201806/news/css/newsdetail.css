@@ -1,0 +1,81 @@
+html{
+	overflow-x: hidden;
+	font-size: 50px;
+}
+.main {
+	position: relative;
+	width: 7.5rem;
+	/*height: 11.5rem;*/
+	margin-top:0.5rem;
+	background-color: #f5f5f5;
+}
+
+.main .news-nav{
+	position: fixed;
+	top:0;
+	/*top:-1rem;*/
+	/*margin-left: 0.2rem;*/
+	width: 7.5rem;
+	height:1rem;
+	border-bottom: 1px solid #999;
+	background-color: #fff;
+	transition:all .7s ease;
+}
+.main .news-nav.show{
+	top:0;
+	transition:all .7s ease;
+}
+.main .news-nav .navtit{
+	position: relative;
+	padding: .21rem 0 0 .2rem;
+	width: 7.1rem;
+	height: 100%;
+	font:normal .16rem "microsoft yahei";
+	/*text-align: center;*/
+	color: #999;
+}
+.main .news-nav .navtit span{
+	font:normal .4rem "microsoft yahei";
+	color: #333;
+}
+
+.main .news-nav .returnbtn{
+	display: block;
+	position: absolute;
+	left:6.26rem;
+	top:.2rem;
+	width: 1.4rem;
+	height: .78rem;
+	background: url(../images/returnbtn.png) 0 0 no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.main .news-content{
+	margin-top:1rem;
+	width: 7.5rem;
+	/*height: 8.89rem;*/
+}
+.main .news-content .newstit{
+	padding:.2rem;
+	width: 7.1rem;
+	/*height: 1.54rem;*/
+	background-color: #333;
+	color: #fff;
+	font:normal  .4rem "microsoft yahei";
+}
+.main .news-content .newstit span{
+	font:normal  .24rem "microsoft yahei";
+}
+.main .news-content .newscont{
+	padding: .2rem;
+	font:normal  .32rem "microsoft yahei";
+}
+.main .news-content .newscont img{
+	max-width:100%;
+}
+
+.main .news-content .newscont p{
+	line-height: .6rem;
+}
+
+

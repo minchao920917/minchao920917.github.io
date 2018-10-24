@@ -1,0 +1,221 @@
+body{
+  overflow-x: hidden;
+  font-size: 50px;
+}
+.bg5 {
+  position: relative;
+  width: 7.5rem;
+  height: 11.5rem;
+  margin-top:0.5rem;
+  background-color: #f5f5f5;
+}
+
+.bg5 .news-nav{
+  position: fixed;
+  top:0;
+  /*margin-left: 0.2rem;*/
+  width: 7.5rem;
+  height:1.65rem;
+  border-bottom: 1px solid #999;
+  background-color: #fff;
+}
+.bg5 .news-nav .navtit{
+  position: relative;
+  padding-top: .31rem;
+  width: 100%;
+  height: 0.76rem;
+  font:normal .16rem "microsoft yahei";
+  text-align: center;
+  color: #999;
+}
+.bg5 .news-nav .navtit span{
+  font:normal .4rem "microsoft yahei";
+  color: #333;
+}
+.bg5 .news-nav .navtit .navlink{
+  margin-top: 0.5rem;
+  /*margin-left: 0.2rem;*/
+}
+.bg5 .news-nav .nav-one:nth-child(1){
+  margin-left: 0.2rem;
+}
+.bg5 .news-nav .nav-one{
+  display: block;
+  float: left;
+  width: 1.77rem;
+  height: 0.56rem;
+  border-bottom: 4px solid #ddd;
+  font:normal 0.26rem/0.56rem "microsoft yahei";
+  text-align: center;
+  color: #000;
+}
+.bg5 .news-nav .nav-one.cur{
+  border-bottom: 4px solid #dd3900;
+  color: #dd3900;
+}
+.bg5 .news-nav .returnbtn{
+  display: block;
+  position: absolute;
+  left:6.26rem;
+  top:.26rem;
+  width: 1.4rem;
+  height: .78rem;
+  background: url(../images/returnbtn.png) 0 0 no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+
+.bg5 .news-content{
+  margin:1.8rem 0 0 .19rem;
+  width: 7.11rem;
+  /*height: 8.89rem;*/
+}
+.newsone-detail{
+  /*display: none;*/
+}
+.newsone-detail.cur{
+  display: block;
+}
+.bg5 .news-content .one-max{
+  display: block;
+  margin-top: 0.2rem;
+  padding: 0 .2rem;
+  width: 6.71rem;
+  height: 2.76rem;
+  border-bottom: 4px solid #A09D9D;
+  background-color: #fff;
+}
+.bg5 .newsone-detail .one-max .arr-box{
+  width: 6.91rem;
+  height: .5rem;
+}
+.bg5 .newsone-detail .one-max .right-arr{
+  float: right;
+  width: .5rem;
+  height: .5rem;
+  /*background: url(../images/rightarr.png) 0 0;*/
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.bg5 .newsone-detail .one-max .tit{
+  width: 6.72rem;
+  height: .55rem;
+  font:normal .32rem "microsoft yahei";
+  border-bottom: 1px solid #ddd;
+  color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.bg5 .newsone-detail .one-max .desc{
+  margin-top: .1rem;
+  font:normal .24rem/.36rem "microsoft yahei";
+  width: 6.7rem;
+  height: 1.04rem;
+  color: #666;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  text-overflow: -o-ellipsis-lastline;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.bg5 .newsone-detail .one-max .date{
+  margin-top:.2rem;
+  font:normal .24rem "microsoft yahei";
+  color: #999;
+}
+
+.bg5 .newsone-detail .one-max .date span{
+  float: right;
+  color: #999;
+}
+.bg5 .one-sm-box{
+  display: block;
+  margin-top: 0.2rem;
+  padding: .1rem .2rem 0;
+  width: 6.71rem;
+  height: 2.66rem;
+  border-bottom: 4px solid #b3a798;
+  background-color: #eee;
+}
+.bg5 .one-sm-box .one-sm{
+  display: block;
+  width: 6.71rem;
+  height: .87rem;
+  text-indent: 0.05rem;
+  color: #666;
+  font:normal .24rem/.87rem "microsoft yahei";
+  border-bottom: 1px solid #ddd;
+}
+.bg5 .one-sm-box .one-sm:nth-child(3){
+  border-bottom: none;
+}
+.bg5 .one-sm-box .one-sm span{
+  float: right;
+  color: #999;
+}
+.bg5 .morenews{
+  display: block;
+  margin:.28rem 0 .28rem .19rem;
+  width: 7.1rem;
+  height:.86rem;
+  background-color: #e3e3e3;
+  font:normal .24rem/.86rem "microsoft yahei";
+  color: #999;
+  text-align: center;
+}
+
+
+.pagebox{
+  margin:.4rem 0  .4rem;
+  width:7.5rem;
+  height:.46rem;
+  text-align: center;
+}
+.pagebox .pagelf{
+  display: inline-block;	
+  margin-right:.1rem;
+  width: 1.22rem;
+  height: .44rem;
+  background-color: #f5f5f5;
+  font:normal .14rem/.44rem "microsoft yahei";
+  border: 1px solid #ddd;
+  color: #333;
+  /*background: url(../images/pagelf.png);*/
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  /*transition:all 0.7s ease;*/
+}
+.pagebox .pagerg{
+  display: inline-block;	
+  margin-right:.1rem;
+  width: 1.22rem;
+  height: .44rem;
+  background-color: #f5f5f5;
+  font:normal .14rem/.44rem "microsoft yahei";
+  border: 1px solid #ddd;
+  color: #333;
+  /*background: url(../images/pagerg.png);*/
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  /*transition:all 0.7s ease;*/
+}
+.pagebox .page{
+  display: inline-block;	
+  margin-right:.1rem;
+  width: .44rem;
+  height: .44rem;
+  font:normal .14rem/.44rem "microsoft yahei";
+  text-align: center;
+  background-color: #f5f5f5;
+  border: 1px solid #999;
+  color: #000;
+  /*transition:all 0.7s ease;*/
+}
+.pagebox .page.cur{
+  color: #fff;
+  background-color: #7a6144;
+}
+

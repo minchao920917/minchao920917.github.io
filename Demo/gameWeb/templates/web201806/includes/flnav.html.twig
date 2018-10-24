@@ -1,0 +1,63 @@
+<!-- 浮动导航栏 -->
+{% set  pc_index_qqgroup = block.getPosterByCode('pc_1712_qq',site.getID()) %}
+<div class="flmenu" id="flmenu">
+<div class="flmenucont">
+  <div class="fllogo">
+    <img src="{{ site.getStaticUrl() }}web201806/images/logo2.png" alt="">
+    <h2>九阳神功</h2>
+    <!-- <h5>暗黑动作手游典藏之作</h5> -->
+  </div>
+  <div class="flnav">
+    <a href="//jy2.woniu.com/index.html" class="navlink">官网首页</a>
+    <i></i>
+    <a href="//jy2.woniu.com/all" target="_blank" class="navlink">新闻资讯</a>
+    <i></i>
+    <a href="//jy2.woniu.com/static/info/" class="navlink">游戏资料</a>
+    <i></i>
+    {# <a href="//jy2.bbs.woniu.com/" target="_blank" class="navlink">官方论坛</a>
+    <i></i> #}
+    <a href="javascript:;" class="navlink navlinksocial">官方社群</a>
+    <div class="thumb" {% if num %}style="left:{{num*89.5}}px;"{% endif %}></div>
+    {# <div class="flnav-hot-dot"></div> #}
+  </div>
+  <!-- <div class="flduebtn" id="duebtn2">立即下载</div> -->
+    <a href="http://gwact.woniu.com/api/channel/874" class="flduebtn" id="duebtn2">立即下载</a>
+  <div class="flsocial">
+    <a href="javascript:;" class="solink solinkmore"></a>
+    <a href="javascript:;" class="solink solinkqq"></a>
+    <a href="javascript:void(0);" target="_blank" class="solink solinkweixin"></a>
+    <a href="javascript:void(0);" target="_blank" class="solink solinktieba"></a>
+    <!-- <a href="javascript:void(0);" target="_blank" class="solink solinkqq"></a> -->
+  </div>
+  <div class="fldropdown">
+    <div class="dropdown-cont">
+      <div class="weixintxt"></div>
+      <div class="weixinqrcode"></div>
+      <div class="hr"></div>
+      <div class="weibotxt"></div>
+      <div class="weiboqrcode"></div>
+      <div class="socdiv">
+        <a href="https://tieba.baidu.com/f?kw=%E9%BB%8E%E6%98%8E%E9%99%A8%E8%90%BD%E6%89%8B%E6%B8%B8" class="solink tieba" target="_blank"></a>
+        <a href="https://weibo.com/p/1006066432596916" class="solink weibo" target="_blank"></a>
+        <a href="{{ pc_index_qqgroup[0].getUrl() }}" class="solink qq" target="_blank"></a>
+      </div>
+      <div class="qqgroup qqgroup1">
+        {% for qqgroup in pc_index_qqgroup %}
+        {% if loop.index < 5 %}
+        <p>{{qqgroup.getTitle()}}</p>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="qqgroup qqgroup2">
+        {% for qqgroup in pc_index_qqgroup %}
+        {% if loop.index > 4 %}
+        <p>{{qqgroup.getTitle()}}</p>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    </div>
+</div>
+<div class="flmenubg"></div>
+</div>
+</div>

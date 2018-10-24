@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=static/css/common.css><link rel=stylesheet href=./static/css/app.css><title>stewardship</title><script type=text/javascript>//为页面html动态设置font-size值
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+            //等价于clientWidth / 750 * 100 + 'px';
+          };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);//resize
+        doc.addEventListener('DOMContentLoaded', recalc, false);//reload
+      })(document, window);</script><link href=./static/css/app.67caa705cc39277ac822e51111a45315.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.3ad1d5771e9b13dbdad2.js></script><script type=text/javascript src=./static/js/vendor.bc02edd6cfffd80a9432.js></script><script type=text/javascript src=./static/js/app.cd9080dd9eefb05dde19.js></script></body></html>
