@@ -163,7 +163,23 @@
               title: '自定义字体图标',
               core_tech: 'css+js',
               description: '自定义字体图标'
-          }
+          },
+      {
+          demo_link: '../Demo/stewardship/#/',
+          img_link: 'https://i.loli.net/2018/10/24/5bcfc615e3e8a.png',
+          code_link: 'https://github.com/minchao920917/stewardship',
+          title: 'vue的web-app应用',
+          core_tech: 'vue+vue-cli',
+          description: '基于vue的webapp前端部分'
+      },
+      {
+          demo_link: '../Demo/gameWeb/static/web201806/index.html',
+          img_link: 'https://i.loli.net/2018/10/24/5bd0024318401.png',
+          code_link: 'https://github.com/minchao920917/gameWeb',
+          title: '蜗牛游戏宣传网站模板',
+          core_tech: 'html+css+js',
+          description: '蜗牛游戏宣传网站模板'
+      }
   ];
 
   contentInit(demoContent) //内容初始化

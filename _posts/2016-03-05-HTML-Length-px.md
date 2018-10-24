@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "HTML中常见的长度单位"
-date:   2015-5-18 15:14:54
-categories: HTML
-tags:	HTML
+date:   2016-03-05 15:14:54
+categories: HTML5
+tags:	HTML5
 excerpt:	在做屏幕适配过程中，最麻烦的点就在于像素的缩放比例
 mathjax: true
 author:	闵超

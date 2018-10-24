@@ -2,8 +2,8 @@
 layout: post
 title:  "HTML, CSS基础及编码规范"
 date:   2016-06-20 19:06:05
-categories: HTML CSS
-tags: HTML CSS
+categories: HTML5 CSS3
+tags: HTML5 CSS3
 excerpt: HTML和CSS基础以及编码规范
 mathjax: true
 author:	闵超
