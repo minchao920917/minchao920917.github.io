@@ -39,8 +39,8 @@ tag_dir: Tags/
 excerpt_separator: "\n\n\n\n"
 
 # paginate
-gems: [jekyll-paginate]
-paginate: 2
+# gems: [jekyll-paginate]
+# paginate: 2
 
 
 #Local Server Port
