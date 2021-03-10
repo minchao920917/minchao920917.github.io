@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<title>拼一拼 老越城 新玩法</title>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+	<meta itemprop="image" content="https://chncpah5.nicelab.cn/images/sharev2.jpg">
+	<link rel="stylesheet" media="all" href="css/animate.min.css?v=20">
+	<link rel="stylesheet" media="all" href="css/swiper.min.css?v=20">
+	<link rel="stylesheet" href="css/base.css?v=20">
+	<link rel="stylesheet" href="css/style.css?v=20">
+	<script src="js/media.js?v=20"></script>
+	<script src="js/jquery-1.12.3.min.js?v=20"></script>
+	<script src="js/layer/layer.js?v=20"></script>
+	<script src="js/preloadjs.min.js?v=20"></script>
+	<script type="text/javascript" src="js/swiper.min.js?v=20"></script>
+	<script src="js/script.js?v=20"></script>
+	<script type="text/javascript" src="js/zUI.js?v=20"></script>
+	<script type="text/javascript" src="js/wow.js?v=20"></script>
+	<script type="text/javascript" src="js/html2canvas.min.js"></script>
+	<script>
+		wow = new WOW({
+			animateClass: 'animated',
+			offset: 0
+		});
+		wow.init();
+	</script>
+	<script>
+		document.addEventListener('touchmove', function (e) {
+			e.preventDefault();
+		})
+	</script>
+
+
+</head>
+
+<body>
+	<!-- 页面主体 -->
+	<div class="pagewrap">
+		<div id="header">
+			<div class="top wow fadeInLeftSmall animated"><img src="images/top.png"></div>
+			<div id="music" class="music" style="display: block;"><audio id="audio" autoplay="autoplay" src="music/music.m4a" loop=""></audio></div>
+		</div>
+		
+		<div class="page loading">
+			<div class="wrap">
+				<div class="imgbox">
+					<div id="progress">0</div>
+					<div class="he"><img src="images/loading-he.png"></div>
+				</div>
+			</div>
+
+		</div>
+		<div class="page index">
+			<div class="wrap">
+				<div class="div">
+					<div class="top wow fadeInLeftSmall animated"><img src="images/index-top.png"></div>
+					<div class="logo wow fadeInLeftSmall animated"><img src="images/pingyiping.png"></div>
+					<div class="img">
+						<div class="con">
+							<div class="word wow fadeInUpSmall animated" data-wow-delay="1.1s" data-wow-duration="1s">
+								<img src="images/index_word.png">
+							</div>
+							<div class="solon wow fadeInUpSmall animated" data-wow-delay="0.5s" data-wow-duration="3s">
+								<img src="images/solon.png">
+							</div>
+						</div>
+					</div>
+					<div class="btn"><img src="images/index-btn.png"></div>
+				</div>
+			</div>
+
+		</div>
+		<div class="page pintu">
+			<div class="wrap">
+				<div>
+					<div class="conbox">
+						<div class="kuai kuai1"></div>
+						<div class="kuai kuai2"></div>
+						<div class="kuai kuai3"></div>
+						<div class="kuai kuai4"></div>
+						<div class="box">
+							<div class="content" id='picbox'>
+								<div class="pic one" data-index='1' style="top:0;left: 0"><i></i></div>
+								<div class="pic one" data-index='2' style="top:0;left: 33.333333%"><i></i></div>
+								<div class="pic one" data-index='3' style="top:0;left: 66.666666%"><i></i></div>
+								<div class="pic one" data-index='4' style="top:33.333333%;left: 0"><i></i></div>
+								<div class="pic one" data-index='5' style="top:33.333333%;left: 33.333333%"><i></i>
+								</div>
+								<div class="pic one" data-index='6' style="top:33.333333%;left: 66.666666%"><i></i>
+								</div>
+								<div class="pic one" data-index='7' style="top:66.666666%;left: 0"><i></i></div>
+								<div class="pic one" data-index='8' style="top:66.666666%;left: 33.333333%"><i></i>
+								</div>
+								<div class="pic one" data-index='9' style="top:66.666666%;left: 66.666666%"><i></i>
+								</div>
+								<div class="line line1"></div>
+								<div class="line line2"></div>
+								<div class="line line3"></div>
+								<div class="line line4"></div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="bottom">
+						<div class="timing">0</div>
+					</div> -->
+					<div class="word">
+						<div class="two-word">
+							<img src="./images/two-word.png" alt="">
+						</div>
+						<div class="two-botom">
+							<img src="./images/two-botom.png" alt="">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 拼图提示弹窗 -->
+	<div class="pop tips">
+		<div class="shadow"></div>
+		<div class="wrap">
+			<div class="tip">
+				<div class="img"><img src="images/pintu-tips.png"></div>
+			</div>
+		</div>
+	</div>
+	<!-- 拼图倒计时弹窗 -->
+	<div class="pop timeout">
+		<div class="shadow"></div>
+		<div class="wrap">
+			<div class="times">
+				<!-- <div class="tit"><img src="images/pintu-time-tit.png"></div> -->
+				<div class="txt">
+					<div><img src="images/pintu-time-txt3.png"></div>
+					<div><img src="images/pintu-time-txt2.png"></div>
+					<div><img src="images/pintu-time-txt1.png"></div>
+				</div>
+				<div class="desc"><img src="images/pintu-time-desc.png"></div>
+			</div>
+		</div>
+	</div>
+	<!-- 拼图成功弹窗 -->
+	<div class="pop done">
+		<div class="shadow"></div>
+		<div class="wrap">
+			<div>
+				<p class="txt">超过了<span>80%</span>的小伙伴</p>
+			</div>
+		</div>
+	</div>
+	<!-- 成功弹窗-生成二维码 -->
+	<div class="pop erweima">
+		<div class="shadow"></div>
+		<div class="wrap">
+			<div>
+				<div class="content">
+					<canvas id="myCanvas" width="616" height="976"></canvas>
+					<div id="cover" class="cover">
+					</div>
+					<div class="btnbox">
+						<div class="btn"><img src="images/chakan.png"></div>
+						<div class="again"><img src="images/agin.png"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 拼图失败弹窗 -->
+	<!-- <div class="pop fail">
+		<div class="shadow"></div>
+		<div class="wrap">
+			<div>
+				<p class="txt">成功近在咫尺，要再接再厉哦！<br> ART鹅会陪你一起进步！</p>
+				<div class="btn">
+					<div class="share"><img src="images/fail-btn1.png"></div>
+					<div class="again"><img src="images/fail-btn2.png"></div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<!-- 分享弹窗 -->
+	<div class="pop share">
+		<div class="shadow"></div>
+		<div class="wrap">
+			<div>
+				<!-- <div class="img"><img src="images/share-img.png"></div> -->
+			</div>
+		</div>
+	</div>
+	<!-- 预加载 -->
+	<script src="js/load.js"></script>
+	<script type='text/javascript' src="js/music.js?v=20"></script>
+	<script type="text/javascript">
+		var queue = new createjs.LoadQueue(false);
+		queue.on("complete", loadComplete);
+		queue.loadManifest(imgsrc);
+		queue.on("progress", function (e) {
+			var proNum = Math.ceil(e.progress * 100);
+			$("#progress").html(proNum);
+		});
+		var indexAniTime;
+
+		function loadComplete() {
+			// console.log('完成加载');
+			$('#music').fadeIn(0)
+			initMusic()
+			$('.page.loading').css('display', 'none');
+			$('.page.index').fadeIn();
+			// $('.page.jingxi').fadeIn();
+			setTimeout(function () {
+				indexAniTime()
+			}, 15000);
+		}
+		$(function () {
+			var galleryThumbs = new Swiper('.choose .gallery-thumbs', {
+				observer: true,
+				observeParents: true,
+				slidesPerView: 4,
+				freeMode: true,
+				watchSlidesVisibility: true,
+				watchSlidesProgress: true,
+			});
+			var galleryTop = new Swiper('.choose .gallery-top', {
+				observer: true,
+				observeParents: true,
+				thumbs: {
+					swiper: galleryThumbs
+				}
+			});
+			var jingxiSwiper = new Swiper('.jingxi .swiper-container', {
+				observer: true,
+				observeParents: true,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				on: {
+					init: function () {
+						this.emit('slideChangeTransitionEnd');
+					},
+					slidePrevTransitionStart: function () {
+						$('.jingxi .jingxibox .buy .bg').css({
+							'transition': 'all 0.2s',
+							'transform': 'rotateY(-180deg)'
+						})
+					},
+					slidePrevTransitionEnd: function () {
+						$('.jingxi .jingxibox .buy .bg').css({
+							'transition': 'none',
+							'transform': 'rotateY(0)'
+						})
+					},
+					slideNextTransitionStart: function () {
+						$('.jingxi .jingxibox .buy .bg').css({
+							'transition': 'all 0.2s',
+							'transform': 'rotateY(180deg)'
+						})
+					},
+					slideNextTransitionEnd: function () {
+						$('.jingxi .jingxibox .buy .bg').css({
+							'transition': 'none',
+							'transform': 'rotateY(0)'
+						})
+					},
+					slideChangeTransitionStart: function () {
+						$('.jingxi .jingxibox .buy .btn').attr('href', 'javascript:void(0);')
+						if (this.activeIndex == 0) {
+							$('.jingxi .jingxibox .buy .btn1').css('display', 'block')
+							$('.jingxi .jingxibox .buy .btn2').css('display', 'none')
+							$('.jingxi .jingxibox .buy .btn3').css('display', 'none')
+						} else if (this.activeIndex == 1) {
+							$('.jingxi .jingxibox .buy .btn1').css('display', 'none')
+							$('.jingxi .jingxibox .buy .btn2').css('display', 'block')
+							$('.jingxi .jingxibox .buy .btn3').css('display', 'none')
+						} else {
+							$('.jingxi .jingxibox .buy .btn1').css('display', 'none')
+							$('.jingxi .jingxibox .buy .btn2').css('display', 'none')
+							$('.jingxi .jingxibox .buy .btn3').css('display', 'block')
+						}
+					},
+
+				}
+			});
+		})
+
+		function indexAniTime() {
+			if ($('.index .feie').hasClass('indexani')) {
+				$('.index .feie').removeClass('indexani')
+				$('.index .feie').addClass('indexanii')
+			} else {
+				$('.index .feie').removeClass('indexanii')
+				$('.index .feie').addClass('indexani')
+			}
+			setTimeout(function () {
+				indexAniTime()
+			}, 15000);
+		}
+
+		function jingxiAniTime() {
+			if ($('.jingxi .feie').hasClass('indexani')) {
+				$('.jingxi .feie').removeClass('indexani')
+				$('.jingxi .feie').addClass('indexanii')
+			} else {
+				$('.jingxi .feie').removeClass('indexanii')
+				$('.jingxi .feie').addClass('indexani')
+			}
+			setTimeout(function () {
+				jingxiAniTime()
+			}, 15000);
+		}
+	</script>
+	<script type="text/javascript" src="js/pintu.js?v=20"></script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+		/*
+		 * 注意：
+		 * 1. 所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+		 * 2. 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+		 * 3. 完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
+		 *
+		 * 如有问题请通过以下渠道反馈：
+		 * 邮箱地址：weixin-open@qq.com
+		 * 邮件主题：【微信JS-SDK反馈】具体问题
+		 * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
+		 */
+
+		var windowUrl = location.href;
+
+		var cfg = {
+			share_url: windowUrl,
+			title: '拼一拼，老越城，新玩法！',
+			desc: '听说这个游戏10个人里只有三个人挑战成功哦！',
+			imgUrl: 'http://minchao.me/pingtu/images/ice.jpg'
+		};
+
+		//alert(location.href.split('#')[0]);
+
+		wx.config({
+			debug: false,
+			appId: 'gh_551fded90217',
+			timestamp: '1615185117',
+			nonceStr: 'fzCpwWISM9JDpqAZ',
+			signature: '91bc690b0bce96c2862c181e586fdab3ad541b04',
+			jsApiList: [
+				'onMenuShareTimeline', 'onMenuShareAppMessage', 'shapeShareAppMessage',
+				'shapeShareTimeline' // 所有要调用的 API 都要加到这个列表中
+			]
+		});
+
+		wx.ready(function () {
+			wx.onMenuShareTimeline({
+				title: cfg.title, // 分享标题
+				link: cfg.share_url, // 分享链接
+				imgUrl: cfg.imgUrl, // 分享图标
+				success: function () {
+					// 用户确认分享后执行的回调函数
+				},
+				cancel: function () {
+					// 用户取消分享后执行的回调函数
+				}
+			});
+			wx.onMenuShareAppMessage({
+				title: cfg.title, // 分享标题
+				desc: cfg.desc, // 分享描述
+				link: cfg.share_url, // 分享链接
+				imgUrl: cfg.imgUrl, // 分享图标
+				type: '', // 分享类型,music、video或link，不填默认为link
+				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+				success: function () {
+					// 用户确认分享后执行的回调函数
+				},
+				cancel: function () {
+					// 用户取消分享后执行的回调函数
+				}
+			});
+		});
+	</script>
+	<!-- <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
+<script>
+  // 初始化
+  var vConsole = new VConsole();
+  console.log('Hello world');
+</script> -->
+</body>
+
+</html>

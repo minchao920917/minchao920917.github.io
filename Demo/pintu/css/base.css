@@ -1,0 +1,90 @@
+/* public */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,section, article, aside, header, footer, nav, dialog, figure,menu,hgroup{ margin:0; padding:0; border:0;}
+/*解除最小字体限制*/
+html{ -webkit-text-size-adjust:none;}
+body{ font-size:14px; line-height:normal;  color:#666;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+img{vertical-align: top;width: 100%;display: block;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;}
+ol,ul,li {list-style:none;}
+capation,th{text-align:left;}
+q:before, q:after{content:'';}
+abbr,acronym{border:0;}
+video{object-fit: fill;}
+/*手机端页面去除a标签点击时的蓝色边框*/
+a{text-decoration:none; color:#333; transition:color 0.3s ease-in;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color: transparent;outline: none;}
+a:hover{ outline:none; text-decoration:none;}
+a:focus{ outline:none;}
+/* 清除表单相关默认样式 */
+input,textarea,select,button{ outline:none; resize:none; appearance:none;-moz-appearance:none;-webkit-appearance:none;-ms-appearance:none;}
+input:focus,textarea:focus,button,a,select{ outline:none; appearance:none;-moz-appearance:none;-webkit-appearance:none;-ms-appearance:none;}
+/*去除input自动填充的黄色背景*/
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {box-shadow: 0 0 0px 1000px white inset; -webkit-box-shadow: 0 0 0px 1000px white inset;}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+/*块状元素集中对齐 block center*/
+.bc{margin-left:auto;margin-right:auto;}
+/* 可修复IE6中双倍边距bug */
+.fl{float:left;}
+.fr{float: right;}
+.cb{clear:both;}
+.or{overflow:hidden;}
+.clearfix:after{content:'';display:block;height:0;visibility: hidden;clear:both;}
+.clearfix{    /*IE6中的解决方案*/     zoom:1; }
+/* 限制内容文本行数 */
+.ovline{text-overflow:ellipsis;overflow: hidden;white-space: nowrap;}
+.ovline2{display:-webkit-box;-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:2;-moz-line-clamp:2;text-overflow:ellipsis;overflow: hidden;}
+.ovline3{display:-webkit-box;-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:3;-moz-line-clamp:3;text-overflow:ellipsis;overflow: hidden;}
+
+/* 内宽 */
+/*.mainbox{ margin:0 auto;font-style:normal;width: 1400px;}
+@media screen and (max-width:1596px){
+    .mainbox{width: 90%;}
+}*/
+
+/* layer 弹出层 */
+.layui-layer-hui{background-color: rgba(0,0,0,0.6) !important}
+.layui-layer-hui .layui-layer-content{color: #fff !important;font-size: 14px !important;line-height: 22px !important;padding: 10px !important;}
+
+/* zUI模拟滚动条 */
+.zUIpanelScrollBox,.zUIpanelScrollBar{width:4px;top:4px;right:2px;border-radius:2px;}
+.zUIpanelScrollBox{background:transparent;/*opacity:0.1;filter:alpha(opacity=10);*/}
+.zUIpanelScrollBar{background:#A5896B;/*opacity:1;filter:alpha(opacity=100);*/}
+
+/* 弹窗 */
+.pop{position: fixed;top: 0;bottom: 0;left: 0;right: 0;margin: auto;z-index: 9999;display:none;text-align: center;}
+.pop:after{content: '';display: inline-block;height: 100%;vertical-align: middle;}
+.pop .shadow{ background:#000; opacity:0.8;position:absolute; top: 0;bottom: 0;left: 0;right: 0;margin: auto; z-index:1;}
+    
+/* 解决ios上下滚屏卡顿 */
+.ios{-webkit-overflow-scrolling : touch;}
+
+
+/*设置placeholder*/
+
+/*WebKit browsers   */
+input::-webkit-input-placeholder{color: #999;}
+/*Mozilla Firefox 4 to 18   */
+input:-moz-placeholder,{color: #999;}
+/*Mozilla Firefox 19+   */
+input::-moz-placeholder{   color: #999;   }
+/*Internet Explorer 10+ */
+input:-ms-input-placeholder{color: #999;}
+
+/*WebKit browsers   */
+textarea::-webkit-input-placeholder {color: #999;}
+/*Mozilla Firefox 4 to 18   */
+textarea:-moz-placeholder {color: #999;}
+    /*Mozilla Firefox 19+   */
+textarea::-moz-placeholder { color: #999;}
+    /*Internet Explorer 10+ */
+textarea:-ms-input-placeholder {color: #999;}
+
+
+/* h5 */
+html{font-size: 50px}
+*{ margin:0; padding:0; border:0;box-sizing: border-box;background-repeat: no-repeat;font-family:"SourceHanSansCN","PingFang SC","Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;}
