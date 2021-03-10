@@ -191,7 +191,7 @@
       {
         demo_link: '../Demo/pintu/index.html',
         img_link: 'https://i.loli.net/2021/03/10/2BxeyW6vhcEG3O7.jpg',
-        code_link: 'https://github.com/minchao920917/minchao920917.github.io/Dome/pintu',
+        code_link: 'https://github.com/minchao920917/minchao920917.github.io/tree/master/Demo/pintu',
         title: '拼图小游戏',
         core_tech: 'html+css+js',
         description: '越城推广拼图小游戏'
